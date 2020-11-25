@@ -70,6 +70,10 @@ class Car extends Component {
          alert(a);
       }
 
+      shoot1(a) {
+    alert(a);
+      }
+
 
   render() {
 
@@ -117,7 +121,8 @@ class Car extends Component {
           <button onClick={this.shootbindthis}>The react bind this method</button>
      
           <button onClick={() => this.shoot("Send parameters into an event handler")}>Take the shot!</button>
-
+           
+            <button onClick={this.shoot1.bind(this, "Bind the event handler to this.")}>Click to pass arguments</button>
 
       </div>
     );
