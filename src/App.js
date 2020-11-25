@@ -15,6 +15,11 @@ class Car extends Component {
    changeReferences = () => {
     this.setState({references: "Add Dashbord description"});
   }
+ 
+    changeTextno = () => {
+    this.setState({textno: "Add Dashbord description"});
+  }
+
 
     componentDidMount() {
     setTimeout(() => {
@@ -23,7 +28,7 @@ class Car extends Component {
   }
 
     shouldComponentUpdate() {
-    return false;
+    return true;
   }
 
 
@@ -47,7 +52,7 @@ class Car extends Component {
         >We are changing Tracks References</button>
 
 
-       <h1>My Favorite Color is {this.state.textno}</h1>
+       <h1>My Text no. is {this.state.textno}</h1>
 
        <button
           type="button"
