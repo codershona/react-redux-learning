@@ -41,6 +41,8 @@ class Car extends Component {
     document.getElementById("div10").innerHTML =
     "Before the update, the favorite was " + prevState.textno;
   }
+
+
   componentDidUpdate() {
     document.getElementById("div20").innerHTML =
     "The updated favorite is " + this.state.textno;
@@ -49,6 +51,10 @@ class Car extends Component {
     componentDidUpdate() {
     document.getElementById("mydivexample").innerHTML =
     "The updated favorite is " + this.state.references;
+  }
+
+    shootclicking() {
+    alert("Learning React Shots");
   }
 
 
@@ -92,6 +98,9 @@ class Car extends Component {
           <div id="mydivexample"></div>
 
            {MyHeader}
+
+           <button onClick={this.shootclicking}>Learning React Shots</button>
+
      
       </div>
     );
