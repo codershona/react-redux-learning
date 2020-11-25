@@ -99,7 +99,7 @@ class Car extends Component {
 
            {MyHeader}
 
-           <button onClick={this.shootclicking}>Learning React Shots</button>
+           <button onClick={this.shootclicking}>Learning React Shots!</button>
 
      
       </div>
