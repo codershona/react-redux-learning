@@ -32,6 +32,16 @@ class Car extends Component {
   }
 
 
+    getSnapshotBeforeUpdate(prevProps, prevState) {
+    document.getElementById("div1").innerHTML =
+    "Before the update, the favorite was " + prevState.textno;
+  }
+  componentDidUpdate() {
+    document.getElementById("div2").innerHTML =
+    "The updated favorite is " + this.state.textno;
+  }
+
+
   render() {
     return (
       <div>
@@ -58,6 +68,9 @@ class Car extends Component {
           type="button"
           onClick={this.textno}
         >We are changing Text No.</button>
+
+             <div id="div1"></div>
+        <div id="div2"></div>
      
       </div>
     );
