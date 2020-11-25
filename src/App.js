@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 
 
-class Car extends React.Component {
+class Car extends Component {
   constructor(props) {
     super(props);
     this.state = {
       tracks: "Hook Tasks",
       references: "Hooks state description",
       schemas: "User id",
-      textno: 1999
+      textno: "1999"
     };
   }
 
@@ -20,6 +20,10 @@ class Car extends React.Component {
     setTimeout(() => {
       this.setState({textno: "2020"})
     }, 1000)
+  }
+
+    shouldComponentUpdate() {
+    return false;
   }
 
 
