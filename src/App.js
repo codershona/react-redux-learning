@@ -75,6 +75,15 @@ class Car extends Component {
       }
 
 
+       shoot2 = (a, b) => {
+    alert(b.type);
+    /*
+    'b' represents the React event that triggered the function,
+    in this case the 'click' event
+    */
+  }
+
+
   render() {
 
   	   let MyHeader;
@@ -123,6 +132,9 @@ class Car extends Component {
           <button onClick={() => this.shoot("Send parameters into an event handler")}>Take the shot!</button>
            
             <button onClick={this.shoot1.bind(this, "Bind the event handler to this.")}>Click to pass arguments</button>
+   
+         <button onClick={(ev) => this.shoot2("React event Object", ev)}>Arrow Function: Sending the event object manually</button>
+
 
       </div>
     );
