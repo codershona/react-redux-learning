@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './mysass.scss';
 
 
 class Car extends Component {
