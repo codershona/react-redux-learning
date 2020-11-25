@@ -4,6 +4,7 @@ import React, { Component } from 'react';
 class Car extends Component {
   constructor(props) {
     super(props);
+
     this.state = {
       tracks: "Hook Tasks",
       references: "Hooks state description",
@@ -65,6 +66,11 @@ class Car extends Component {
   }
 
 
+     shoot = (a) => {
+         alert(a);
+      }
+
+
   render() {
 
   	   let MyHeader;
@@ -109,6 +115,9 @@ class Car extends Component {
            <button onClick={this.shootclicking}>Learning React Shots!</button>
 
           <button onClick={this.shootbindthis}>The react bind this method</button>
+     
+          <button onClick={() => this.shoot("Send parameters into an event handler")}>Take the shot!</button>
+
 
       </div>
     );
@@ -124,6 +133,7 @@ class Container extends Component {
   render() {
     return (
       <h1>I am learning Unmounting emthod for React</h1>
+
     );
   }
 }
