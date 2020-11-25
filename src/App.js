@@ -57,6 +57,13 @@ class Car extends Component {
     alert("Learning React Shots");
   }
 
+    shootbindthis = () => {
+    alert(this);
+    /*
+    The 'this' keyword refers to the component object
+    */
+  }
+
 
   render() {
 
@@ -101,7 +108,8 @@ class Car extends Component {
 
            <button onClick={this.shootclicking}>Learning React Shots!</button>
 
-     
+          <button onClick={this.shootbindthis}>The react bind this method</button>
+
       </div>
     );
   }
