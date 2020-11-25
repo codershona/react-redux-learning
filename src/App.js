@@ -5,20 +5,24 @@ class Car extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      brand: "Ford",
-      model: "Mustang",
-      color: "red",
-      year: 1964
+      tracks: "Hook Tasks",
+      references: "Hooks state description",
+      schemas: "User id",
+      textno: 1999
     };
   }
   render() {
     return (
       <div>
-        <h1>My {this.state.brand}</h1>
+        <h1>My {this.state.tracks}</h1>
         <p>
-          It is a {this.state.color}
-          {this.state.model}
-          from {this.state.year}.
+          It is a {this.state.textno}
+          </p>
+            <p>
+          {this.state.schemas}
+          </p>
+          <p>
+            from {this.state.references}.
         </p>
       </div>
     );
