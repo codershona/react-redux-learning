@@ -16,6 +16,12 @@ class Car extends React.Component {
     this.setState({references: "Add Dashbord description"});
   }
 
+    componentDidMount() {
+    setTimeout(() => {
+      this.setState({textno: "2020"})
+    }, 1000)
+  }
+
 
   render() {
     return (
@@ -37,6 +43,13 @@ class Car extends React.Component {
         >We are changing Tracks References</button>
 
 
+       <h1>My Favorite Color is {this.state.textno}</h1>
+
+       <button
+          type="button"
+          onClick={this.textno}
+        >We are changing Text No.</button>
+     
       </div>
     );
   }
