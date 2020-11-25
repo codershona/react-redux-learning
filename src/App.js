@@ -11,6 +11,12 @@ class Car extends React.Component {
       textno: 1999
     };
   }
+
+   changeReferences = () => {
+    this.setState({references: "Add Dashbord description"});
+  }
+
+
   render() {
     return (
       <div>
@@ -24,6 +30,13 @@ class Car extends React.Component {
           <p>
             from {this.state.references}.
         </p>
+
+            <button
+          type="button"
+          onClick={this.changeReferences}
+        >We are changing Tracks References</button>
+
+
       </div>
     );
   }
