@@ -1,12 +1,18 @@
 import React, { Component } from 'react';
 
+
+
 class Car extends Component {
-	constructor() {
-		super();
-		this.state = { tracks: "yellow" };
-	}
+  constructor(props) {
+    super(props);
+    this.state = {brand: "Ford"};
+  }
   render() {
-    return <h2>Hi, I have a { this.state.tracks } Car!</h2>;
+    return (
+      <div>
+        <h1>I have a nice Car</h1>
+      </div>
+    );
   }
 }
 
