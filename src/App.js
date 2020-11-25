@@ -8,8 +8,13 @@ class Car extends Component {
       tracks: "Hook Tasks",
       references: "Hooks state description",
       schemas: "User id",
-      textno: "1999"
+      textno: "1999",
+      shows: true
     };
+  }
+
+   delHeader = () => {
+    this.setState({shows: false});
   }
 
    changeReferences = () => {
@@ -33,16 +38,28 @@ class Car extends Component {
 
 
     getSnapshotBeforeUpdate(prevProps, prevState) {
-    document.getElementById("div1").innerHTML =
+    document.getElementById("div10").innerHTML =
     "Before the update, the favorite was " + prevState.textno;
   }
   componentDidUpdate() {
-    document.getElementById("div2").innerHTML =
+    document.getElementById("div20").innerHTML =
     "The updated favorite is " + this.state.textno;
+  }
+
+    componentDidUpdate() {
+    document.getElementById("mydivexample").innerHTML =
+    "The updated favorite is " + this.state.references;
   }
 
 
   render() {
+
+  	   let MyHeader;
+    if (this.state.shows) {
+      MyHeader = <Container />;
+    };
+
+
     return (
       <div>
         <h1>My {this.state.tracks}</h1>
@@ -69,13 +86,32 @@ class Car extends Component {
           onClick={this.textno}
         >We are changing Text No.</button>
 
-             <div id="div1"></div>
-        <div id="div2"></div>
+             <div id="div10"></div>
+        <div id="div20"></div>
+
+          <div id="mydivexample"></div>
+
+           {MyHeader}
      
       </div>
     );
   }
 }
+
+
+
+class Container extends Component {
+  componentWillUnmount() {
+    alert("---- The component named Header is about to be unmounted.---- ");
+  }
+  render() {
+    return (
+      <h1>I am learning Unmounting emthod for React</h1>
+    );
+  }
+}
+
+
 export default Car;
 
 
