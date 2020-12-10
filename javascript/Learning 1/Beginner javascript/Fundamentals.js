@@ -1,2 +1,15 @@
-alert('Hello');
-alert('World');
+
+
+    alert('Hello');
+    alert('World');
+
+    alert(3 +1 + 2);
+
+    alert("some code");
+    // "use strict" below is ignored--it must be at the top
+
+     "use strict";
+
+     // strict mode is not activated
+
+
