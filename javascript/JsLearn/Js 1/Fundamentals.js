@@ -103,6 +103,70 @@
 
 
 
+   // Data types
+
+   alert( 1 / 0 );
+   alert( Infinity );
+
+   alert( "not a number" / 2 ); // NaN, such division is erroneous
+
+   alert( "not a number" / 2 + 5 );
+
+    alert( "not a number" / 3 ); 
+     alert( "not a number" / 5 + 6 ); 
+   // string
+
+     let users = "MILI";
+
+		// embed a variable
+		alert( `This is , ${users}!` ); // Hello, John!
+
+		// embed an expression
+		alert( `Her score is  ${6 + 9}` ); // the result is 3
+
+
+
+		// Boolean (logical type)
+
+		let isLoading = 7 > 2;
+
+       alert( isLoading ); // true (the comparison result is "yes")
+
+
+   // undefined
+
+
+   let age = 100;
+
+   // change the value to undefined
+   age = undefined;
+
+     alert(age);
+
+
+
+
+
+// The typeof operator
+
+// Type Conversions
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
