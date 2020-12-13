@@ -221,16 +221,22 @@ alert(typeof number); // number
 // alert( Number(false) );       // 0
 
 
-alert( Numbers("   333   ") ); // 123
-alert( Numbers("444z") );      // NaN (error reading a number at "z")
-alert( Numbers(true) );        // 1
-alert( Numbers(false) );       // 0
+// alert( Numbers("   333   ") ); // 123
+// alert( Numbers("444z") );      // NaN (error reading a number at "z")
+// alert( Numbers(true) );        // 1
+// alert( Numbers(false) );       // 0
 
-alert( Boolean(1) ); // true
-alert( Boolean(0) ); // false
+// alert( Boolean(1) ); // true
+// alert( Boolean(0) ); // false
 
-alert( Boolean("hello Javascript") ); // true
-alert( Boolean("") ); // false
+// alert( Boolean("hello Javascript") ); // true
+// alert( Boolean("") ); // false
+
+
+
+// Basic operators, maths  :
+
+
 
 
 
