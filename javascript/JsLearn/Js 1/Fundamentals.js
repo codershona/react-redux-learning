@@ -236,20 +236,215 @@ alert(typeof number); // number
 
 // Basic operators, maths  :
 
+// Terms: “unary”, “binary”, “operand”
+
+
+let x = 1;
+
+x = -x;
+alert( x ); // -1, unary negation was applied
+
+let x = 1, y = 3;
+alert( y - x ); // 2, binary minus subtracts values
+
+let y = 2;
+y = -y;
+alert( y );
+
+let b = 2, a = 4;
+alert( a - b );
+
+// remainder
+
+// alert( 5 % 2 ); // 1, a remainder of 5 divided by 2
+// alert( 8 % 3 ); // 2, a remainder of 8 divided by 3
+
+alert( 6 % 3 ); // 1, a remainder of 5 divided by 2
+alert( 9 % 2 ); // 2, a remainder of 8 divided by 3
+
+
+// Exponentiation **
+
+alert( 2 ** 2 ); // 4  (2 multiplied by itself 2 times)
+alert( 2 ** 3 ); // 8  (2 * 2 * 2, 3 times)
+alert( 2 ** 4 ); // 16 (2 * 2 * 2 * 2, 4 times)
+
+
+alert( 4 ** (1/2) ); // 2 (power of 1/2 is the same as a square root)
+alert( 8 ** (1/3) ); // 2 (power of 1/3 is the same as a cubic root)
+
+
+// String concatenation with binary +
+
+
+alert( '1' + 2 ); // "12"
+alert( 2 + '1' ); // "21"
+
+
+alert(2 + 2 + '1' ); // "41" and not "221"
+
+alert('1' + 2 + 2); // "122" and not "14"
+
+alert( 6 - '2' ); // 4, converts '2' to a number
+alert( '6' / '2' ); // 3, converts both operands to numbers
+
+
+// Numeric conversion, unary +
+
+// No effect on numbers
+let x = 1;
+alert( +x ); // 1
+
+let y = -2;
+alert( +y ); // -2
+
+// Converts non-numbers
+alert( +true ); // 1
+alert( +"" );   // 0
+
+
+// method 3
+
+let apples = "2";
+let oranges = "3";
+
+alert( apples + oranges ); // "23", the binary plus concatenates strings
+
+
+
+let apples = "2";
+let oranges = "3";
+
+// both values converted to numbers before the binary plus
+alert( +apples + +oranges ); // 5
+
+// the longer variant
+// alert( Number(apples) + Number(oranges) ); // 5
+
+
+// Operator precedence
+
+
+let a = 1;
+let b = 2;
+
+let c = 3 - (a = b + 1);
+
+alert( a ); // 3
+alert( c ); // 0
+
+
+let a, b, c;
+
+a = b = c = 2 + 2;
+
+alert( a ); // 4
+alert( b ); // 4
+alert( c ); // 4
+
+
+
+// Modify-in-place
+
+
+let n = 2;
+n += 5; // now n = 7 (same as n = n + 5)
+n *= 2; // now n = 14 (same as n = n * 2)
+
+alert( n ); // 14
+
+
+let n = 2;
+n += 5; // now n = 7 (same as n = n + 5)
+n *= 2; // now n = 14 (same as n = n * 2)
+
+alert( n ); // 14
+
+
+let n = 2;
+
+n *= 3 + 5;
+
+alert( n ); // 16  (right part evaluated first, same as n *= 8)
 
 
 
 
+// Increment/decrement
+
+
+let counter = 2;
+counter++;        // works the same as counter = counter + 1, but is shorter
+alert( counter ); // 3
 
 
 
+let counter = 2;
+counter--;        // works the same as counter = counter - 1, but is shorter
+alert( counter ); // 1
+
+
+let counter = 1;
+let a = ++counter; // (*)
+
+alert(a); // 2
+
+
+let counter = 1;
+let a = counter++; // (*) changed ++counter to counter++
+
+alert(a); // 1
+
+
+let counter = 0;
+counter++;
+++counter;
+alert( counter ); // 2, the lines above did the same
+
+
+let counter = 0;
+alert( ++counter ); // 1
+
+
+// Bitwise operators
+// Bitwise operators treat arguments as 32-bit integer numbers and work on the level of their binary representation.
+
+// These operators are not JavaScript-specific. They are supported in most programming languages.
+
+// The list of operators:
+
+// AND ( & )
+// OR ( | )
+// XOR ( ^ )
+// NOT ( ~ )
+// LEFT SHIFT ( << )
+// RIGHT SHIFT ( >> )
+// ZERO-FILL RIGHT SHIFT ( >>> )
 
 
 
+// 1
+let a = 1, b = 1;
+
+let c = ++a; // ?
+let d = b++; // ?
+
+alert( ++a );
+alert( b++);
+alert( a );
+alert( b );
+
+let a = 2;
+
+let x = 1 + (a *= 2);
+
+alert( x );
 
 
+let a = prompt("First number?", 1);
+let b = prompt("Second number?", 2);
 
-
+alert(+a + +b); // 12
 
 
 
