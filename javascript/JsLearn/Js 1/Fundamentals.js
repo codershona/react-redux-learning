@@ -509,3 +509,12 @@
 
 
 
+// Conditional branching: if, '?'
+
+let year = prompt('In which year was ECMAScript-2015 specification published?', '');
+
+if (year == 2015) alert( 'You are right!' );
+
+let salesman = prompt('We had sale 13 apartmants', '');
+
+if (salesman == 2015) alert( 'Thats great' );
