@@ -738,12 +738,184 @@
 // alert(user ?? "Anonymous"); // John
 
 
-let fatherName = null;
-let motherName = null;
-let sisterName = "Supercodersss";
+// let fatherName = null;
+// let motherName = null;
+// let sisterName = "Supercodersss";
 
-// shows the first defined value:
-alert(fatherName ?? motherName ?? sisterName ?? "Anonymous"); 
+// // shows the first defined value:
+// alert(fatherName ?? motherName ?? sisterName ?? "Anonymous"); 
+
+
+
+// Loops: while and for
+
+// let i = 0;
+// while (i < 3) { // shows 0, then 1, then 2
+//   alert( i );
+//   i++;
+// }
+
+// let x = 1;
+// while(x < 4) {
+// 	alert(x);
+// 	x++
+// }
+
+// let y = 6;
+// while (y) { // when i becomes 0, the condition becomes falsy, and the loop stops
+//   alert( y );
+//   y--;
+// }
+
+
+// The “do…while” loop
+
+
+// let x = 0;
+// do {
+//   alert( x );
+//   x++;
+// } while (x < 8);
+
+
+// for (let y = 0; y < 7; y++) { // shows 0, then 1, then 2
+//   alert(y);
+// }
+
+
+// let ix = 0;
+
+// for (ix = 0; ix < 6; ix++) { // use an existing variable
+//   alert(ix); // 0, 1, 2
+// }
+
+// alert(ix); // 3, visible, because declared outside of the loop
+
+
+
+// let sums = 0;
+
+// while (true) {
+
+//   let values = +prompt("Enter a code numbers: ", '');
+
+//   if (!values) break; // (*)
+
+//   sums += values;
+
+// }
+// alert( 'Sum : ' + sums );
+
+
+
+// for (let y = 0; y < 9; y++) {
+
+//   // if true, skip the remaining part of the body
+//   if (y % 5 == 0) continue;
+
+//   alert(y); // 1, then 3, 5, 7, 9
+// }
+
+
+
+
+// if (i > 5) {
+//   alert(i);
+// } else {
+//   continue;
+// }
+
+// if (x > 6) {
+// 	alert(x);
+// } else {
+// 	continue;
+// }
+
+// for (let i = 0; i < 3; i++) {
+
+//   for (let j = 0; j < 3; j++) {
+
+//     let input = prompt(`Value at coords (${i},${j})`, '');
+
+//     // what if we want to exit from here to Done (below)?
+//   }
+// }
+
+// alert('Done!');
+
+
+// for (let iy = 0; iy < 6; iy++) {
+
+//   for (let jx = 0; jx < 9; jx++) {
+
+//     let input = prompt(`Value at coords (${iy},${jx})`, '');
+
+//     // what if we want to exit from here to Done (below)?
+//   }
+// }
+
+// alert('Done!.......');
+
+
+
+// The "switch" statement :
+
+
+
+// let x = 4 + 4;
+
+// switch (x) {
+//   case 5:
+//     alert( 'Too small..............' );
+//     break;
+//   case 6:
+//     alert( 'Exactly!...........' );
+//     break;
+//   case 7:
+//     alert( 'Too large.............' );
+//     break;
+//   default:
+//     alert( "I don't know such values..............." );
+// }
+
+
+// let x = 6;
+
+// switch (x) {
+//   case 7:
+//     alert('Right!.....');
+//     break;
+
+//   case 4: // (*) grouped two cases
+//   case 8:
+//     alert('Wrong!....');
+//     alert("Why don't you take a math class?....");
+//     break;
+
+//   default:
+//     alert('The result is strange. Really.....');
+// }
+
+
+// let browser = prompt("Enter a browser name ");
+// switch (browser) {
+//   case 'Edge':
+//     alert( "You've got the Edge!" );
+//     break;
+
+//   case 'Chrome':
+//   case 'Firefox':
+//   case 'Safari':
+//   case 'Opera':
+//     alert( 'Okay we support these browsers too' );
+//     break;
+
+//   default:
+//     alert( 'We hope that this page looks ok!' );
+// }
+
+// Functions :
+
 
 
 
