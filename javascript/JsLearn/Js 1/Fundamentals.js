@@ -727,3 +727,23 @@
 // alert( !0 ); // true
 
 
+// Nullish coalescing operator '??':
+
+// let user;
+
+// alert(user ?? "Anonymous"); // Anonymous
+
+// let user = "Baby";
+
+// alert(user ?? "Anonymous"); // John
+
+
+let fatherName = null;
+let motherName = null;
+let sisterName = "Supercodersss";
+
+// shows the first defined value:
+alert(fatherName ?? motherName ?? sisterName ?? "Anonymous"); 
+
+
+
