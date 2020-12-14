@@ -638,3 +638,92 @@
 // }
 
 // Logical operators
+
+// alert( true || true );   // true
+// alert( false || true );  // true
+// alert( true || false );  // true
+// alert( false || false ); // false
+
+// if (2 || 1) { // works just like if( true || false )
+//   alert( 'It maybe true' );
+// }
+
+
+
+// let hour = 9;
+
+// if (hour < 10 || hour > 18) {
+//   alert( 'The office is closed.' );
+// }
+
+// let users = 8;
+// if (users < 88 || users > 12) {
+// 	alert('Is this ok');
+// }
+
+
+// let hour = 12;
+// let isWeekend = true;
+
+// if (hour < 10 || hour > 18 || isWeekend) {
+//   alert( 'The office is closed.' ); // it is the weekend
+// }
+
+
+
+// let users = 22;
+// let isUsers = true;
+// if (users < 20 || users > 17 || isUsers) {
+// 	alert('hellody');
+// }
+
+
+// alert( 6 || 0 ); // 1 (1 is truthy)
+
+// alert( null || 8 ); // 1 (1 is the first truthy value)
+// alert( null || 0 || 9 ); // 1 (the first truthy value)
+
+// alert( undefined || null || 0 ); // 0 (all falsy, returns the last value)
+
+
+// let Name = "";
+// let fatherName = "";
+// let motherName = "SuperCoder";
+
+// alert( Name || fatherName || motherName || "Anonymous"); // SuperCoder
+
+
+// true || alert("not printed!!");
+// false || alert("printed!!");
+
+// alert( true && true );   // true
+// alert( false && true );  // false
+// alert( true && false );  // false
+// alert( false && false ); // false
+
+
+
+// let name = 22;
+// let number = 39;
+
+// if (name == 22 && number == 39) {
+//   alert( 'Numner and Name is ' );
+// }
+
+
+// if (2 && 0) { // evaluated as true && false
+//   alert( "won't work, because the result is falsy" );
+// }
+
+
+
+// alert( Boolean("non-empty string") ); // true
+// alert( Boolean(null) );
+
+// alert( !!"non-empty string" ); // true
+// alert( !!null )
+
+// alert( !true ); // false
+// alert( !0 ); // true
+
+
