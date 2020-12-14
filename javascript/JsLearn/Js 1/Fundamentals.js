@@ -511,10 +511,130 @@
 
 // Conditional branching: if, '?'
 
-let year = prompt('In which year was ECMAScript-2015 specification published?', '');
+// let year = prompt('In which year was ECMAScript-2015 specification published?', '');
 
-if (year == 2015) alert( 'You are right!' );
+// if (year == 2015) alert( 'You are right!' );
 
-let salesman = prompt('We had sale 13 apartmants', '');
+// let salesman = prompt('We had sale 13 apartmants', '');
 
-if (salesman == 2015) alert( 'Thats great' );
+// if (salesman == 2015) alert( 'Thats great' );
+
+// The “else” clause :
+
+
+// let year = prompt('In which year was the ECMAScript-2015 specification published?', '');
+
+// if (year == 2015) {
+//   alert( 'You guessed it right!' );
+// } else {
+//   alert( 'How can you be so wrong?' ); // any value except 2015
+// }
+
+
+// let users = prompt('I am leanring else claues', '');
+// if (users == 2) {
+// 	alert( "This is right user" );
+
+// } else {
+// 	alert( 'This was a wrong answers' );
+// }
+
+
+// Several conditions: “else if”
+
+// let year = prompt('In which year was the ECMAScript-2015 specification published?', '');
+
+// if (year < 2015) {
+//   alert( 'Too early...' );
+// } else if (year > 2015) {
+//   alert( 'Too late' );
+// } else {
+//   alert( 'Exactly!' );
+// }
+
+// let names = prompt('This is else if condition', '');
+
+// if (names < 8) {
+//   alert( 'Guess which condition' );
+// } else if (names > 4) {
+//   alert( 'Wrong please write again' );
+// } else {
+//   alert( 'Exactly!...' );
+// }
+
+
+// Conditional operator ‘?’
+
+
+// let accessAllowed;
+// let age = prompt('How old are you?', '');
+
+// if (age > 18) {
+//   accessAllowed = true;
+// } else {
+//   accessAllowed = false;
+// }
+
+// alert(accessAllowed);
+
+
+// let accessNumberStack;
+// let userId = prompt('Enter your user id?', '');
+
+// if (userId > 3) {
+//   accessNumberStack = true;
+// } else {
+//   accessNumberStack= false;
+// }
+
+// alert(accessAllowed);
+
+
+// Multiple ‘?’
+
+// let age = prompt('age?', 18);
+
+// let message = (age < 3) ? 'Hi, baby!' :
+//   (age < 18) ? 'Hello!' :
+//   (age < 100) ? 'Greetings!' :
+//   'What an unusual age!';
+
+// alert( message );
+
+// Non-traditional use of ‘?’
+
+
+// let company = prompt('Which company created JavaScript?', '');
+
+// (company == 'Netscape') ?
+//    alert('Right!') : alert('Wrong.');
+
+
+//    let stack = prompt('Learning method 2', '');
+
+// (stack == 'Javascript') ?
+//   alert('correct answers') : alert('incorrect answers.');
+
+
+
+
+   // method 2
+
+//    let company = prompt('Which company created JavaScript?', '');
+
+// if (company == 'Netscape') {
+//   alert('Right!');
+// } else {
+//   alert('Wrong.');
+// }
+
+
+// let stack = prompt('Learning method 2', '');
+
+// if (stack == 'Javascript') {
+//   alert('correct answers');
+// } else {
+//   alert('incorrect answers.');
+// }
+
+// Logical operators
