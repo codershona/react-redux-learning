@@ -947,33 +947,42 @@
 
 
 
-let userName = 'John';
+// let userName = 'John';
 
-function showMessage() {
-  let message = 'Hello, ' + userName;
-  alert(message);
-}
+// function showMessage() {
+//   let message = 'Hello, ' + userName;
+//   alert(message);
+// }
 
-showMessage(); // Hello, John
+// showMessage(); // Hello, John
+
+// let userId = 'JohnnyPApa';
+
+// function showMessage() {
+//   let messages = 'Hello, ' + userID;
+//   alert(messages);
+// }
+
+// showMessage(); // Hello, John
 
 
-// method 2
+// // method 2
 
 
-let userName = 'John';
+// let userIDs = 'Johnny';
 
-function showMessage() {
-  userName = "Bob"; // (1) changed the outer variable
+// function showMessage() {
+//   userIDs = "Bobby"; // (1) changed the outer variable
 
-  let message = 'Hello, ' + userName;
-  alert(message);
-}
+//   let messages = 'Hello,,,, ' + userIDs;
+//   alert(messages);
+// }
 
-alert( userName ); // John before the function call
+// alert( userIDs ); // John before the function call
 
-showMessage();
+// showMessage();
 
-alert( userName ); // Bob, the value was modified by the function
+// alert( userName ); // Bob, the value was modified by the function
 
 
 
@@ -983,98 +992,130 @@ alert( userName ); // Bob, the value was modified by the function
 
 
 
-function showMessage(from, text) { // arguments: from, text
-  alert(from + ': ' + text);
-}
+// function showMessage(from, text) { // arguments: from, text
+//   alert(from + ': ' + text);
+// }
 
-showMessage('Ann', 'Hello!'); // Ann: Hello! (*)
-showMessage('Ann', "What's up?"); // Ann: What's up? (**)
+// showMessage('Annnaaa', 'Hello...!'); // Ann: Hello! (*)
+// showMessage('Annnnaa', "What's up...?"); // Ann: What's up? (**)
 
 
-// method 4
+// // method 4
 
-function showMessage(from, text) {
+// function showMessage(from, text) {
 
-  from = '*' + from + '*'; // make "from" look nicer
+//   from = '*' + from + '*'; // make "from" look nicer
 
-  alert( from + ': ' + text );
-}
+//   alert( from + ': ' + text );
+// }
 
-let from = "Ann";
+// let from = "Annaaa";
 
-showMessage(from, "Hello"); // *Ann*: Hello
+// showMessage(from, "Hellooo"); // *Ann*: Hello
 
-// the value of "from" is the same, the function modified a local copy
-alert( from ); // Ann
+// // the value of "from" is the same, the function modified a local copy
+// alert( from ); // Ann
 
-// default values
+// // default values
 
-function showMessage(from, text = "no text given") {
-  alert( from + ": " + text );
-}
+// function showMessage(from, text = "no text given") {
+//   alert( from + ": " + text );
+// }
 
-showMessage("Ann"); // Ann: no text given
+// showMessage("Annnaaa"); // Ann: no text given
 
-// method 5
+// // method 5
 
-function showMessage(text) {
-  if (text === undefined) {
-    text = 'empty message';
-  }
+// function showMessage(text) {
+//   if (text === undefined) {
+//     text = 'empty message....';
+//   }
 
-  alert(text);
-}
+//   alert(text);
+// }
 
-showMessage(); // empty message
+// showMessage(); // empty message
 
-// method 6
+// // method 6
 
-// if there's no "count" parameter, show "unknown"
-function showCount(count) {
-  alert(count ?? "unknown");
-}
+// // if there's no "count" parameter, show "unknown"
+// function showCount(count) {
+//   alert(count ?? "unknown");
+// }
 
-showCount(0); // 0
-showCount(null); // unknown
-showCount(); // unknown
+// showCount(0); // 0
+// showCount(null); // unknown
+// showCount(); // unknown
 
 
 // Returning a value
 
 
-function sum(a, b) {
-  return a + b;
-}
+// function sum(a, b) {
+//   return a + b;
+// }
 
-let result = sum(1, 2);
-alert( result ); // 3
+// let result = sum(1, 2);
+// alert( result ); // 3
+
+// function sums(x, y) {
+// 	return x + y;
+// }
+// let query = sums(3, 5);
+// alert(query);
 
 
 // method 8
-function checkAge(age) {
-  if (age >= 18) {
-    return true;
-  } else {
-    return confirm('Do you have permission from your parents?');
-  }
-}
+// function checkAge(age) {
+//   if (age >= 18) {
+//     return true;
+//   } else {
+//     return confirm('Do you have permission from your parents?');
+//   }
+// }
 
-let age = prompt('How old are you?', 18);
+// let age = prompt('How old are you?', 18);
 
-if ( checkAge(age) ) {
-  alert( 'Access granted' );
-} else {
-  alert( 'Access denied' );
-}
+// if ( checkAge(age) ) {
+//   alert( 'Access granted' );
+// } else {
+//   alert( 'Access denied' );
+// }
 
 
-// method 9
+// function checkMethod(method) {
+// 	if (method >= 28) {
+// 		return true;
 
-function doNothing() {
-  return;
-}
+// 	} else {
+// 		return confirm('Do you wan to work in metod?');
 
-alert( doNothing() === undefined ); // true
+// 	}
+// }
+
+// let method = prompt('How was the tasks?', 28);
+
+// if ( checkMethod(method) ) {
+//   alert( 'Access granted....' );
+// } else {
+//   alert( 'Access denied...' );
+// }
+
+
+// // method 9
+
+// // function doNothing() {
+// //   return;
+// // }
+
+// // alert( doNothing() === undefined ); // true
+
+
+// function didNothing() {
+// 	return;
+// }
+
+// alert(didNothing() ===  undefined);
 
 // CHAPTER : Function expressions :
 
