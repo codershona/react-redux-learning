@@ -109,6 +109,10 @@
 // obj.__proto__ = 5; // assign a number
 // alert(obj.__proto__); 
 
+// Object references and copying:
+
+// Object methods, "this":
+
 
 
 
