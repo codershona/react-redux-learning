@@ -167,6 +167,24 @@
 
 // method 3
 
+// let method = {
+// 	num: 0,
+// 	str() {
+// 		this.num++;
+// 		return this;
+// 	},
+// 	isStr() {
+// 		this.num--;
+// 		return this;
+// 	},
+// 	isNum() {
+// 		alert(this.num);
+// 		return this;
+// 	}
+// }
+
+// method.str().str().isStr().str().isStr().isNum();
+
 
 // let ladder = {
 //   step: 0,
@@ -191,6 +209,7 @@
 // method 4
 
 
+
 // let calculator = {
 //   sum() {
 //     return this.a + this.b;
@@ -212,8 +231,80 @@
 
 
 
-// method 5
+// Optional chaining '?.' :
 
+
+// let user = {}; // a user without "address" property
+
+// alert(user.address.street); // Error!
+
+// document.querySelector('.elem') is null if there's no element
+// let html = document.querySelector('.elem').innerHTML; // error if it's null
+
+
+// let person = {};
+// alert(person.number.error);
+
+// let user = {}; // user has no address
+
+// alert( user.address && user.address.street && user.address.street.name ); // undefined (no error)
+
+
+// let person = {};
+// alert( person.number && person.number.error && person.number.error.undefined );
+
+// let user = {}; // user has no address
+
+// alert( user?.address?.street ); // undefined (no error)
+
+// let user = null;
+
+// alert( user?.address ); // undefined
+// alert( user?.address.street ); // undefined
+
+
+// ReferenceError: user is not defined
+// user?.address;
+
+// let user = null;
+// let x = 0;
+
+// user?.sayHi(x++); // no "sayHi", so the execution doesn't reach x++
+
+// alert(x); // 0, value not incremented
+
+// let person = null;
+// let y = 0;
+// person?.isPerson(y++);
+// alert(y);
+
+
+// let user1 = {
+//   firstName: "John"
+// };
+
+// let user2 = null; // Imagine, we couldn't authorize the user
+
+// let key = "firstName";
+
+// alert( user1?.[key] ); // John
+// alert( user2?.[key] ); // undefined
+
+// alert( user1?.[key]?.something?.not?.existing); // undefined
+
+
+
+// Constructor, operator "new" :
+
+function User(name) {
+  this.name = name;
+  this.isAdmin = false;
+}
+
+let user = new User("Jack");
+
+alert(user.name); // Jack
+alert(user.isAdmin); // false
 
 
 
