@@ -113,10 +113,110 @@
 
 // Object methods, "this":
 
+// let user = {
+//   // ...
+// };
+
+// first, declare
+// function sayHi() {
+//   alert("Hello!");
+// };
+
+// then add as a method
+// user.sayHi = sayHi;
+
+// user.sayHi(); // Hello!
+
+
+// let person = {
+
+// };
+
+// function Person() {
+//    alert("Persons name: ")
+// };
+// person.Person = Person;
+// person.Person();
 
 
 
-// method 1
+
+
+// method 2
+
+// let user = { name: "John" };
+// let admin = { name: "Admin" };
+
+// function sayHi() {
+//   alert( this.name );
+// }
+
+// // use the same function in two objects
+// user.f = sayHi;
+// admin.f = sayHi;
+
+// // these calls have different this
+// // "this" inside the function is the object "before the dot"
+// user.f(); // John  (this == user)
+// admin.f(); // Admin  (this == admin)
+
+// admin['f'](); // Admin (dot or square brackets access the method – doesn't matter)
+
+
+
+
+// method 3
+
+
+// let ladder = {
+//   step: 0,
+//   up() {
+//     this.step++;
+//     return this;
+//   },
+//   down() {
+//     this.step--;
+//     return this;
+//   },
+//   showStep() {
+//     alert( this.step );
+//     return this;
+//   }
+// }
+
+// ladder.up().up().down().up().down().showStep(); // 1
+
+
+
+// method 4
+
+
+// let calculator = {
+//   sum() {
+//     return this.a + this.b;
+//   },
+
+//   mul() {
+//     return this.a * this.b;
+//   },
+
+//   read() {
+//     this.a = +prompt('a?', 0);
+//     this.b = +prompt('b?', 0);
+//   }
+// };
+
+// calculator.read();
+// alert( calculator.sum() );
+// alert( calculator.mul() );
+
+
+
+// method 5
+
+
+
+
 
 
 
