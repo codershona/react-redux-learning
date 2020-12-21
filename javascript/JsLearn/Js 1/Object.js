@@ -376,6 +376,110 @@
 // accumulator.read();
 // alert(accumulator.value);
 
+//  Optional chaining '?.' :
+
+
+// let user1 = {
+//   firstName: "John"
+// };
+
+// let user2 = null; // Imagine, we couldn't authorize the user
+
+// let key = "firstName";
+
+// alert( user1?.[key] ); // John
+// alert( user2?.[key] ); // undefined
+
+// alert( user1?.[key]?.something?.not?.existing);
+// undefined
+
+
+
+// let user = null;
+// let x = 0;
+
+// user?.sayHi(x++); // no "sayHi", so the execution doesn't reach x++
+
+// alert(x); // 0, value not incremented
+
+
+// Symbol type:
+
+
+let globalSymbol = Symbol.for("name");
+let localSymbol = Symbol("name");
+
+alert( Symbol.keyFor(globalSymbol) ); // name, global symbol
+alert( Symbol.keyFor(localSymbol) ); // undefined, not global
+
+alert( localSymbol.description ); // name
+
+// method 2:
+
+let id = Symbol("id");
+let user = {
+  [id]: 123
+};
+
+let clone = Object.assign({}, user);
+
+alert( clone[id] ); // 123
+
+
+// method 3
+
+let id = Symbol("id");
+let user = {
+  name: "John",
+  age: 30,
+  [id]: 123
+};
+
+for (let key in user) alert(key); // name, age (no symbols)
+
+// the direct access by the symbol works
+alert( "Direct: " + user[id] );
+
+// Object to primitive conversion:
+
+
+let user = {
+  name: "John",
+  money: 1000,
+
+  [Symbol.toPrimitive](hint) {
+    alert(`hint: ${hint}`);
+    return hint == "string" ? `{name: "${this.name}"}` : this.money;
+  }
+};
+
+// conversions demo:
+alert(user); // hint: string -> {name: "John"}
+alert(+user); // hint: number -> 1000
+alert(user + 500);
+
+
+// method 2:
+let user = {
+  name: "John",
+  money: 1000,
+
+  // for hint="string"
+  toString() {
+    return `{name: "${this.name}"}`;
+  },
+
+  // for hint="number" or "default"
+  valueOf() {
+    return this.money;
+  }
+
+};
+
+alert(user); // toString -> {name: "John"}
+alert(+user); // valueOf -> 1000
+alert(user + 500); // valueOf -> 1500
+
 
 
 
