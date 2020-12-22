@@ -28,7 +28,11 @@ class App extends Component {
      const store = createStore(reducer)
 
      store.subscribe(() => {
-       console.log(store.getState())
+       console.log(store.getState().A)
+     })
+
+     store.subscribe(() => {
+       console.log(store.getState().X)
      })
 
      store.dispatch({type: 'X'})
