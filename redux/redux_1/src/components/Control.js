@@ -1,22 +1,33 @@
 import React from 'react';
-
+import { connect } from 'react-redux';
 
 
 const Control = (props) => {
   return (
     <div>
-      <button>
-          +
+      <button onClick={ () => props.add() }>
+          + ADD
       </button>
-      <button>
-          -
+      <button onClick={ () => props.subtract() }>
+          - SUBTRACT
       </button>
-      <button>
-          *
+      <button onClick={ () => props.multiply() }>
+          * MULTIPLY
       </button>
     </div>
   );
+};
+
+
+function mapDispatchToProps(dispatch) {
+
+    return {
+        add: () => {
+            dispatch({ type: 'ADD' })
+        }
+    }
+
 }
 
 
-export default Control;
+export default connect(null, mapDispatchToProps)(Control);

@@ -8,7 +8,31 @@ const initialState = {
 
 function rootReducer (state=initialState, action) {
 
-    return initialState
+    switch (action.type) {
+       
+        case 'ADD': {
+          return {
+              count: state.count + 1
+          }
+        }
+
+        case 'SUBTRACT': {
+            return {
+                count: state.count - 1
+            }
+
+        }
+
+        case 'MULTIPLY': {
+            return {
+                count: state.count * 1
+            }
+
+        }
+
+        default: return state
+
+    }
 
 }
 
