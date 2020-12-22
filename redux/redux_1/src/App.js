@@ -11,11 +11,13 @@ class App extends Component {
      const reducer = (state={}, action) => {
        if (action.type === 'A') {
          return {
+           ...state,
            A: ' This is Redux'
          }
        }
        if (action.type === 'X') {
          return {
+           ...state,
            X: 'I am creating a redux store'
          }
        }
