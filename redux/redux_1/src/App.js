@@ -9,11 +9,34 @@ class App extends Component {
     // A reducer must have two parameters in this function with State, Action
 
      const reducer = (state={}, action) => {
+       if (action.type === 'A') {
+         return {
+           A: ' This is Redux'
+         }
+       }
+       if (action.type === 'X') {
+         return {
+           X: 'I am creating a redux store'
+         }
+       }
         return state
      }
 
 
      const store = createStore(reducer)
+
+     store.subscribe(() => {
+       console.log(store.getState())
+     })
+
+     store.dispatch({type: 'X'})
+     store.dispatch({type: 'Redux testing for type 1'})
+     store.dispatch({type: 'Redux testing for type 2'})
+     store.dispatch({type: 'Redux testing for type 3'})
+     store.dispatch({type: 'A'})
+     store.dispatch({type: 'Redux testing for type 5'})
+     store.dispatch({type: 'Redux testing for type 6'})
+
 
     return(
       <div className="App">
