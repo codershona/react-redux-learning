@@ -2,7 +2,7 @@
 
 
 const initialState = {
-    count: 0
+    count: 5
 }
 
 
