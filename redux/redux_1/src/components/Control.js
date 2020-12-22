@@ -24,6 +24,12 @@ function mapDispatchToProps(dispatch) {
     return {
         add: () => {
             dispatch({ type: 'ADD' })
+        },
+        subtract: () => {
+            dispatch({ type: 'SUBTRACT' })
+        },
+        multiply: () => {
+            dispatch({ type: 'MULTIPLY' })
         }
     }
 
