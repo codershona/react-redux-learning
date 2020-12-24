@@ -5,8 +5,8 @@ const createListItem = bookmark => {
     li.className = 'list-group-item d-flex'
 
    const img = document.createElement('img')
-   img.src = `//logo.clearbit.com/${bookmark.name}`
-   img.src = bookmark.name
+   img.alt = `//logo.clearbit.com/${bookmark.name}`
+   img.alt = bookmark.name
    img.className = 'avatar'
 
    const text = document.createElement('p')
