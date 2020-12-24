@@ -117,9 +117,184 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"scripts/app.js":[function(require,module,exports) {
+})({"scripts/createStore.js":[function(require,module,exports) {
+"use strict";
 
-},{}],"../../../../../.config/yarn/global/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var createStore = function createStore(reducer, init) {
+  var store = {};
+  /* define as a empty state */
+
+  store.state = init;
+  store.listeners = [];
+
+  store.getState = function () {
+    return store.state;
+  };
+
+  store.subscribe = function (listener) {
+    return store.listeners.push(listener);
+  };
+
+  store.dispatch = function (action) {
+    store.state = reducer(store.state, action);
+    store.listeners.forEach(function (listener) {
+      return listener();
+    });
+  };
+
+  return store;
+};
+
+var _default = createStore;
+exports.default = _default;
+},{}],"scripts/reducer.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+var init = [{
+  url: 'https://google.com',
+  name: 'google.com',
+  isFav: false,
+  id: 'sdfhfjkffejfj'
+}];
+
+var reducer = function reducer() {
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : init;
+  var action = arguments.length > 1 ? arguments[1] : undefined;
+
+  switch (action.type) {
+    case 'ADD_BOOKMARK':
+      {
+        /* const bookmarks = state.concat(action.payload) */
+        return state.concat(action.payload);
+      }
+
+    case 'REMOVE_BOOKMARK':
+      {
+        return state.filter(function (bookmark) {
+          return bookmark.id !== action.payload;
+        });
+      }
+
+    case 'TOGGLE_BOOKMARK':
+      {
+        /* const bookmarks = state.map(bookmark => { */
+        return state.map(function (bookmark) {
+          if (bookmark.id === action.payload) {
+            bookmark.isFav = !bookmark.isFav;
+          }
+
+          return bookmark;
+        });
+      }
+
+    default:
+      return state;
+  }
+};
+
+var _default = reducer;
+exports.default = _default;
+},{}],"scripts/createListItem.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var createListItem = function createListItem(bookmark) {
+  var li = document.createElement('li');
+  li.className = 'list-group-item d-flex';
+  var img = document.createElement('img');
+  img.src = "//logo.clearbit.com/".concat(bookmark.name);
+  img.src = bookmark.name;
+  img.className = 'avatar';
+  var text = document.createElement('p');
+  text.className = 'lead ml-4';
+  text.innerHTML = bookmark.name;
+  text.style.cursor = 'pointer';
+  text.onclick - function () {
+    window.open(bookmark.url, '_blank');
+  };
+  var icons = document.createElement('div');
+  icons.className = 'ml-auto';
+  var fav = document.createElement('span');
+  var i = document.createElement('i');
+  i.className = "".concat(bookmark.isFav ? 'fas' : 'far', " fa-heart");
+  fav.appendChild(i); // TODO: need to add event listener
+
+  var remove = document.createElement('span');
+  remove.innerHTML = "<i className=\"fas fa-trash\"></i>";
+  remove.className = 'mx-3';
+  icons.append(fav, remove);
+  li.append(img, text, icons);
+  return li;
+};
+
+var _default = createListItem;
+exports.default = _default;
+},{}],"scripts/app.js":[function(require,module,exports) {
+"use strict";
+
+var _createStore = _interopRequireDefault(require("./createStore"));
+
+var _reducer = _interopRequireDefault(require("./reducer"));
+
+var _createListItem = _interopRequireDefault(require("./createListItem"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var store = (0, _createStore.default)(_reducer.default);
+
+window.onload = function () {
+  var urlInput = document.getElementById('urlInput');
+  var favoriteBookmarks = document.getElementById('favoriteBookmarks');
+  var allBookmarks = document.getElementById('allBookmarks');
+
+  urlInput.onkeypress = function (event) {
+    if (event.key === 'Enter') {
+      var url = event.target.value;
+      var name = nameFromUrl(url);
+      var isFav = false;
+      var id = UUID();
+      var li = (0, _createListItem.default)({
+        url: url,
+        name: name,
+        isFav: isFav,
+        id: id
+      });
+      console.log(li);
+    }
+  };
+};
+/*  https://google.com/redux  */
+
+/* regex: /:\/\/(.[^/]+)/  */
+
+
+function nameFromUrl(url) {
+  return url.match(/:\/\/(.[^/]+)/)[1];
+}
+
+function UUID() {
+  var dt = new Date().getTime();
+  var uuid = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
+    var r = (dt + Math.random() * 16) % 16 | 0;
+    dt = Math.floor(dt / 16);
+    return (c == 'x' ? r : r & 0x3 | 0x8).toString(16);
+  });
+  return uuid;
+}
+},{"./createStore":"scripts/createStore.js","./reducer":"scripts/reducer.js","./createListItem":"scripts/createListItem.js"}],"../../../../../.config/yarn/global/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -147,7 +322,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "38229" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "39849" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

@@ -1,6 +1,5 @@
 // basic implementation of the redux:
 
-
 const createStore = (reducer, init) => {
 
     const store = {} /* define as a empty state */
