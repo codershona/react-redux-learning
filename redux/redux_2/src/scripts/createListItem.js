@@ -33,6 +33,7 @@ const createListItem = bookmark => {
           type: 'TOGGLE_BOOKMARK',
           payload: bookmark.id
       })
+      localStorage.setItem('bookmarks', JSON.stringify(store.getState()))
     }
 
     // TODO: need to add event listener
@@ -48,8 +49,10 @@ const createListItem = bookmark => {
           type: 'REMOVE_BOOKMARK',
           payload: bookmark.id
       })
+      localStorage.setItem('bookmarks', JSON.stringify(store.getState()))
   }
 
+  
   icons.append(fav, remove)
 
   li.append(img, text, icons)

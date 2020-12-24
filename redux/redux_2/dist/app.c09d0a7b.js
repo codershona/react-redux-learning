@@ -239,6 +239,8 @@ var createListItem = function createListItem(bookmark) {
       type: 'TOGGLE_BOOKMARK',
       payload: bookmark.id
     });
+
+    localStorage.setItem('bookmarks', JSON.stringify(_app.store.getState()));
   }; // TODO: need to add event listener
 
 
@@ -251,6 +253,8 @@ var createListItem = function createListItem(bookmark) {
       type: 'REMOVE_BOOKMARK',
       payload: bookmark.id
     });
+
+    localStorage.setItem('bookmarks', JSON.stringify(_app.store.getState()));
   };
 
   icons.append(fav, remove);
@@ -276,7 +280,15 @@ var _createListItem = _interopRequireDefault(require("./createListItem"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var store = (0, _createStore.default)(_reducer.default);
+var init = [];
+
+if (localStorage.getItem('bookmarks')) {
+  init = JSON.parse(localStorage.getItem('bookmarks'));
+}
+
+var store = (0, _createStore.default)(_reducer.default, init);
+exports.store = store;
+console.log(store);
 /*
 SUBSCRIBE for all bookmarks list
 
@@ -286,12 +298,23 @@ store.subscribe(() => {
 
 */
 
-exports.store = store;
-
 window.onload = function () {
   var urlInput = document.getElementById('urlInput');
   var favoriteBookmarks = document.getElementById('favoriteBookmarks');
   var allBookmarks = document.getElementById('allBookmarks');
+
+  if (store.getState().length > 0) {
+    store.getState().forEach(function (bookmark) {
+      var li = (0, _createListItem.default)(bookmark);
+      allBookmarks.appendChild(li);
+    });
+    store.getState().forEach(function (bookmark) {
+      if (bookmark.isFav) {
+        var li = (0, _createListItem.default)(bookmark);
+        favoriteBookmarks.appendChild(li);
+      }
+    });
+  }
 
   urlInput.onkeypress = function (event) {
     if (event.key === 'Enter') {
@@ -308,6 +331,7 @@ window.onload = function () {
           id: id
         }
       });
+      localStorage.setItem('bookmarks', JSON.stringify(store.getState()));
       event.target.value = '';
       /* console.log(name) */
 

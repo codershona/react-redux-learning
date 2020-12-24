@@ -2,8 +2,15 @@ import createStore from './createStore';
 import reducer from './reducer';
 import createListItem from './createListItem';
 
+let init = []
+if (localStorage.getItem('bookmarks')) {
+    init = JSON.parse(localStorage.getItem('bookmarks'))
+}
 
-export const store = createStore(reducer)
+
+export const store = createStore(reducer, init)
+
+console.log(store)
 
 /*
 SUBSCRIBE for all bookmarks list
@@ -19,7 +26,20 @@ window.onload = function() {
     const favoriteBookmarks = document.getElementById('favoriteBookmarks')
     const allBookmarks = document.getElementById('allBookmarks')
 
+    if (store.getState().length > 0) {
+        store.getState().forEach(bookmark => {
+            let li = createListItem(bookmark)
+            allBookmarks.appendChild(li)
+        })
+        store.getState().forEach(bookmark => {
+            if (bookmark.isFav) {
+             let li = createListItem(bookmark)
+             favoriteBookmarks.appendChild(li)
+ 
+            }
+         })
 
+    }
    
     urlInput.onkeypress = function(event) {
         if (event.key === 'Enter') {
@@ -37,7 +57,7 @@ window.onload = function() {
                 }
 
             })
-
+            localStorage.setItem('bookmarks', JSON.stringify(store.getState()))
             event.target.value = ''
 
             /* console.log(name) */
