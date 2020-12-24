@@ -21,10 +21,14 @@ window.onload = function() {
 
             const id = UUID()
 
+            /* console.log(name) */
+
 
             const li = createListItem({url, name, isFav, id})
             
-            console.log(li)
+            /* console.log(li) */
+            allBookmarks.appendChild(li)
+            event.target.value = ''
 
         }
     }
@@ -47,5 +51,5 @@ function UUID(){
         return (c=='x' ? r :(r&0x3|0x8)).toString(16);
     });
     return uuid;
-    
+
 }

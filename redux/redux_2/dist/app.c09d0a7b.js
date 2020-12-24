@@ -266,13 +266,18 @@ window.onload = function () {
       var name = nameFromUrl(url);
       var isFav = false;
       var id = UUID();
+      /* console.log(name) */
+
       var li = (0, _createListItem.default)({
         url: url,
         name: name,
         isFav: isFav,
         id: id
       });
-      console.log(li);
+      /* console.log(li) */
+
+      allBookmarks.appendChild(li);
+      event.target.value = '';
     }
   };
 };
