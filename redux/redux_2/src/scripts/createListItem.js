@@ -1,3 +1,5 @@
+import { store } from './app';
+
 const createListItem = bookmark => {
     const li = document.createElement('li')
     li.className = 'list-group-item d-flex'
@@ -26,14 +28,27 @@ const createListItem = bookmark => {
    i.className = `${bookmark.isFav ? 'fas' : 'far'} fa-heart`
 
     fav.appendChild(i)
+    fav.onclick = function() {
+      store.dispatch({
+          type: 'TOGGLE_BOOKMARK',
+          payload: bookmark.id
+      })
+    }
 
     // TODO: need to add event listener
 
 
   const remove = document.createElement('span')
 
-  remove.innerHTML = `<i className="fas fa-trash"></i>`
+  remove.innerHTML = `<i class="fa fa-trash"></i>`
   remove.className = 'mx-3'
+
+  remove.onclick = function () {
+      store.dispatch({
+          type: 'REMOVE_BOOKMARK',
+          payload: bookmark.id
+      })
+  }
 
   icons.append(fav, remove)
 

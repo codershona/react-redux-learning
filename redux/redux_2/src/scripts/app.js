@@ -3,7 +3,16 @@ import reducer from './reducer';
 import createListItem from './createListItem';
 
 
-const store = createStore(reducer)
+export const store = createStore(reducer)
+
+/*
+SUBSCRIBE for all bookmarks list
+
+store.subscribe(() => {
+    console.log(store.getState())
+})
+
+*/
 
 window.onload = function() {
     const urlInput = document.getElementById('urlInput')
@@ -21,17 +30,48 @@ window.onload = function() {
 
             const id = UUID()
 
+            store.dispatch({
+                type: 'ADD_BOOKMARK',
+                payload: {
+                    url, name, isFav, id
+                }
+
+            })
+
+            event.target.value = ''
+
             /* console.log(name) */
-
-
+        
+             
+          /*
             const li = createListItem({url, name, isFav, id})
             
-            /* console.log(li) */
+             console.log(li) 
             allBookmarks.appendChild(li)
             event.target.value = ''
+            */
 
         }
     }
+
+    store.subscribe(() => {
+        allBookmarks.innerHTML = null
+        store.getState().forEach(bookmark => {
+            let li = createListItem(bookmark)
+            allBookmarks.appendChild(li)
+        })
+    })
+
+    store.subscribe(() => {
+        favoriteBookmarks.innerHTML = null
+        store.getState().forEach(bookmark => {
+           if (bookmark.isFav) {
+            let li = createListItem(bookmark)
+            favoriteBookmarks.appendChild(li)
+
+           }
+        })
+    })
 
 }
 

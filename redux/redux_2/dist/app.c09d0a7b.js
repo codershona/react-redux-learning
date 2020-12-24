@@ -211,6 +211,8 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
+var _app = require("./app");
+
 var createListItem = function createListItem(bookmark) {
   var li = document.createElement('li');
   li.className = 'list-group-item d-flex';
@@ -230,11 +232,27 @@ var createListItem = function createListItem(bookmark) {
   var fav = document.createElement('span');
   var i = document.createElement('i');
   i.className = "".concat(bookmark.isFav ? 'fas' : 'far', " fa-heart");
-  fav.appendChild(i); // TODO: need to add event listener
+  fav.appendChild(i);
+
+  fav.onclick = function () {
+    _app.store.dispatch({
+      type: 'TOGGLE_BOOKMARK',
+      payload: bookmark.id
+    });
+  }; // TODO: need to add event listener
+
 
   var remove = document.createElement('span');
-  remove.innerHTML = "<i className=\"fas fa-trash\"></i>";
+  remove.innerHTML = "<i class=\"fa fa-trash\"></i>";
   remove.className = 'mx-3';
+
+  remove.onclick = function () {
+    _app.store.dispatch({
+      type: 'REMOVE_BOOKMARK',
+      payload: bookmark.id
+    });
+  };
+
   icons.append(fav, remove);
   li.append(img, text, icons);
   return li;
@@ -242,8 +260,13 @@ var createListItem = function createListItem(bookmark) {
 
 var _default = createListItem;
 exports.default = _default;
-},{}],"scripts/app.js":[function(require,module,exports) {
+},{"./app":"scripts/app.js"}],"scripts/app.js":[function(require,module,exports) {
 "use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.store = void 0;
 
 var _createStore = _interopRequireDefault(require("./createStore"));
 
@@ -254,6 +277,16 @@ var _createListItem = _interopRequireDefault(require("./createListItem"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var store = (0, _createStore.default)(_reducer.default);
+/*
+SUBSCRIBE for all bookmarks list
+
+store.subscribe(() => {
+    console.log(store.getState())
+})
+
+*/
+
+exports.store = store;
 
 window.onload = function () {
   var urlInput = document.getElementById('urlInput');
@@ -266,20 +299,44 @@ window.onload = function () {
       var name = nameFromUrl(url);
       var isFav = false;
       var id = UUID();
+      store.dispatch({
+        type: 'ADD_BOOKMARK',
+        payload: {
+          url: url,
+          name: name,
+          isFav: isFav,
+          id: id
+        }
+      });
+      event.target.value = '';
       /* console.log(name) */
 
-      var li = (0, _createListItem.default)({
-        url: url,
-        name: name,
-        isFav: isFav,
-        id: id
-      });
-      /* console.log(li) */
-
-      allBookmarks.appendChild(li);
-      event.target.value = '';
+      /*
+        const li = createListItem({url, name, isFav, id})
+        
+         console.log(li) 
+        allBookmarks.appendChild(li)
+        event.target.value = ''
+        */
     }
   };
+
+  store.subscribe(function () {
+    allBookmarks.innerHTML = null;
+    store.getState().forEach(function (bookmark) {
+      var li = (0, _createListItem.default)(bookmark);
+      allBookmarks.appendChild(li);
+    });
+  });
+  store.subscribe(function () {
+    favoriteBookmarks.innerHTML = null;
+    store.getState().forEach(function (bookmark) {
+      if (bookmark.isFav) {
+        var li = (0, _createListItem.default)(bookmark);
+        favoriteBookmarks.appendChild(li);
+      }
+    });
+  });
 };
 /*  https://google.com/redux  */
 
