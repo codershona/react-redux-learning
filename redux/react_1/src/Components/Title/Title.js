@@ -5,9 +5,9 @@ class Title extends React.Component {
       
     render() {
         return(
-            <h2>
-                The Title Component was {this.props.name}
-            </h2>
+            <h5>
+                The Title Component was : {this.props.name} and Email address: ({this.props.email})
+            </h5>
 
         );
     }
