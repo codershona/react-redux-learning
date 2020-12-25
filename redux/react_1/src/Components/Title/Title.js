@@ -12,32 +12,34 @@ class Title extends React.Component {
         }
     }
 
-    counter() {
+   counter() {
         /* this.number = this.number + 1; */
         /* this.state.number = this.number + 1 */
 
-        this.setState({
+       this.setState({
             number: this.state.number + 1
-        })
+        }) 
 
-        console.log(this.state.number)
-    }
-
+         console.log( this.state.number ) } 
+     
       
     render() {
         return(
             /* <h5>
                 The Title Component was : {this.props.name} and Email address: ({this.props.email})
             </h5> */
+  
         <div>
             <p>
                 { this.state.number }
+                </p>
+                <p>
                 <button onClick={ () => this.counter() }>
                 CLICK HERE
                 </button>
             </p>
         </div>
-
+     
 
         );
     }
