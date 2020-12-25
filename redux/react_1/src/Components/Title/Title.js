@@ -6,7 +6,7 @@ class Title extends React.Component {
     render() {
         return(
             <h2>
-                This is a Title Component
+                The Title Component was {this.props.name}
             </h2>
 
         );

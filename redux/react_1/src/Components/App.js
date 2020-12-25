@@ -9,7 +9,8 @@ class App extends Component {
         <div className = "container">
          <h1 className="display-4">
          React Crash Course
-          <Title />
+          <Title name='Beginner' />
+          <Title name='Advance' />
          </h1>
         </div>
       </div>
