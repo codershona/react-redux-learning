@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './Titles.css';
 
 
-class Titles extends React.Component {
+class Titles extends Component {
    
     constructor(props) {
         super(props)
