@@ -14,17 +14,95 @@ class Controller extends Component {
         }
     }
 
+    startHandler() {
+        this.setState({
+            ...this.state,
+            start: false,
+            pause: true,
+            lap: true
+        })
+    }
+
+    pauseHandler() {
+        this.setState({
+            ...this.state,
+            start: true,
+            pause: false,
+            lap: false,
+            reset: true
+
+        })
+
+    }
+
+
+    lapHandler() {
+
+    }
+
+    resetHandler() {
+        this.setState({
+            start: true,
+            pause: false,
+            lap: false,
+            reset: false
+
+        })
+
+    }
+
     getController() {
         let output = null
 
         if (this.state.start && !this.state.reset) {
             output = (
                 <div>
-                    <button className="btn btn-success btn-lg px-5">
+                    <button 
+                    className="btn btn-success btn-lg px-5 ml-5"
+                    onClick={ event => this.startHandler() }
+                    >
                        START
                     </button>
                 </div>
             )
+        } else if (this.state.pause && this.state.lap) {
+        output = (
+             <div>
+            <button 
+            className="btn btn-primary btn-lg px-5 ml-5"
+            onClick={ event => this.pauseHandler() }
+            >
+             PAUSE
+            </button>
+            <button 
+            className="btn btn-secondary btn-lg px-5 ml-5"
+            onClick={ event => this.lapHandler() }
+            >
+             LAP
+            </button>
+        </div>
+        )
+
+        } else if (this.state.start && this.state.reset) {
+
+            output = (
+                <div>
+               <button 
+               className="btn btn-warning btn-lg px-5 ml-5"
+               onClick={ event => this.startHandler() }
+               >
+                START
+               </button>
+               <button 
+               className="btn btn-danger btn-lg px-5 ml-5"
+               onClick={ event => this.resetHandler() }
+               >
+                RESET
+               </button>
+           </div>
+           )
+          
+
         }
 
         return output
