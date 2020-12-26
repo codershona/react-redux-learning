@@ -30,6 +30,13 @@ class Titles extends Component {
 
        if (this.state.isInput) {
 
+        output = (
+        <div className="Title">
+            <input className="form-control" type="text" value={ this.state.title }/>
+    
+            </div>
+        )
+
        } else {
            output = (
                <div className="d-flex Titles">
