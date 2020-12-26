@@ -20,6 +20,34 @@ class Titles extends Component {
         })
     }
 
+    inputChange(event) {
+       /* console.log(event.target.value) */
+       this.setState({
+           ...this.state,
+           title: event.target.value
+       })
+    }
+
+    keyPressHandler(event) {
+      
+        /* console.log(event.key) */
+        if (event.key === 'Enter') {
+            this.setState({
+                ...this.state,
+                isInput: false
+
+            })
+        }
+    }
+
+    blurHandler(event) {
+        this.setState({
+            ...this.state,
+            isInput: false
+
+        })
+    }
+
      
       
     render() {
@@ -32,7 +60,14 @@ class Titles extends Component {
 
         output = (
         <div className="Title">
-            <input className="form-control" type="text" value={ this.state.title }/>
+            <input 
+            className="form-control"
+            onChange={ event => this.inputChange(event)} 
+            type="text"
+            onKeyPress= { event => this.keyPressHandler(event) } 
+            value={ this.state.title }
+            onBlur={ event => this.blurHandler(event)}
+            />
     
             </div>
         )
