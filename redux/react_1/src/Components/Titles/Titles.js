@@ -46,6 +46,7 @@ class Titles extends Component {
             isInput: false
 
         })
+        
     }
 
      
