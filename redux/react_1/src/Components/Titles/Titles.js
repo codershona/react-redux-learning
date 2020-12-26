@@ -12,6 +12,14 @@ class Titles extends Component {
         }
     }
 
+
+    editHandler() {
+        this.setState({
+            ...this.state,
+            isInput: true
+        })
+    }
+
      
       
     render() {
@@ -28,7 +36,7 @@ class Titles extends Component {
                <h6 className="display-5">
                 {this.state.title}
                </h6>
-               <span className="ml-auto edit-icon">
+               <span onClick={ () => this.editHandler() } className="ml-auto edit-icon">
                 <i className="fas fa-pencil-alt"></i>
                </span>
                </div>
