@@ -4,6 +4,7 @@ import Title from './Title/Title';
 import Titles from './Titles/Titles';
 
 import CountDown from './CountDown/CountDown';
+import Controller from './Controller/Controller';
 
 class App extends Component {
   
@@ -34,6 +35,10 @@ class App extends Component {
            
            <br />
            <CountDown time={this.state.time} />
+
+           <br />
+
+           <Controller />
 
         
          </div>
