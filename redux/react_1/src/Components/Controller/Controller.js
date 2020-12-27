@@ -33,11 +33,13 @@ class Controller extends Component {
             reset: true
 
         })
+        this.props.pause()
 
     }
 
 
     lapHandler() {
+        this.props.lap()
 
     }
 
@@ -50,6 +52,8 @@ class Controller extends Component {
 
         })
 
+        this.props.reset()
+
     }
 
     getController() {
@@ -57,7 +61,7 @@ class Controller extends Component {
 
         if (this.state.start && !this.state.reset) {
             output = (
-                <div>
+                <div className="my-5">
                     <button 
                     className="btn btn-success btn-lg px-5 ml-5"
                     onClick={ event => this.startHandler() }
@@ -68,7 +72,7 @@ class Controller extends Component {
             )
         } else if (this.state.pause && this.state.lap) {
         output = (
-             <div>
+             <div className="my-5">
             <button 
             className="btn btn-primary btn-lg px-5 ml-5"
             onClick={ event => this.pauseHandler() }
@@ -87,7 +91,7 @@ class Controller extends Component {
         } else if (this.state.start && this.state.reset) {
 
             output = (
-                <div>
+                <div className="my-5">
                <button 
                className="btn btn-warning btn-lg px-5 ml-5"
                onClick={ event => this.startHandler() }
