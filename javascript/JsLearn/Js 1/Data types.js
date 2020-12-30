@@ -295,79 +295,116 @@
 // Arrays :
 
 // method 1: pop
-let fruits = ["Apple", "Orange", "Pear"];
+// let fruits = ["Apple", "Orange", "Pear"];
 
-alert( fruits.pop() ); // remove "Pear" and alert it
+// alert( fruits.pop() ); // remove "Pear" and alert it
 
-alert( fruits ); // Apple, Orange
+// alert( fruits ); // Apple, Orange
 
 // method 2: push
-let fruits = ["Apple", "Orange"];
+// let fruits = ["Apple", "Orange"];
 
-fruits.push("Pear");
+// fruits.push("Pear");
 
-alert( fruits ); // Apple, Orange, Pear
+// alert( fruits ); // Apple, Orange, Pear
 
 // method 3: shift
-let fruits = ["Apple", "Orange", "Pear"];
+// let fruits = ["Apple", "Orange", "Pear"];
 
-alert( fruits.shift() ); // remove Apple and alert it
+// alert( fruits.shift() ); // remove Apple and alert it
 
-alert( fruits ); // Orange, Pear
+// alert( fruits ); // Orange, Pear
 
 // method 4: unshift
-let fruits = ["Orange", "Pear"];
+// let fruits = ["Orange", "Pear"];
 
-fruits.unshift('Apple');
+// fruits.unshift('Apple');
 
-alert( fruits ); // Apple, Orange, Pear
+// alert( fruits ); // Apple, Orange, Pear
 
 
 // method 5:
 
-let arr = ["Apple", "Orange", "Pear"];
+// let arr = ["Apple", "Orange", "Pear"];
 
-for (let i = 0; i < arr.length; i++) {
-  alert( arr[i] );
-}
+// for (let i = 0; i < arr.length; i++) {
+//   alert( arr[i] );
+// }
+
+
+
+// let person = ["mina", "bina", "lina"];
+
+// let personTwo = ["bina", "lina", "tiya"];
+// for (let x = 0; x < personTwo.length; x++) {
+//   alert(person[x]);
+// }
+
+// alert(person.pop());
+// alert(person);
+
+// alert(person.shift());
+// alert(person);
+
+// let person1 = ["bina", "lina"];
+// alert(person1.unshift('mina'));
+// alert(person1);
+
+// let persons = ["mina", "bina"];
+// persons.push("Qmya");
+// alert(persons);
+
 
 
 // method 6:
 
-let arr = ["Apple", "Orange", "Pear"];
+// let arr = ["Apple", "Orange", "Pear"];
 
-for (let key in arr) {
-  alert( arr[key] ); // Apple, Orange, Pear
-}
+// for (let key in arr) {
+//   alert( arr[key] ); // Apple, Orange, Pear
+// }
+
+
+// let baby = ["grape", "fox", "bear"];
+// for (let key in baby) {
+//   alert(baby[key]);
+// }
 
 // method 7:
 
-let fruits = ["Apples", "Pear", "Orange"];
+// let fruits = ["Apples", "Pear", "Orange"];
 
-let shoppingCart = fruits;
+// let shoppingCart = fruits;
 
-shoppingCart.push("Banana");
+// shoppingCart.push("Banana");
 
-alert( fruits.length ); // 4
+// alert( fruits.length ); // 4
 
+// let animals = ["dog", "cat", "monkey"];
+// let flowers = animals;
+// flowers.push("Hasna hena");
+// flowers[Math.floor((flowers.length - 1) / 2)] = "Manys";
+// alert(flowers.shift());
+// flowers.unshift("Keno", "kihoce");
+// alert(animals.length);
 
 // method 8:
 
-let styles = ["Jazz", "Blues"];
-styles.push("Rock-n-Roll");
-styles[Math.floor((styles.length - 1) / 2)] = "Classics";
-alert( styles.shift() );
-styles.unshift("Rap", "Reggae");
+// let styles = ["Jazz", "Blues"];
+// styles.push("Rock-n-Roll");
+// styles[Math.floor((styles.length - 1) / 2)] = "Classics";
+// alert( styles.shift() );
+// styles.unshift("Rap", "Reggae");
 
 // method 9:
 
-let arr = ["a", "b"];
+// let arr = ["a", "b"];
 
-arr.push(function() {
-  alert( this );
-})
+// arr.push(function() {
+//   alert( this );
+// })
 
-arr[2](); // a,b,function(){...}
+// arr[2](); // a,b,function(){...}
 
 
 
