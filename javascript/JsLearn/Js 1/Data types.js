@@ -423,8 +423,410 @@ function sumInput() {
 
 // Array methods :
 
+// let arr = ["I", "go", "home"];
+
+// delete arr[1]; // remove "go"
+
+// alert( arr[1] ); // undefined
+
+// // now arr = ["I",  , "home"];
+// alert( arr.length ); // 3
 
 
+
+// // method 2:
+// let arr = ["I", "study", "JavaScript"];
+
+// arr.splice(1, 1); // from index 1 remove 1 element
+
+// alert( arr ); // ["I", "JavaScript"]
+
+
+
+// //method 3:
+
+// let arr = ["I", "study", "JavaScript", "right", "now"];
+
+// // remove 2 first elements
+// let removed = arr.splice(0, 2);
+
+// alert( removed ); // "I", "study" <-- array of removed elements
+
+// // method 4:
+
+// let arr = ["t", "e", "s", "t"];
+
+// alert( arr.slice(1, 3) ); // e,s (copy from 1 to 3)
+
+// alert( arr.slice(-2) ); // s,t (copy from -2 till the end)
+
+
+
+// // method 5:
+
+// let arr = [1, 2];
+
+// // create an array from: arr and [3,4]
+// alert( arr.concat([3, 4]) ); // 1,2,3,4
+
+// // create an array from: arr and [3,4] and [5,6]
+// alert( arr.concat([3, 4], [5, 6]) ); // 1,2,3,4,5,6
+
+// // create an array from: arr and [3,4], then add values 5 and 6
+// alert( arr.concat([3, 4], 5, 6) ); // 1,2,3,4,5,6
+
+
+
+// // method 6:
+// let arr = [1, 2];
+
+// let arrayLike = {
+//   0: "something",
+//   length: 1
+// };
+
+// alert( arr.concat(arrayLike) ); // 1,2,[object Object]
+
+
+
+// // method 7:
+
+
+// let arr = [1, 2];
+
+// let arrayLike = {
+//   0: "something",
+//   1: "else",
+//   [Symbol.isConcatSpreadable]: true,
+//   length: 2
+// };
+
+// alert( arr.concat(arrayLike) ); // 1,2,something,else
+
+
+
+// // method 8:
+
+// let arr = [1, 0, false];
+
+// alert( arr.indexOf(0) ); // 1
+// alert( arr.indexOf(false) ); // 2
+// alert( arr.indexOf(null) ); // -1
+
+// alert( arr.includes(1) ); // true
+
+
+
+// // method 9:
+
+// const arr = [NaN];
+// alert( arr.indexOf(NaN) ); // -1 (should be 0, but === equality doesn't work for NaN)
+// alert( arr.includes(NaN) );// true (correct)
+
+
+
+// //method 10:
+
+// let users = [
+//   {id: 1, name: "John"},
+//   {id: 2, name: "Pete"},
+//   {id: 3, name: "Mary"}
+// ];
+
+// let user = users.find(item => item.id == 1);
+
+// alert(user.name); // John
+
+
+
+// // method 11:
+
+// let lengths = ["Bilbo", "Gandalf", "Nazgul"].map(item => item.length);
+// alert(lengths); // 5,7,6
+
+
+// // method 12:
+
+// let arr = [ 1, 2, 15 ];
+
+// // the method reorders the content of arr
+// arr.sort();
+
+// alert( arr );  // 1, 15, 2
+
+
+
+// // method 13:
+
+// function compareNumeric(a, b) {
+//   if (a > b) return 1;
+//   if (a == b) return 0;
+//   if (a < b) return -1;
+// }
+
+// let arr = [ 1, 2, 15 ];
+
+// arr.sort(compareNumeric);
+
+// alert(arr);  // 1, 2, 15
+
+
+
+// // method 14:
+
+// [1, -2, 15, 2, 0, 8].sort(function(a, b) {
+//   alert( a + " <> " + b );
+//   return a - b;
+// });
+
+
+// // method 15
+
+// let arr = [1, 2, 3, 4, 5];
+// arr.reverse();
+
+// alert( arr ); // 5,4,3,2,1
+
+
+// // method 16:
+
+// let names = 'Bilbo, Gandalf, Nazgul';
+
+// let arr = names.split(', ');
+
+// for (let name of arr) {
+//   alert( `A message to ${name}.` ); // A message to Bilbo  (and other names)
+// }
+
+
+// // method 17
+
+// let arr = [1, 2, 3, 4, 5];
+
+// // removed initial value from reduce (no 0)
+// let result = arr.reduce((sum, current) => sum + current);
+
+// alert( result ); // 15
+
+
+// // method 18
+
+// alert(typeof {}); // object
+// alert(typeof []); // same
+
+
+
+// // method 19
+
+// let army = {
+//   minAge: 18,
+//   maxAge: 27,
+//   canJoin(user) {
+//     return user.age >= this.minAge && user.age < this.maxAge;
+//   }
+// };
+
+// let users = [
+//   {age: 16},
+//   {age: 20},
+//   {age: 23},
+//   {age: 30}
+// ];
+
+// // find users, for who army.canJoin returns true
+// let soldiers = users.filter(army.canJoin, army);
+
+// alert(soldiers.length); // 2
+// alert(soldiers[0].age); // 20
+// alert(soldiers[1].age); // 23
+
+
+
+
+// // method 20
+
+// function camelize(str) {
+//   return str
+//     .split('-') // splits 'my-long-word' into array ['my', 'long', 'word']
+//     .map(
+//       // capitalizes first letters of all array items except the first one
+//       // converts ['my', 'long', 'word'] into ['my', 'Long', 'Word']
+//       (word, index) => index == 0 ? word : word[0].toUpperCase() + word.slice(1)
+//     )
+//     .join(''); // joins ['my', 'Long', 'Word'] into 'myLongWord'
+// }
+
+
+
+// // method 21:
+
+// function groupById(array) {
+//   return array.reduce((obj, value) => {
+//     obj[value.id] = value;
+//     return obj;
+//   }, {})
+// }
+
+
+
+// // method 22: 
+// function unique(arr) {
+//   let result = [];
+
+//   for (let str of arr) {
+//     if (!result.includes(str)) {
+//       result.push(str);
+//     }
+//   }
+
+//   return result;
+// }
+
+// let strings = ["Hare", "Krishna", "Hare", "Krishna",
+//   "Krishna", "Krishna", "Hare", "Hare", ":-O"
+// ];
+
+// alert( unique(strings) ); // Hare, Krishna, :-O
+
+
+
+
+// // method 23
+
+// function getAverageAge(users) {
+//   return users.reduce((prev, user) => prev + user.age, 0) / users.length;
+// }
+
+// let john = { name: "John", age: 25 };
+// let pete = { name: "Pete", age: 30 };
+// let mary = { name: "Mary", age: 29 };
+
+// let arr = [ john, pete, mary ];
+
+// alert( getAverageAge(arr) ); // 28
+
+
+
+// // method 24
+
+// function shuffle(array) {
+//   array.sort(() => Math.random() - 0.5);
+// }
+
+// let arr = [1, 2, 3];
+// shuffle(arr);
+// alert(arr);
+
+
+// // method 25
+
+// function sortByAge(arr) {
+//   arr.sort((a, b) => a.age - b.age);
+// }
+
+// let john = { name: "John", age: 25 };
+// let pete = { name: "Pete", age: 30 };
+// let mary = { name: "Mary", age: 28 };
+
+// let arr = [ pete, john, mary ];
+
+// sortByAge(arr);
+
+// // now sorted is: [john, mary, pete]
+// alert(arr[0].name); // John
+// alert(arr[1].name); // Mary
+// alert(arr[2].name); // Pete
+
+
+
+// // method 26
+
+// function Calculator() {
+
+//   this.methods = {
+//     "-": (a, b) => a - b,
+//     "+": (a, b) => a + b
+//   };
+
+//   this.calculate = function(str) {
+
+//     let split = str.split(' '),
+//       a = +split[0],
+//       op = split[1],
+//       b = +split[2];
+
+//     if (!this.methods[op] || isNaN(a) || isNaN(b)) {
+//       return NaN;
+//     }
+
+//     return this.methods[op](a, b);
+//   };
+
+//   this.addMethod = function(name, func) {
+//     this.methods[name] = func;
+//   };
+// }
+
+
+
+// //  method 27
+
+
+// function copySorted(arr) {
+//   return arr.slice().sort();
+// }
+
+// let arr = ["HTML", "JavaScript", "CSS"];
+
+// let sorted = copySorted(arr);
+
+// alert( sorted );
+// alert( arr );
+
+
+// // method 28
+
+// function filterRangeInPlace(arr, a, b) {
+
+//   for (let i = 0; i < arr.length; i++) {
+//     let val = arr[i];
+
+//     // remove if outside of the interval
+//     if (val < a || val > b) {
+//       arr.splice(i, 1);
+//       i--;
+//     }
+//   }
+
+// }
+
+// let arr = [5, 3, 8, 1];
+
+// filterRangeInPlace(arr, 1, 4); // removed the numbers except from 1 to 4
+
+// alert( arr ); // [3, 1]
+
+
+
+
+// // method 29
+
+
+// function filterRange(arr, a, b) {
+//   // added brackets around the expression for better readability
+//   return arr.filter(item => (a <= item && item <= b));
+// }
+
+// let arr = [5, 3, 8, 1];
+
+// let filtered = filterRange(arr, 1, 4);
+
+// alert( filtered ); // 3,1 (matching values)
+
+// alert( arr ); // 5,3,8,1 (not modified)
+
+
+// Iterables :
 
 
 
