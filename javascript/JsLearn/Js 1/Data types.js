@@ -1187,6 +1187,8 @@
 
 /////     Advanced working with functions //////////
 
+// Recursion and stack :
+
 
 
 
