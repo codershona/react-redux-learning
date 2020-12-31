@@ -505,414 +505,687 @@
 
 // Array methods :
 
-let arr = ["I", "go", "home"];
 
-delete arr[1]; // remove "go"
 
-alert( arr[1] ); // undefined
+
+// let arr = ["I", "go", "home"];
+
+// delete arr[1]; // remove "go"
+
+// alert( arr[1] ); // undefined
 
 // now arr = ["I",  , "home"];
-alert( arr.length ); // 3
+// alert( arr.length ); // 3
 
 
 
 // method 2:
-let arr = ["I", "study", "JavaScript"];
 
-arr.splice(1, 1); // from index 1 remove 1 element
+// let arr = ["I", "study", "JavaScript"];
 
-alert( arr ); // ["I", "JavaScript"]
+// arr.splice(1, 1); // from index 1 remove 1 element
+
+// alert( arr ); // ["I", "JavaScript"]
 
 
 
 //method 3:
 
-let arr = ["I", "study", "JavaScript", "right", "now"];
+// let arr = ["I", "study", "JavaScript", "right", "now"];
 
-// remove 2 first elements
-let removed = arr.splice(0, 2);
+// // remove 2 first elements
+// let removed = arr.splice(0, 2);
 
-alert( removed ); // "I", "study" <-- array of removed elements
+// alert( removed ); // "I", "study" <-- array of removed elements
 
 // method 4:
 
-let arr = ["t", "e", "s", "t"];
+// let arr = ["t", "e", "s", "t"];
 
-alert( arr.slice(1, 3) ); // e,s (copy from 1 to 3)
+// alert( arr.slice(1, 3) ); // e,s (copy from 1 to 3)
 
-alert( arr.slice(-2) ); // s,t (copy from -2 till the end)
+// alert( arr.slice(-2) ); // s,t (copy from -2 till the end)
 
 
 
 // method 5:
 
-let arr = [1, 2];
+// let arr = [1, 2];
 
-// create an array from: arr and [3,4]
-alert( arr.concat([3, 4]) ); // 1,2,3,4
+// // create an array from: arr and [3,4]
+// alert( arr.concat([3, 4]) ); // 1,2,3,4
 
-// create an array from: arr and [3,4] and [5,6]
-alert( arr.concat([3, 4], [5, 6]) ); // 1,2,3,4,5,6
+// // create an array from: arr and [3,4] and [5,6]
+// alert( arr.concat([3, 4], [5, 6]) ); // 1,2,3,4,5,6
 
-// create an array from: arr and [3,4], then add values 5 and 6
-alert( arr.concat([3, 4], 5, 6) ); // 1,2,3,4,5,6
+// // create an array from: arr and [3,4], then add values 5 and 6
+// alert( arr.concat([3, 4], 5, 6) ); // 1,2,3,4,5,6
 
+// let arrayTwo = [2, 4];
+// alert(arrayTwo.concat([6, 9]));
+// alert(arrayTwo.concat([6, 9], [1, 2]));
+// alert(arrayTwo.concat([6, 9], 8, 0));
 
+// let array = ["hello", "hey", "whatever"];
+// delete array[1];
+// alert(array[1]);
+// alert(array.length);
+
+// let arrayOne = ["I", "learn", "javascript", "java"];
+// arrayOne.splice(1, 1);
+// let removed = arrayOne.splice(0, 1);
+// alert (removed);
+// alert(arrayOne);
+// alert(arrayOne.slice(1, 3));
+// alert(arrayOne.slice(-2));
+
+// let person = [3, 4];
+// let personLike = {
+//   0: "nothing",
+//   length: 1
+// };
+
+// alert(person.concat(personLike));
 
 // method 6:
-let arr = [1, 2];
+// let arr = [1, 2];
 
-let arrayLike = {
-  0: "something",
-  length: 1
-};
+// let arrayLike = {
+//   0: "something",
+//   length: 1
+// };
 
-alert( arr.concat(arrayLike) ); // 1,2,[object Object]
+// alert( arr.concat(arrayLike) ); // 1,2,[object Object]
 
 
 
 // method 7:
 
 
-let arr = [1, 2];
+// let arr = [1, 2];
 
-let arrayLike = {
-  0: "something",
-  1: "else",
-  [Symbol.isConcatSpreadable]: true,
-  length: 2
-};
+// let arrayLike = {
+//   0: "something",
+//   1: "else",
+//   [Symbol.isConcatSpreadable]: true,
+//   length: 2
+// };
 
-alert( arr.concat(arrayLike) ); // 1,2,something,else
+// alert( arr.concat(arrayLike) ); // 1,2,something,else
 
+// let arrayThree = [3, 4];
+// let arraythree = {
+//   0: "nothing",
+//   1: "else",
+//   [Symbol.isConcatSpreadable]: true,
+//   length: 3
+// };
 
+// alert(person.concat(personLike));
+
+// let myarr = [2, 0, false];
+// alert(myarr.indexOf(0));
+// alert(myarr.indexOf(false));
+// alert(myarr.indexOf(null));
+// alert(myarr.includes(1));
 
 // method 8:
 
-let arr = [1, 0, false];
+// let arr = [1, 0, false];
 
-alert( arr.indexOf(0) ); // 1
-alert( arr.indexOf(false) ); // 2
-alert( arr.indexOf(null) ); // -1
+// alert( arr.indexOf(0) ); // 1
+// alert( arr.indexOf(false) ); // 2
+// alert( arr.indexOf(null) ); // -1
 
-alert( arr.includes(1) ); // true
+// alert( arr.includes(1) ); // true
 
 
 
 // method 9:
 
-const arr = [NaN];
-alert( arr.indexOf(NaN) ); // -1 (should be 0, but === equality doesn't work for NaN)
-alert( arr.includes(NaN) );// true (correct)
+// const arr = [NaN];
+// alert( arr.indexOf(NaN) ); // -1 (should be 0, but === equality doesn't work for NaN)
+// alert( arr.includes(NaN) );// true (correct)
 
-
+// const personfour = [NaN];
+// alert(personfour.indexOf(NaN));
+// alert(personfour.includes(NaN));
 
 //method 10:
 
-let users = [
-  {id: 1, name: "John"},
-  {id: 2, name: "Pete"},
-  {id: 3, name: "Mary"}
-];
+// let users = [
+//   {id: 1, name: "John"},
+//   {id: 2, name: "Pete"},
+//   {id: 3, name: "Mary"}
+// ];
 
-let user = users.find(item => item.id == 1);
+// let user = users.find(item => item.id == 1);
 
-alert(user.name); // John
+// alert(user.name); // John
 
-
-
+// let peoples = [
+//   {
+//     id: 11, names: "karan"
+//   },
+//   {
+//     id: 22, names: "karena"
+//   },
+//   {
+//     id: 44, names: "Marani"
+//   }
+// ];
+// let peoplestwo = peoplestwo.find(item => item.id == 1);
+// alert(peoplestwo.names);
+// let peoplesOne = ["Jasb", "JAcob", "Jerry"].map(item => item.peoplesOne);
+// alert(peoplesOne);
 // method 11:
 
-let lengths = ["Bilbo", "Gandalf", "Nazgul"].map(item => item.length);
-alert(lengths); // 5,7,6
+// let lengths = ["Bilbo", "Gandalf", "Nazgul"].map(item => item.length);
+// alert(lengths); // 5,7,6
 
 
 // method 12:
 
-let arr = [ 1, 2, 15 ];
+// let arr = [ 1, 2, 15 ];
 
-// the method reorders the content of arr
-arr.sort();
+// // the method reorders the content of arr
+// arr.sort();
 
-alert( arr );  // 1, 15, 2
+// alert( arr );  // 1, 15, 2
 
 
 
 // method 13:
 
-function compareNumeric(a, b) {
-  if (a > b) return 1;
-  if (a == b) return 0;
-  if (a < b) return -1;
-}
+// function compareNumeric(a, b) {
+//   if (a > b) return 1;
+//   if (a == b) return 0;
+//   if (a < b) return -1;
+// }
 
-let arr = [ 1, 2, 15 ];
+// let arr = [ 1, 2, 15 ];
 
-arr.sort(compareNumeric);
+// arr.sort(compareNumeric);
 
-alert(arr);  // 1, 2, 15
+// alert(arr);  // 1, 2, 15
 
 
 
-// method 14:
+// // method 14:
 
-[1, -2, 15, 2, 0, 8].sort(function(a, b) {
-  alert( a + " <> " + b );
-  return a - b;
-});
+// [1, -2, 15, 2, 0, 8].sort(function(a, b) {
+//   alert( a + " <> " + b );
+//   return a - b;
+// });
 
 
-// method 15
+// // method 15
 
-let arr = [1, 2, 3, 4, 5];
-arr.reverse();
+// let arr = [1, 2, 3, 4, 5];
+// arr.reverse();
 
-alert( arr ); // 5,4,3,2,1
+// alert( arr ); // 5,4,3,2,1
 
 
-// method 16:
+// // method 16:
 
-let names = 'Bilbo, Gandalf, Nazgul';
+// let names = 'Bilbo, Gandalf, Nazgul';
 
-let arr = names.split(', ');
+// let arr = names.split(', ');
 
-for (let name of arr) {
-  alert( `A message to ${name}.` ); // A message to Bilbo  (and other names)
-}
+// for (let name of arr) {
+//   alert( `A message to ${name}.` ); // A message to Bilbo  (and other names)
+// }
 
 
-// method 17
+// // method 17
 
-let arr = [1, 2, 3, 4, 5];
+// let arr = [1, 2, 3, 4, 5];
 
-// removed initial value from reduce (no 0)
-let result = arr.reduce((sum, current) => sum + current);
+// // removed initial value from reduce (no 0)
+// let result = arr.reduce((sum, current) => sum + current);
 
-alert( result ); // 15
+// alert( result ); // 15
 
 
-// method 18
+// // method 18
 
-alert(typeof {}); // object
-alert(typeof []); // same
+// alert(typeof {}); // object
+// alert(typeof []); // same
 
 
 
-// method 19
+// // method 19
 
-let army = {
-  minAge: 18,
-  maxAge: 27,
-  canJoin(user) {
-    return user.age >= this.minAge && user.age < this.maxAge;
-  }
-};
+// let army = {
+//   minAge: 18,
+//   maxAge: 27,
+//   canJoin(user) {
+//     return user.age >= this.minAge && user.age < this.maxAge;
+//   }
+// };
 
-let users = [
-  {age: 16},
-  {age: 20},
-  {age: 23},
-  {age: 30}
-];
+// let users = [
+//   {age: 16},
+//   {age: 20},
+//   {age: 23},
+//   {age: 30}
+// ];
 
-// find users, for who army.canJoin returns true
-let soldiers = users.filter(army.canJoin, army);
+// // find users, for who army.canJoin returns true
+// let soldiers = users.filter(army.canJoin, army);
 
-alert(soldiers.length); // 2
-alert(soldiers[0].age); // 20
-alert(soldiers[1].age); // 23
+// alert(soldiers.length); // 2
+// alert(soldiers[0].age); // 20
+// alert(soldiers[1].age); // 23
 
 
 
 
-// method 20
+// // method 20
 
-function camelize(str) {
-  return str
-    .split('-') // splits 'my-long-word' into array ['my', 'long', 'word']
-    .map(
-      // capitalizes first letters of all array items except the first one
-      // converts ['my', 'long', 'word'] into ['my', 'Long', 'Word']
-      (word, index) => index == 0 ? word : word[0].toUpperCase() + word.slice(1)
-    )
-    .join(''); // joins ['my', 'Long', 'Word'] into 'myLongWord'
-}
+// function camelize(str) {
+//   return str
+//     .split('-') // splits 'my-long-word' into array ['my', 'long', 'word']
+//     .map(
+//       // capitalizes first letters of all array items except the first one
+//       // converts ['my', 'long', 'word'] into ['my', 'Long', 'Word']
+//       (word, index) => index == 0 ? word : word[0].toUpperCase() + word.slice(1)
+//     )
+//     .join(''); // joins ['my', 'Long', 'Word'] into 'myLongWord'
+// }
 
 
 
-// method 21:
+// // method 21:
 
-function groupById(array) {
-  return array.reduce((obj, value) => {
-    obj[value.id] = value;
-    return obj;
-  }, {})
-}
+// function groupById(array) {
+//   return array.reduce((obj, value) => {
+//     obj[value.id] = value;
+//     return obj;
+//   }, {})
+// }
 
 
 
-// method 22: 
-function unique(arr) {
-  let result = [];
+// // method 22: 
+// function unique(arr) {
+//   let result = [];
 
-  for (let str of arr) {
-    if (!result.includes(str)) {
-      result.push(str);
-    }
-  }
+//   for (let str of arr) {
+//     if (!result.includes(str)) {
+//       result.push(str);
+//     }
+//   }
 
-  return result;
-}
+//   return result;
+// }
 
-let strings = ["Hare", "Krishna", "Hare", "Krishna",
-  "Krishna", "Krishna", "Hare", "Hare", ":-O"
-];
+// let strings = ["Hare", "Krishna", "Hare", "Krishna",
+//   "Krishna", "Krishna", "Hare", "Hare", ":-O"
+// ];
 
-alert( unique(strings) ); // Hare, Krishna, :-O
+// alert( unique(strings) ); // Hare, Krishna, :-O
 
 
 
 
-// method 23
+// // method 23
 
-function getAverageAge(users) {
-  return users.reduce((prev, user) => prev + user.age, 0) / users.length;
-}
+// function getAverageAge(users) {
+//   return users.reduce((prev, user) => prev + user.age, 0) / users.length;
+// }
 
-let john = { name: "John", age: 25 };
-let pete = { name: "Pete", age: 30 };
-let mary = { name: "Mary", age: 29 };
+// let john = { name: "John", age: 25 };
+// let pete = { name: "Pete", age: 30 };
+// let mary = { name: "Mary", age: 29 };
 
-let arr = [ john, pete, mary ];
+// let arr = [ john, pete, mary ];
 
-alert( getAverageAge(arr) ); // 28
+// alert( getAverageAge(arr) ); // 28
 
 
 
-// method 24
+// // method 24
 
-function shuffle(array) {
-  array.sort(() => Math.random() - 0.5);
-}
+// function shuffle(array) {
+//   array.sort(() => Math.random() - 0.5);
+// }
 
-let arr = [1, 2, 3];
-shuffle(arr);
-alert(arr);
+// let arr = [1, 2, 3];
+// shuffle(arr);
+// alert(arr);
 
 
-// method 25
+// // method 25
 
-function sortByAge(arr) {
-  arr.sort((a, b) => a.age - b.age);
-}
+// function sortByAge(arr) {
+//   arr.sort((a, b) => a.age - b.age);
+// }
 
-let john = { name: "John", age: 25 };
-let pete = { name: "Pete", age: 30 };
-let mary = { name: "Mary", age: 28 };
+// let john = { name: "John", age: 25 };
+// let pete = { name: "Pete", age: 30 };
+// let mary = { name: "Mary", age: 28 };
 
-let arr = [ pete, john, mary ];
+// let arr = [ pete, john, mary ];
 
-sortByAge(arr);
+// sortByAge(arr);
 
-// now sorted is: [john, mary, pete]
-alert(arr[0].name); // John
-alert(arr[1].name); // Mary
-alert(arr[2].name); // Pete
+// // now sorted is: [john, mary, pete]
+// alert(arr[0].name); // John
+// alert(arr[1].name); // Mary
+// alert(arr[2].name); // Pete
 
 
 
-// method 26
+// // method 26
 
-function Calculator() {
+// function Calculator() {
 
-  this.methods = {
-    "-": (a, b) => a - b,
-    "+": (a, b) => a + b
-  };
+//   this.methods = {
+//     "-": (a, b) => a - b,
+//     "+": (a, b) => a + b
+//   };
 
-  this.calculate = function(str) {
+//   this.calculate = function(str) {
 
-    let split = str.split(' '),
-      a = +split[0],
-      op = split[1],
-      b = +split[2];
+//     let split = str.split(' '),
+//       a = +split[0],
+//       op = split[1],
+//       b = +split[2];
 
-    if (!this.methods[op] || isNaN(a) || isNaN(b)) {
-      return NaN;
-    }
+//     if (!this.methods[op] || isNaN(a) || isNaN(b)) {
+//       return NaN;
+//     }
 
-    return this.methods[op](a, b);
-  };
+//     return this.methods[op](a, b);
+//   };
 
-  this.addMethod = function(name, func) {
-    this.methods[name] = func;
-  };
-}
+//   this.addMethod = function(name, func) {
+//     this.methods[name] = func;
+//   };
+// }
 
 
 
-//  method 27
+// //  method 27
 
 
-function copySorted(arr) {
-  return arr.slice().sort();
-}
+// function copySorted(arr) {
+//   return arr.slice().sort();
+// }
 
-let arr = ["HTML", "JavaScript", "CSS"];
+// let arr = ["HTML", "JavaScript", "CSS"];
 
-let sorted = copySorted(arr);
+// let sorted = copySorted(arr);
 
-alert( sorted );
-alert( arr );
+// alert( sorted );
+// alert( arr );
 
 
-// method 28
+// // method 28
 
-function filterRangeInPlace(arr, a, b) {
+// function filterRangeInPlace(arr, a, b) {
 
-  for (let i = 0; i < arr.length; i++) {
-    let val = arr[i];
+//   for (let i = 0; i < arr.length; i++) {
+//     let val = arr[i];
 
-    // remove if outside of the interval
-    if (val < a || val > b) {
-      arr.splice(i, 1);
-      i--;
-    }
-  }
+//     // remove if outside of the interval
+//     if (val < a || val > b) {
+//       arr.splice(i, 1);
+//       i--;
+//     }
+//   }
 
-}
+// }
 
-let arr = [5, 3, 8, 1];
+// let arr = [5, 3, 8, 1];
 
-filterRangeInPlace(arr, 1, 4); // removed the numbers except from 1 to 4
+// filterRangeInPlace(arr, 1, 4); // removed the numbers except from 1 to 4
 
-alert( arr ); // [3, 1]
+// alert( arr ); // [3, 1]
 
 
 
 
-// method 29
+// // method 29
 
 
-function filterRange(arr, a, b) {
-  // added brackets around the expression for better readability
-  return arr.filter(item => (a <= item && item <= b));
-}
+// function filterRange(arr, a, b) {
+//   // added brackets around the expression for better readability
+//   return arr.filter(item => (a <= item && item <= b));
+// }
 
-let arr = [5, 3, 8, 1];
+// let arr = [5, 3, 8, 1];
 
-let filtered = filterRange(arr, 1, 4);
+// let filtered = filterRange(arr, 1, 4);
 
-alert( filtered ); // 3,1 (matching values)
+// alert( filtered ); // 3,1 (matching values)
 
-alert( arr ); // 5,3,8,1 (not modified)
+// alert( arr ); // 5,3,8,1 (not modified)
 
 
 // Iterables :
 
+// let range = {
+//   from: 1,
+//   to: 5
+// };
+
+// // 1. call to for..of initially calls this
+// range[Symbol.iterator] = function() {
+
+//   // ...it returns the iterator object:
+//   // 2. Onward, for..of works only with this iterator, asking it for next values
+//   return {
+    // current: this.from,
+    // last: this.to,
+
+    // 3. next() is called on each iteration by the for..of loop
+    // next() {
+      // 4. it should return the value as an object {done:.., value :...}
+      // if (this.current <= this.last) {
+        // return { done: false, value: this.current++ };
+      // } else {
+      //   return { done: true };
+      // }
+//     }
+//   };
+// };
+
+// now it works!
+// for (let num of range) {
+//   alert(num); // 1, then 2, 3, 4, 5
+// }
+
+
+// let person5 = {
+//   from: 2,
+//   to: 6
+// };
+// person5[Symbol.iterator] = function() {
+//   return {
+//       current: this.from,
+//       last: this.to,
+
+//       next() {
+//         if (this.current <= this.last) {
+//           return {done: false, value: this.current++};
+
+//         } else {
+//           return {done: true};
+//         }
+
+//       }
+
+
+//   };
+
+// };
+
+// for (let num of person5) {
+//   alert(num);
+// }
+
+// // method 2:
+
+// let iterables = "hiii";
+// let iterator = iterables[Symbol.iterator]();
+// while (true) {
+//   let iterator1 = iterator.next();
+//   if (iterator1.done) break;
+//   alert(iterator1.value);
+// }
+
+// let str = "Hello";
+
+// does the same as
+// for (let char of str) alert(char);
+
+// let iterator = str[Symbol.iterator]();
+
+// while (true) {
+//   let result = iterator.next();
+//   if (result.done) break;
+//   alert(result.value); // outputs characters one by one
+// }
+
+// function slice(strings, defer, ending) {
+//   return Array.from(strings).slice(defer, ending).join('');
+// }
+// let strings = "no way";
+// alert(slice(strings, 4, 8));
+// alert(strings.slice(strings, 4, 8));
+
+// function slice(str, start, end) {
+//   return Array.from(str).slice(start, end).join('');
+// }
+
+// let str = '𝒳😂𩷶';
+
+// alert( slice(str, 1, 3) ); // 😂𩷶
+
+// // the native method does not support surrogate pairs
+// alert( str.slice(1, 3) ); // garbage (two pieces from different surrogate pairs)
 
 
 
+// Maps and sets:
+
+// let map = new Map();
+
+// map.set("name", "John");
+
+// let keys = Array.from(map.keys());
+
+// keys.push("more");
+
+// alert(keys); // name, more
+
+
+//method 2
+
+// function aclean(arr) {
+//   let map = new Map();
+
+//   for (let word of arr) {
+//     // split the word by letters, sort them and join back
+//     let sorted = word.toLowerCase().split('').sort().join(''); // (*)
+//     map.set(sorted, word);
+//   }
+
+//   return Array.from(map.values());
+// }
+
+// let arr = ["nap", "teachers", "cheaters", "PAN", "ear", "era", "hectares"];
+
+// alert( aclean(arr) );
+
+// method 3
+
+// let map = new Map();
+
+// map.set("name", "John");
+
+// let keys = map.keys();
+
+// // Error: keys.push is not a function
+// keys.push("more");
+
+
+// method 4
+// let map = new Map();
+// map.set('banana', 1);
+// map.set('orange', 2);
+// map.set('meat', 4);
+
+// let obj = Object.fromEntries(map.entries()); // make a plain object (*)
+
+// // done!
+// // obj = { banana: 1, orange: 2, meat: 4 }
+
+// alert(obj.orange); // 2
+
+
+// method 5
+
+// let prices = Object.fromEntries([
+//   ['banana', 1],
+//   ['orange', 2],
+//   ['meat', 4]
+// ]);
+
+// // now prices = { banana: 1, orange: 2, meat: 4 }
+
+// alert(prices.orange); // 2
+
+
+
+// method 6
+
+// let obj = {
+//   name: "John",
+//   age: 30
+// };
+
+// let map = new Map(Object.entries(obj));
+
+// alert( map.get('name') ); // John
+
+
+// let object = {
+//   names: "Jenny",
+//   year: 20
+// };
+// let maps = new Map(Object.entries(object));
+// alert(maps.get('names'));
+
+
+// Object.keys, values, entries:
+
+// function sumSalaries(salaries) {
+
+//   let sum = 0;
+//   for (let salary of Object.values(salaries)) {
+//     sum += salary;
+//   }
+
+//   return sum; // 650
+// }
+
+// let salaries = {
+//   "John": 100,
+//   "Pete": 300,
+//   "Mary": 250
+// };
+
+// alert( sumSalaries(salaries) );
+
+
+
+
+
+/////     Advanced working with functions //////////
 
 
 
