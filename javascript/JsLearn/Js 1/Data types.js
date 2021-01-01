@@ -1339,6 +1339,40 @@
 
 /////    Rest parameters and spread syntax : /////
 
+// function sum(a, b) {
+//   return a + b;
+// }
+
+// alert( sum(1, 2, 3, 4, 5) );
+
+
+// function Sum(x, y) {
+//   return x + y;
+// }
+// alert(Sum(3, 5, 6, 7));
+
+
+// function sumAll(...args) { // args is the name for the array
+//   let sum = 0;
+
+//   for (let arg of args) sum += arg;
+
+//   return sum;
+// }
+
+// alert( sumAll(1) ); // 1
+// alert( sumAll(1, 2) ); // 3
+// alert( sumAll(1, 2, 3) ); // 6
+
+
+// function hookSum(...args) {
+//   let hookSums = 0;
+//   for (let arg of args) hookSums += arg;
+//   return hookSums;
+// }
+// alert(hookSum(2));
+// alert(hookSum(2, 9));
+// alert(hookSum(3, 5 ,9));
 
 
 
