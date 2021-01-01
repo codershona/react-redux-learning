@@ -1189,6 +1189,156 @@
 
 // Recursion and stack :
 
+// function pow(x, n) {
+//   if (n == 1) {
+//     return x;
+//   } else {
+//     return x * pow(x, n - 1);
+//   }
+// }
+
+// alert( pow(2, 3) );
+
+
+// function papy(a, c) {
+//   if (c == 1) {
+//     return a;
+//   } else {
+//     return a * papy(a, c - 1);
+//   }
+// }
+// alert(papy(6,7));
+
+
+// function sumSalaries(department) {
+//   if (Array.isArray(department)) { // case (1)
+//     return department.reduce((prev, current) => prev + current.salary, 0); // sum the array
+//   } else { // case (2)
+//     let sum = 0;
+//     for (let subdep of Object.values(department)) {
+//       sum += sumSalaries(subdep); // recursively call for subdepartments, sum the results
+//     }
+//     return sum;
+//   }
+// }
+
+// alert(sumSalaries(company));
+
+
+
+// using a loop
+
+// function sumTo(n) {
+//   let sum = 0;
+//   for (let i = 1; i <= n; i++) {
+//     sum += i;
+//   }
+//   return sum;
+// }
+
+// alert( sumTo(100) );
+
+// function Sumto(x) {
+//   let Sum = 0;
+//   for (let n = 1; n <= x; n++) {
+//     Sum += n;
+//   }
+//   return Sum;
+// }
+// alert(Sumto(29));
+
+// using recursion
+
+// function sumTo(n) {
+//   if (n == 1) return 1;
+//   return n + sumTo(n - 1);
+// }
+
+// alert( sumTo(100) );
+
+// function Sumthree(a) {
+//   if (x = 1) return 1;
+//   return x + Sumthree(a - 1);
+// }
+// alert(Sumthree(28));
+
+
+// function sumTo(n) {
+//   return n * (n + 1) / 2;
+// }
+
+// alert( sumTo(100) );
+
+// function Sumone(a) {
+//   return a * (a + 1) / 2;
+// }
+// alert(Sumone(30));
+
+// function factorial(n) {
+//   return (n != 1) ? n * factorial(n - 1) : 1;
+// }
+
+// alert( factorial(5) ); // 120
+
+// function Fac(x) {
+//   return (x != 2) ? x * Fac(x - 2) : 2;
+// }
+// alert(Fac(6));
+
+// let persons6 = {
+//   value: 4,
+//   next: {
+//     value: 23,
+//     next: {
+//       value: 5,
+//       next: {
+//         value: 99,
+//         next: null
+//       }
+//     }
+//   }
+// };
+
+// function isSubmitted(persons6) {
+//   alert(persons6.value);
+//   if(persons6.next) {
+//     isSubmitted(persons6.next);
+//   }
+// }
+
+// isSubmitted(persons6);
+
+
+// let list = {
+//   value: 1,
+//   next: {
+//     value: 2,
+//     next: {
+//       value: 3,
+//       next: {
+//         value: 4,
+//         next: null
+//       }
+//     }
+//   }
+// };
+
+// function printList(list) {
+
+//   alert(list.value); // output the current item
+
+//   if (list.next) {
+//     printList(list.next); // do the same for the rest of the list
+//   }
+
+// }
+
+// printList(list);
+
+
+
+/////    Rest parameters and spread syntax : /////
+
 
 
 
