@@ -186,6 +186,155 @@
 
   /////     Scheduling: setTimeout and setInterval ///////
 
+  // function sayHi() {
+  //   alert('Hello');
+  // }
+  
+  // setTimeout(sayHi, 1000);
+
+
+  // function Zero() {
+  //   alert('Hjjj');
+  // }
+  // setTimeout(Zero, 1500);
+
+
+  // function sayHi(phrase, who) {
+  //   alert( phrase + ', ' + who );
+  // }
+
+  // setTimeout(sayHi, 1000, "Hello", "John");
+
+  // function ZerOne(see, watch) {
+  //   alert(see + ', ' + watch);
+  // }
+  // setTimeout(ZerOne, 1500, "Zello", "Jenny");
+  // setTimeout(() => alert('Zello'), 1500);
+
+
+//   let timerId = setTimeout(() => alert("never happens"), 1000);
+// alert(timerId); // timer identifier
+
+// clearTimeout(timerId);
+// alert(timerId);
+
+// let melloId = setTimeout(() => alert("cdsjfhewf"), 1200);
+// alert(melloId);
+// clearTimeout(melloId);
+// alert(melloId);
+
+
+
+// repeat with the interval of 2 seconds
+// let timerId = setInterval(() => alert('tick'), 2000);
+
+// // after 5 seconds stop
+// setTimeout(() => { clearInterval(timerId); alert('stop'); }, 5000);
+
+
+// method 1:
+
+// function goSaga(here, now) {
+//   let why = here;
+
+//   let sagaId = setInterval(function() {
+//     alert(why);
+//     if (why == now) {
+//       clearInterval(sagaId);
+//     }
+//     why++;
+//   }, 1200);
+
+// }
+
+// goSaga(6, 9);
+
+// function printNumbers(from, to) {
+//   let current = from;
+
+//   let timerId = setInterval(function() {
+//     alert(current);
+//     if (current == to) {
+//       clearInterval(timerId);
+//     }
+//     current++;
+//   }, 1000);
+// }
+
+// // usage:
+// printNumbers(5, 10);
+
+
+// method 2:
+
+// using nested setTimeout
+
+// function printNumbers(from, to) {
+//   let current = from;
+
+//   setTimeout(function go() {
+//     alert(current);
+//     if (current < to) {
+//       setTimeout(go, 1000);
+//     }
+//     current++;
+//   }, 1000);
+// }
+
+// // usage:
+// printNumbers(5, 10);
+
+// method 3
+
+// function printNumbers(from, to) {
+//   let current = from;
+
+
+//   function go() {
+//     alert(current);
+//     if (current == to) {
+//       clearInterval(timerId);
+//     }
+//     current++;
+//   }
+
+//   go();
+//   let timerId = setInterval(go, 1000);
+// }
+
+// printNumbers(5, 10);
+
+
+
+// method 4:
+
+// let i = 0;
+
+// setTimeout(() => alert(i), 100); // 100000000
+
+// // assume that the time to execute this function is >100ms
+// for(let j = 0; j < 100000000; j++) {
+//   i++;
+// }
+
+
+// let n = 0;
+
+// setTimeout(() => alert(n), 120);
+// for(let y = 0; y < 10000000; y++) {
+//   n++;
+// }
+
+
+
+
+
+////////   Decorators and forwarding, call/apply ////////
+
+
+
+
+
 
 
 
