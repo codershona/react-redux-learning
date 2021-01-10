@@ -13,7 +13,7 @@ class AddItem extends Component {
 
     addItem = () => {
         if (this.state.value) {
-            this.props.addToShowcase(this.state.value);
+            this.context.addToShowcase(this.state.value);
             this.setState({value: ''});
         }
 

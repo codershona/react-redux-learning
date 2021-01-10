@@ -22,7 +22,7 @@ const LoggedInNav = () => {
 
 const LoggedOutNav = () => {
     return (
-       <>
+       <Context.Consumer>
            {({login}) => (
                 <div>
                 <p>
@@ -35,7 +35,7 @@ const LoggedOutNav = () => {
         
             </div>
            )}
-       </>
+       </Context.Consumer>
 
     );
  
@@ -48,15 +48,13 @@ const BasicNav = () => {
 
     return (
         <Context.Consumer>
-            {(isAuthenticated) => (
-                <>
+            {({ isAuthenticated }) =>
 
-             {isAuthenticated && <LoggedInNav/>}
 
-             {!isAuthenticated && <LoggedOutNav /> }
+             isAuthenticated ? <LoggedInNav /> : <LoggedOutNav />
 
-                </>
-            )}
+
+            }
         </Context.Consumer>
     );
 };
