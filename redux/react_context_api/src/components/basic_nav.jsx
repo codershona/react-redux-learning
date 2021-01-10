@@ -1,10 +1,10 @@
 import React from 'react';
-import { Context } from './app';
+import Context from './userContext';
 
-const LoggedInNav = ({ logout }) => {
+const LoggedInNav = () => {
     return (
         <Context.Consumer>
-      {(user) => (
+      {({user, logout}) => (
       <div>
             <p>
                 This is {user.name}, My LoggedIn with {user.email}
@@ -20,18 +20,22 @@ const LoggedInNav = ({ logout }) => {
     );
 };
 
-const LoggedOutNav = ({login}) => {
+const LoggedOutNav = () => {
     return (
-        <div>
-        <p>
-            Please Can you Click the Login Button which is given below,
-        </p>
-        <ul>
-            <li onClick={login}>LOGIN</li>
-            <li>REGISTER</li>
-        </ul>
-
-    </div>
+       <>
+           {({login}) => (
+                <div>
+                <p>
+                    Please Can you Click the Login Button which is given below,
+                </p>
+                <ul>
+                    <li onClick={login}>LOGIN</li>
+                    <li>REGISTER</li>
+                </ul>
+        
+            </div>
+           )}
+       </>
 
     );
  
@@ -39,13 +43,22 @@ const LoggedOutNav = ({login}) => {
 
 /* MAIN COMPONENT :  */
 
-const BasicNav = ({ login, logout, isAuthenticated, user }) => {
-    if (isAuthenticated) {
-        return <LoggedInNav logout={logout}/>;
-    }
+const BasicNav = () => {
 
-    return <LoggedOutNav login={login} />;
 
+    return (
+        <Context.Consumer>
+            {(isAuthenticated) => (
+                <>
+
+             {isAuthenticated && <LoggedInNav/>}
+
+             {!isAuthenticated && <LoggedOutNav /> }
+
+                </>
+            )}
+        </Context.Consumer>
+    );
 };
 
 

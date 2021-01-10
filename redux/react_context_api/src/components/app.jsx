@@ -3,8 +3,7 @@ import React, { Component, createContext } from 'react';
 import BasicNav from './basic_nav';
 
 import Showcase from './showcase';
-
-export const Context = createContext()
+import Context from './userContext';
 
 
 
@@ -41,7 +40,12 @@ class App extends Component {
 
     render() {
         return (
-            <Context.Provider value={this.state}>
+            <Context.Provider value={{ ...this.state,
+            login:this.login,
+            logout:this.logout,
+            addToShowcase: this.addToShowcase
+            }}
+            >
             <div className='container'>
                 <div className='row'>
                     <div className='col-sm-6 offset-sm-3'>
@@ -50,16 +54,10 @@ class App extends Component {
                         </h1> 
                         <hr />
                         <BasicNav
-                        isAuthenticated={this.state.isAuthenticated}
-                        user={this.state.user}
-                        login={this.login}
-                        logout={this.logout}
                          />  
                          <hr />
                          {this.state.isAuthenticated && (
-                             <Showcase 
-                             user={this.state.user}
-                             addToShowcase={this.addToShowcase}
+                             <Showcase
                              />
                          )}                     
                     </div>

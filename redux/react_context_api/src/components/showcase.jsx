@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Context } from './app';
+import Context from './userContext';
 
 class AddItem extends Component {
     state = {
@@ -20,6 +20,7 @@ class AddItem extends Component {
     };
 
     render() {
+        console.log(this.context);
         return(
             <div className="d-flex my-3">
                 <input
@@ -40,7 +41,7 @@ class AddItem extends Component {
 }
 
 
-
+AddItem.contextType = Context;
 
 const ItemList = () => {
     return (
@@ -63,15 +64,19 @@ const ItemList = () => {
 
 /* MAIN COMPONENT :  */
 
-const Showcase = ({user, addToShowcase}) => {
+const Showcase = () => {
     return (
+        <Context.Consumer>
+       {({ user }) => (
         <div>
-            <h3>
-                {user.name} ShowCase: 
-            </h3>
-            <AddItem addToShowcase={addToShowcase} />
-            <ItemList />
-        </div>
+        <h3>
+            {user.name} ShowCase: 
+        </h3>
+        <AddItem />
+        <ItemList />
+    </div>
+       )}
+       </Context.Consumer>
     );
 };
 
