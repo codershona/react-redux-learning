@@ -1,8 +1,11 @@
-import React, { Component } from 'react';
+import React, { Component, createContext } from 'react';
 
 import BasicNav from './basic_nav';
 
 import Showcase from './showcase';
+
+export const Context = createContext()
+
 
 
 class App extends Component {
@@ -38,6 +41,7 @@ class App extends Component {
 
     render() {
         return (
+            <Context.Provider value={this.state}>
             <div className='container'>
                 <div className='row'>
                     <div className='col-sm-6 offset-sm-3'>
@@ -61,6 +65,7 @@ class App extends Component {
                     </div>
                 </div>
             </div>
+            </Context.Provider>
         );
     }
 }

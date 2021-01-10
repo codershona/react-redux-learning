@@ -1,8 +1,11 @@
 import React from 'react';
+import { Context } from './app';
 
-const LoggedInNav = ({logout, user}) => {
+const LoggedInNav = ({ logout }) => {
     return (
-        <div>
+        <Context.Consumer>
+      {(user) => (
+      <div>
             <p>
                 This is {user.name}, My LoggedIn with {user.email}
             </p>
@@ -11,7 +14,9 @@ const LoggedInNav = ({logout, user}) => {
                 <li onClick={logout}>LOGOUT</li>
             </ul>
 
-        </div>
+        </div>)}
+
+        </Context.Consumer>
     );
 };
 
