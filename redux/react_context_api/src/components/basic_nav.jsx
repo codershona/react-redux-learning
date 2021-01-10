@@ -1,9 +1,9 @@
 import React from 'react';
-import Context from './userContext';
+import {UserConsumer} from './userContext';
 
 const LoggedInNav = () => {
     return (
-        <Context.Consumer>
+        <UserConsumer>
       {({user, logout}) => (
       <div>
             <p>
@@ -16,13 +16,13 @@ const LoggedInNav = () => {
 
         </div>)}
 
-        </Context.Consumer>
+        </UserConsumer>
     );
 };
 
 const LoggedOutNav = () => {
     return (
-       <Context.Consumer>
+       <UserConsumer>
            {({login}) => (
                 <div>
                 <p>
@@ -35,7 +35,7 @@ const LoggedOutNav = () => {
         
             </div>
            )}
-       </Context.Consumer>
+       </UserConsumer>
 
     );
  
@@ -47,7 +47,7 @@ const BasicNav = () => {
 
 
     return (
-        <Context.Consumer>
+        <UserConsumer>
             {({ isAuthenticated }) =>
 
 
@@ -55,7 +55,7 @@ const BasicNav = () => {
 
 
             }
-        </Context.Consumer>
+        </UserConsumer>
     );
 };
 

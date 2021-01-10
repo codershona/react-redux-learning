@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Context from './userContext';
+import {UserConsumer, UserContext} from './userContext';
 
 class AddItem extends Component {
     state = {
@@ -41,11 +41,11 @@ class AddItem extends Component {
 }
 
 
-AddItem.contextType = Context;
+AddItem.contextType = UserContext;
 
 const ItemList = () => {
     return (
-        <Context.Consumer>
+        <UserConsumer>
      {({user}) => (
              <ul className='list-group'>
              {user.languages.map(lang => (
@@ -56,7 +56,7 @@ const ItemList = () => {
  
          </ul>
      )}
-        </Context.Consumer>
+        </UserConsumer>
     );
 
 };
@@ -66,7 +66,7 @@ const ItemList = () => {
 
 const Showcase = () => {
     return (
-        <Context.Consumer>
+        <UserConsumer>
        {({ user }) => (
         <div>
         <h3>
@@ -76,7 +76,7 @@ const Showcase = () => {
         <ItemList />
     </div>
        )}
-       </Context.Consumer>
+       </UserConsumer>
     );
 };
 
