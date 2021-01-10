@@ -32,7 +32,7 @@ class App extends Component {
         this.setState({isAuthenticated: false});
     };
 
-    addToShowcae = item => {
+    addToShowcase = item => {
         const user = { ...this.state.user };
         user.languages.push(item);
         this.setState({ user });

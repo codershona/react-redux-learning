@@ -41,7 +41,7 @@ const LoggedOutNav = ({login}) => {
 
 const BasicNav = ({ login, logout, isAuthenticated, user }) => {
     if (isAuthenticated) {
-        return <LoggedInNav logout={logout} user={user} />;
+        return <LoggedInNav logout={logout}/>;
     }
 
     return <LoggedOutNav login={login} />;

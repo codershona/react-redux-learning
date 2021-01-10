@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Context } from './app';
 
 class AddItem extends Component {
     state = {
@@ -41,16 +42,20 @@ class AddItem extends Component {
 
 
 
-const ItemList = ({items}) => {
+const ItemList = () => {
     return (
-        <ul className='list-group'>
-            {items.map(lang => (
-                <li className='list-group-item' key={lang}>
-                    {lang}
-                </li>
-            ))}
-
-        </ul>
+        <Context.Consumer>
+     {({user}) => (
+             <ul className='list-group'>
+             {user.languages.map(lang => (
+                 <li className='list-group-item' key={lang}>
+                     {lang}
+                 </li>
+             ))}
+ 
+         </ul>
+     )}
+        </Context.Consumer>
     );
 
 };
@@ -65,7 +70,7 @@ const Showcase = ({user, addToShowcase}) => {
                 {user.name} ShowCase: 
             </h3>
             <AddItem addToShowcase={addToShowcase} />
-            <ItemList items={user.languages} />
+            <ItemList />
         </div>
     );
 };
