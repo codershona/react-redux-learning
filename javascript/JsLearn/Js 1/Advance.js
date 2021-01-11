@@ -332,6 +332,224 @@
 ////////   Decorators and forwarding, call/apply ////////
 
 
+function slow(x) {
+  // there can be a heavy CPU-intensive job here
+  alert(`Called with ${x}`);
+  return x;
+}
+
+function cachingDecorator(func) {
+  let cache = new Map();
+
+  return function(x) {
+    if (cache.has(x)) {    // if there's such key in cache
+      return cache.get(x); // read the result from it
+    }
+
+    let result = func(x);  // otherwise call func
+
+    cache.set(x, result);  // and cache (remember) the result
+    return result;
+  };
+}
+
+slow = cachingDecorator(slow);
+
+alert( slow(1) ); // slow(1) is cached
+alert( "Again: " + slow(1) ); // the same
+
+alert( slow(2) ); // slow(2) is cached
+alert( "Again: " + slow(2) ); // the same as the previous line
+
+
+// method 2
+
+// we'll make worker.slow caching
+let worker = {
+  someMethod() {
+    return 1;
+  },
+
+  slow(x) {
+    // scary CPU-heavy task here
+    alert("Called with " + x);
+    return x * this.someMethod(); // (*)
+  }
+};
+
+// same code as before
+function cachingDecorator(func) {
+  let cache = new Map();
+  return function(x) {
+    if (cache.has(x)) {
+      return cache.get(x);
+    }
+    let result = func(x); // (**)
+    cache.set(x, result);
+    return result;
+  };
+}
+
+alert( worker.slow(1) ); // the original method works
+
+worker.slow = cachingDecorator(worker.slow); // now make it caching
+
+alert( worker.slow(2) ); // Whoops! Error: Cannot read property 'someMethod' of undefined
+
+
+
+// method 3
+
+let worker = {
+  someMethod() {
+    return 1;
+  },
+
+  slow(x) {
+    alert("Called with " + x);
+    return x * this.someMethod(); // (*)
+  }
+};
+
+function cachingDecorator(func) {
+  let cache = new Map();
+  return function(x) {
+    if (cache.has(x)) {
+      return cache.get(x);
+    }
+    let result = func.call(this, x); // "this" is passed correctly now
+    cache.set(x, result);
+    return result;
+  };
+}
+
+worker.slow = cachingDecorator(worker.slow); // now make it caching
+
+alert( worker.slow(2) ); // works
+alert( worker.slow(2) ); // works, doesn't call the original (cach
+
+
+
+// method 4
+
+
+let worker = {
+  slow(min, max) {
+    alert(`Called with ${min},${max}`);
+    return min + max;
+  }
+};
+
+function cachingDecorator(func, hash) {
+  let cache = new Map();
+  return function() {
+    let key = hash(arguments); // (*)
+    if (cache.has(key)) {
+      return cache.get(key);
+    }
+
+    let result = func.call(this, ...arguments); // (**)
+
+    cache.set(key, result);
+    return result;
+  };
+}
+
+function hash(args) {
+  return args[0] + ',' + args[1];
+}
+
+worker.slow = cachingDecorator(worker.slow, hash);
+
+alert( worker.slow(3, 5) ); // works
+alert( "Again " + worker.slow(3, 5) ); // same (cached)
+
+
+
+
+// method 5
+
+function spy(func) {
+
+  function wrapper(...args) {
+    // using ...args instead of arguments to store "real" array in wrapper.calls
+    wrapper.calls.push(args);
+    return func.apply(this, args);
+  }
+
+  wrapper.calls = [];
+
+  return wrapper;
+}
+
+
+
+// method 6
+
+function delay(f, ms) {
+
+  return function() {
+    setTimeout(() => f.apply(this, arguments), ms);
+  };
+
+}
+
+let f1000 = delay(alert, 1000);
+
+f1000("test"); // shows "test" after 1000ms
+
+
+
+// method 7
+
+function debounce(func, ms) {
+  let timeout;
+  return function() {
+    clearTimeout(timeout);
+    timeout = setTimeout(() => func.apply(this, arguments), ms);
+  };
+}
+
+
+
+// method 8
+
+function throttle(func, ms) {
+
+  let isThrottled = false,
+    savedArgs,
+    savedThis;
+
+  function wrapper() {
+
+    if (isThrottled) { // (2)
+      savedArgs = arguments;
+      savedThis = this;
+      return;
+    }
+
+    func.apply(this, arguments); // (1)
+
+    isThrottled = true;
+
+    setTimeout(function() {
+      isThrottled = false; // (3)
+      if (savedArgs) {
+        wrapper.apply(savedThis, savedArgs);
+        savedArgs = savedThis = null;
+      }
+    }, ms);
+  }
+
+  return wrapper;
+}
+
+
+
+//////////  Function binding /////////
+
+
+
 
 
 
