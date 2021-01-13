@@ -1,8 +1,11 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import Controller from './controller';
+import {CountContext} from '../provider/count-provider';
 
+const Counter = () => {
 
-const Counter = ({ counting, increasing, decreasing, reseting }) => {
+    const {counting} = useContext(CountContext)
+
     return(
         <div>
             <div className='card card-body text-center my-3'>
@@ -12,9 +15,6 @@ const Counter = ({ counting, increasing, decreasing, reseting }) => {
             </div>
             <div className='card card-body text-center'>
                 <Controller
-                increasing={increasing}
-                decreasing={decreasing}
-                reseting={reseting}
                 />
             </div>
         </div>
