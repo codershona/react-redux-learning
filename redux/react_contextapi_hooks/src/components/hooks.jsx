@@ -11,6 +11,15 @@ const MyHook = () => {
             <h1>
                 Count: {counts}
             </h1>
+            <button onClick={() => setCount(counts + 1)}>
+                Increase
+            </button>
+            <button onClick={() => setCount(prev => prev -1)}>
+                Decrease
+            </button>
+            <button onClick={() => setCount(100)}>
+                Re-establish
+            </button>
         </div>
     );
 };
