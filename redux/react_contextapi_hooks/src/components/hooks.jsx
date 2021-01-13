@@ -1,4 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
+
+import {UserContext} from './userContext';
 
 const MyHook = () => {
     const [counts, setCounts] = useState(100);
@@ -6,6 +8,9 @@ const MyHook = () => {
     const [ages, setAges] = useState(24);
 
     const [apiposts, setApiPost] = useState({});
+
+    const {user} = useContext(UserContext);
+
 
     useEffect(() => {
         console.log('Count Updated it!', counts);
@@ -54,6 +59,16 @@ const MyHook = () => {
                 <button onClick={() => setAges(ages + 1)}>
                     Increase Ages
                 </button>
+            </div>
+            <hr />
+            <div>
+                <h3>
+                    This was {user.name}
+                </h3>
+                <h3>
+                    This email was {user.email}
+                </h3>
+                <hr />
             </div>
             <div>
                 {Object.keys(apiposts).length > 0 && (
