@@ -1,3 +1,4 @@
+
 class Persons {
 
     constructor(names, emails) {
@@ -7,15 +8,7 @@ class Persons {
 
     }
 
-    // get names() {
-    //     return this.names
-    // }
-
-    // set names(names) {
-    //     this.names = names
-    // }
-
-    prints() {
+    printsOne() {
         console.log(`NAME: ${this.names}, EMAIL: ${this.emails} `)
 
     }
