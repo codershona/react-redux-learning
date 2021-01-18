@@ -6,7 +6,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 // const config = require('webpack-cli/bin/convert-argv')(yargs, argv)
 
 module.exports = {
-    entry: './src/scripts/index.js',
+    entry: './src/index.js',
     output: {
         filename: 'bundle.js',
         path: path.resolve(__dirname, 'dist')
