@@ -33,6 +33,34 @@ console.log(...array);
 console.log(array);
 
 
+var object = {
+    name: 'Jarbie',
+    email: "jarbie@test.com"
+}
+
+var objectTwo = {
+    ...object
+}
+
+console.log(objectTwo);
+
+// run node src/scripts/index.js into the terminal
+
+
+
+var object = {
+    name: 'Jarbie',
+    email: "jarbie@test.com"
+}
+
+var objectTwo = {
+    ...object,
+    name: 'Jenny',
+    age: '55'
+}
+
+console.log(objectTwo);
+
 
 
 
