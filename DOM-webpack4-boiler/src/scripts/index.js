@@ -74,33 +74,71 @@
 // })
 
 
-// let button = $('#clicks-mine')
+let button = $('#clicks-mine')
 
-// let Color = ['Red', 'Green', 'Yellow', 'Blue']
-
-// let i = 0
-
-// button.addEventListener('click', function() {
-//     // console.log('We are learning ...')
-//     let h1 = $('#my-h1')
-
-//      h1.innerHTML = 'This was DOM Lesson'
-
-//      h1.style.background = Color[i]
-
-//      if (i >= Color.length) {
-//          i=0
-//      } else {
-//          i++
-//      }
-
-// })
+// console.log(button);
+// console.dir(button);
+// console.log(button.style);
+// console.dir(document)
 
 
 
-// function $(selector) {
-//     return document.querySelector(selector)
-// }
+let Color = ['Red', 'Green', 'Yellow', 'Blue']
+
+let i = 0
+
+button.addEventListener('click', function() {
+    // console.log('We are learning ...')
+    let h1 = $('#my-h1')
+
+     h1.innerHTML = 'This was DOM Lesson'
+
+     h1.style.background = Color[i]
+
+     if (i >= Color.length) {
+         i=0
+     } else {
+         i++
+     }
+
+})
+
+
+
+function $(selector) {
+    return document.querySelector(selector)
+}
+
+// let h1 = document.querySelector('#my-h1')
+let h1 = $('#my-h1')
+
+// h1.style.background = 'Pink'
+// h1.style.fontSize = '28px'
+// h1.style.fontFamily = 'sans-serif'
+// h1.style.padding = '21px'
+
+let h1CssStyle = {
+    background: 'Pink',
+    fontSize: '28px',
+    fontFamily: 'sans-serif',
+    padding: '21px',
+    textAlign: 'center'
+
+}
+
+Object.assign(h1.style, h1CssStyle)
+
+let paraStyle = {
+    padding: '11px',
+    fontSize: '19px',
+    lineHeight: '1.5'
+}
+
+// let p = $('#my-para')
+// Object.assign(p.style, paraStyle)
+Object.assign($('#my-para').style, paraStyle)
+
+
 
 // let container = document.querySelector('.container')
 // let container = document.querySelector('div')
@@ -109,6 +147,8 @@
 
 // console.log(container);
 
+
+// DOM Style your document:
 
 
 
