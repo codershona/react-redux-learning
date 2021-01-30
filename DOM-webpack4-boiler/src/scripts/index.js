@@ -1,3 +1,5 @@
+// working with events
+
 let btn = document.querySelector('#btn');
 
 let para = document.querySelector('#para');
@@ -18,5 +20,7 @@ btn.addEventListener('click', function() {
     }
 
 })
+
+// working with Dome: Creating and Deleting DOM
 
 
