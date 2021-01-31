@@ -1,26 +1,36 @@
-// working with events
+// working with Dom: Creating and Deleting DOM
 
-let btn = document.querySelector('#btn');
+let idField = document.querySelector('#idField')
 
-let para = document.querySelector('#para');
+let ul = document.querySelector('#idList')
 
-let isShown = false;
+idField.addEventListener('keypress', function(event) {
 
-btn.addEventListener('click', function() {
-    if (isShown) {
-        para.style.visibility = 'hidden';
-        isShown = false;
-        btn.innerHTML = 'SHOW';
+    // console.log(event)
+    if (event.keyCode === 13) {
+        // console.log('Please type here!..')
 
-    } else {
-        para.style.visibility = 'visible';
-        isShown = true;
-        btn.innerHTML = 'HIDE';
+        // let name = event.target.value
+        // console.log(name)
+        let id = event.target.value
+        // console.log(id)
+        ul.appendChild(createLi(id))
+
+        event.target.value = ""
+
+
 
     }
 
 })
 
-// working with Dome: Creating and Deleting DOM
+function createLi(id) {
+    let li = document.createElement('li')
+    li.className = 'list-group-item'
+    li.innerHTML = id
+
+    return li
+}
+
 
 

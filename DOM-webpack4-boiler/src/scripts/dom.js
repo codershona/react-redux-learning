@@ -313,3 +313,63 @@
 // }
 
 // Object.assign($('#my-para').style, paraStyle)
+
+
+
+
+// working with events :
+
+// let btn = document.querySelector('#btn');
+
+// let para = document.querySelector('#para');
+
+// let isShown = false;
+
+// btn.addEventListener('click', function() {
+//     if (isShown) {
+//         para.style.visibility = 'hidden';
+//         isShown = false;
+//         btn.innerHTML = 'SHOW';
+
+//     } else {
+//         para.style.visibility = 'visible';
+//         isShown = true;
+//         btn.innerHTML = 'HIDE';
+
+//     }
+
+// })
+
+
+
+
+// working with Dom: Creating and Deleting DOM
+
+// let root = document.querySelector('#root')
+
+// let jumbotronDiv = document.createElement("div")
+
+// jumbotronDivs.classList.push('jumbotron')
+// jumbotronDiv.className = 'jumbotron text-center'
+
+// jumbotronDivs.attributes
+// jumbotronDiv.setAttribute('id','my-jmb')
+
+// let h1 = document.createElement('h1')
+// h1.className = 'display-2 py-5'
+
+
+// h1.innerText = '<strong>This was DOM Object</strong>'
+// h1.innerHTML = '<strong>This was DOM Object</strong>'
+
+// jumbotronDiv.appendChild(h1)
+
+
+// root.appendChild(jumbotronDiv)
+// console.log(root.children)
+
+// console.log(jumbotronDivs)
+// console.dir(jumbotronDivs)
+
+
+
