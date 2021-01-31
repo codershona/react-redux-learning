@@ -14,7 +14,8 @@ idField.addEventListener('keypress', function(event) {
         // console.log(name)
         let id = event.target.value
         // console.log(id)
-        ul.appendChild(createLi(id))
+        // ul.appendChild(createLi(id))
+        createLi(ul, id)
 
         event.target.value = ""
 
@@ -24,12 +25,28 @@ idField.addEventListener('keypress', function(event) {
 
 })
 
-function createLi(id) {
+function createLi(ul, id) {
     let li = document.createElement('li')
-    li.className = 'list-group-item'
+    li.className = "list-group-item d-flex"
     li.innerHTML = id
 
-    return li
+    let span = document.createElement('span')
+
+    span.innerHTML = 'DELETE'
+    span.className = 'ml-auto'
+    span.style.color = 'orange'
+    span.style.cursor = 'pointer'
+
+    span.addEventListener('click', function() {
+
+        // alert('Delete style was not working')
+        ul.removeChild(li)
+    })
+
+    li.appendChild(span)
+
+    // return li
+    ul.appendChild(li)
 }
 
 
