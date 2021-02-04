@@ -24,4 +24,22 @@ h1 {
     background: rgb(209, 66, 10);
     position: relative;
     margin-bottom: 11px;
+    color: rgb(235, 223, 223);
+    font-family: 'Yusei Magic', sans-serif;
+}
+
+.tasks_controller_panel {
+    width: 100%;
+    min-height: 41px;
+    background: rgb(17, 121, 17);
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    color: rgb(235, 223, 223);
+}
+
+.colors_circle {
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
 }
