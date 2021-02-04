@@ -7,7 +7,7 @@
     "build": "webpack",
     "start": "webpack-dev-server"
   },
-  "author": "HM Nayem",
+  "author": "",
   "license": "ISC",
   "devDependencies": {
     "babel-core": "^6.26.3",
