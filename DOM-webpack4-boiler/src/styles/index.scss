@@ -15,5 +15,13 @@ h1 {
 
 #addTasksButton {
     color: #000;
-    background: lightsalmon;;
+    background: lightsalmon;
+}
+
+.single_tasks {
+    min-height: 76px;
+    padding: 6px;
+    background: rgb(209, 66, 10);
+    position: relative;
+    margin-bottom: 11px;
 }
