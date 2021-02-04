@@ -22,7 +22,7 @@ window.onload = function() {
 function createNewTasks(parent, tasks) {
     // console.log(tasks)
     // creating single tasks using paragraph
-    let col = create({'class': 'col-sm-3'})
+    let col = create({'class': 'col-sm-3 d-flex'})
 
     let single_Tasks = create({'class': 'single_tasks d-flex'})
 
@@ -67,25 +67,66 @@ function createNewTasks(parent, tasks) {
 
 
 function createTasksController(parent) {
-    let Control_Panel = create({'class': 'tasks_controller_panel'})
+    let Control_Panel = create({'class': 'tasks_controller_panel d-flex align-items-center'})
     // trying to work with edit
     let Color_Pallete = createColorPallete(parent)
     Control_Panel.appendChild(Color_Pallete)
 
-
+    let editButton = createEditButton(parent)
+    Control_Panel.appendChild(editButton)
 
     return Control_Panel
 }
 
+function createEditButton(parent) {
+    let span = create('span', {'class': 'ml-auto mr-2'})
+    span.innerHTML = `<i class="fas fa-edit"></i>`
 
-function createColorPallete() {
-    const colors = ['skyblue', 'powderblue', 'salmon', 'white', 'grey', 'pink']
+    span.style.color = "#fff"
+
+    span.addEventListener('click', function() {
+        //alert('This is working')
+
+        let p = parent.querySelector('p')
+        let textArea = create('textarea', {'class': 'inner-textarea'})
+
+        textArea.style.width = parent.offsetWidth + 'px'
+        textArea.style.height = parent.offsetHeight + 'px'
+        textArea.innerHTML = p.innerHTML
+
+        textArea.addEventListener('keypress', function() {
+            if (event.keyCode === 13) {
+
+                event.stopPropagation()
+                if (this.value) {
+                    p.innerHTML = this.value
+                    parent.removeChild(this)
+            } else {
+
+                alert('Please Write something')
+            }
+           }
+        })
+
+        parent.appendChild(textArea)
+
+    })
+
+    return span
+}
+
+
+function createColorPallete(parent) {
+    const colors = ['brown', 'black', 'salmon', 'grey', 'purple']
 
        let colorDiv = create({'class': 'd-flex'})
 
        colors.forEach(color => {
-           let div = create({'class': 'colors_circle'})
+           let div = create({'class': 'colors_circle ml-1'})
            div.style.background = color
+           div.addEventListener('click', function() {
+               parent.style.background = color
+           })
            colorDiv.appendChild(div)
 
        })
