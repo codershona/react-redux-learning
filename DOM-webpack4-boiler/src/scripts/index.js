@@ -118,19 +118,15 @@ function createEditButton(parent) {
 
 function createColorPallete(parent) {
     const colors = ['brown', 'black', 'salmon', 'grey', 'purple']
-
-       let colorDiv = create({'class': 'd-flex'})
-
-       colors.forEach(color => {
+    let colorDiv = create({'class': 'd-flex'})
+        colors.forEach(color => {
            let div = create({'class': 'colors_circle ml-1'})
            div.style.background = color
            div.addEventListener('click', function() {
                parent.style.background = color
            })
            colorDiv.appendChild(div)
-
        })
-
        return colorDiv
 }
 
