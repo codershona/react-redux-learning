@@ -4,26 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Yusei+Magic&display=swap" rel="stylesheet">
     <!-- <link rel="stylesheet" href="./dist/style.css"> -->
-    <!-- <title>DOM learning</title> -->
     <title>Task Manager</title>
-    <!-- <style>
-        #para {
-            visibility: hidden;
-        }
-    </style> -->
 </head>
 <body>
-    <div class="container my-5 py-5">
+    <div class="container my-5 py-4">
 
-      <h1>Creating Assignments Tasks</h1>
+      <h1 class="display-4 text-center">Creating Assignments Tasks</h1>
+       <div class="row">
+           <div class="col mt-3 d-flex">
+               <input type="text" placeholder="Type your Task Name" id="tasksField" class="form-control">
+               <button class="btn ml-1" id="addTasksbtn">
+                <i class="fas fa-plus-circle"></i>
+               </button>
+           </div>
+       </div>
     </div>
 
 
 <!-- <script src="jquery-3.5.1.min.js"></script> -->
+<script src="https://kit.fontawesome.com/25d6482ba5.js" crossorigin="anonymous"></script>
 <!-- <script src="./dist/bundle.js"></script> -->
 </body>
 </html>
