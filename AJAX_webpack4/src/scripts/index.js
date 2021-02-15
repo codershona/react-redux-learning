@@ -11,16 +11,23 @@
 
 const URL = 'https://jsonplaceholder.typicode.com/users'
 
-const xhr = new XMLHttpRequest()
+let btn = document.querySelector('#loadingData')
+let p = document.querySelector('#output')
 
-xhr.onreadystatechange = () => {
-    console.log(xhr.response)
+btn.addEventListener('click', function() {
+    const xhr = new XMLHttpRequest()
 
-}
+   xhr.onreadystatechange = () => {
+    // console.log(xhr.response)
+    p.innerHTML = xhr.response
+ }
 
-xhr.open('GET', URL)
+  xhr.open('GET', URL)
 
-xhr.send()
+  xhr.send()
+})
+
+
 
 
 
