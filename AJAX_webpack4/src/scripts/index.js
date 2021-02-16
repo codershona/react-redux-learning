@@ -15,17 +15,31 @@ let btn = document.querySelector('#loadingData')
 let p = document.querySelector('#output')
 
 btn.addEventListener('click', function() {
-    const xhr = new XMLHttpRequest()
-
-   xhr.onreadystatechange = () => {
-    // console.log(xhr.response)
-    p.innerHTML = xhr.response
- }
-
-  xhr.open('GET', URL)
-
-  xhr.send()
+  fetch(URL)
+//  .then(res => console.log(res.json()))
+.then(res => res.json())
+// .then(data => console.log(data))
+.then(data => {
+  // p.innerHTML = `${p.innerHTML} <br> Name: `
+  data.forEach((user) => {
+    p.innerHTML = `${p.innerHTML} <br> Name: ${user.name}`;
+  })
 })
+  .catch(err => console.log(err));
+});
+
+// btn.addEventListener('click', function() {
+//     const xhr = new XMLHttpRequest()
+
+//    xhr.onreadystatechange = () => {
+//     // console.log(xhr.response)
+//     p.innerHTML = xhr.response
+//  }
+
+//   xhr.open('GET', URL)
+
+//   xhr.send()
+// })
 
 
 
