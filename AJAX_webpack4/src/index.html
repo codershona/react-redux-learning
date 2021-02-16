@@ -4,13 +4,57 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="scripts/index.css"> -->
     <title>Contact Phonebook</title>
 </head>
 <body>
     <div class="container">
-    <h1>Using Ajax PhoneBook</h1>
+    <!-- <h1>Using Ajax PhoneBook</h1>
     <button class="btn btn-danger" id="loadingData">Loading Data</button>
-    <p id="output"></p>
+    <p id="output"></p> -->
+
+    <h1 class="display-4 text-center">Ajax PhoneBook</h1>
+    <div class="row my-4">
+        <div class="col">
+            <input type="text" placeholder="Please type your Full Name" id="nameFields" class="form-control">
+        </div>
+        <div class="col">
+            <input type="text" placeholder="Please type your Correct Phone Number" id="phoneFields" class="form-control">
+        </div>
+        <div class="col">
+            <input type="email" placeholder="Please type your Email Address" id="emailFields" class="form-control">
+        </div>
+        <div class="col">
+            <button class="btn btn-danger">SAVED!</button>
+        </div>
+    </div>
+
+    <!-- table created -->
+
+        <table class="table table-dark table-striped">
+            <thead>
+              <tr>
+                <th>Full Name</th>
+                <th>Phone Number</th>
+                <th>Email</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>Julie</td>
+                <td>Julie</td>
+                <td>Julie</td>
+            <td>
+                <button class="btn btn-secondary">EDIT</button>
+                <button class="btn btn-warning">DELETE</button>
+            </td>
+
+            </tr>
+            </tbody>
+          </table>
+
 </div>
 </body>
 </html>

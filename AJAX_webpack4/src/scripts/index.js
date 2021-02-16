@@ -10,6 +10,7 @@
 // alert('Hello Catians')
 
 import axios from 'axios';
+import '../scripts/index.scss';
 
 const URL = 'https://jsonplaceholder.typicode.com/users'
 
