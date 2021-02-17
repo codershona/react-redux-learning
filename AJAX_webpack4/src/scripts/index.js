@@ -8,6 +8,7 @@ window.onload = function() {
 
     let tbody = document.querySelector('#tbody')
 
+    // getting data from server and filled the tables when page has been loaded
     axios.get(BASE_URL)
     .then(res => {
         res.data.forEach(contact => {
@@ -16,7 +17,42 @@ window.onload = function() {
     })
     .catch()
 
+    // I had been added the eventListener method to saved my contacts button
+
+    let saveContactBtn = document.querySelector('#saveContact')
+    saveContactBtn.addEventListener('click', function() {
+        createNewContact()
+    })
+
 }
+
+// Create New post method function to posts contacts details
+
+function createNewContact() {
+
+     let nameFields = document.querySelector("#nameFields")
+     let phoneFields = document.querySelector("#phoneFields")
+     let emailFields = document.querySelector("#emailFields")
+
+     let contact = {
+        name: nameFields.value,
+        phone: phoneFields.value,
+        email: emailFields.value
+    }
+    axios.post(BASE_URL, contact)
+     .then(res => {
+         let tbody = document.querySelector('#tbody')
+         createTDElement(res.data, tbody)
+
+         nameFields.value = ''
+         phoneFields.value = ''
+         emailFields.value = ''
+
+     })
+     .catch(err => console.log(err))
+}
+
+
 
 // Now I am creating TR element & appending for the parentElement
 
@@ -50,7 +86,8 @@ function createTDElement(contact, parentElement) {
     tdDeleteBtn.className = 'btn btn-warning'
     tdDeleteBtn.innerHTML = 'Delete'
     tdDeleteBtn.addEventListener('click', function() {
-        console.log('Please Delete the Button')
+        // console.log('Please Delete the Button')
+        console.log(contact)
     })
     tdActions.appendChild(tdDeleteBtn)
 
