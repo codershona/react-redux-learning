@@ -6,20 +6,22 @@
       "email": "barbiedoll@test.com"
     },
     {
-      "id": 2,
-      "name": "Pokemon",
-      "email": "pokemon@test.com"
+      "name": "Gony Mia",
+      "phone": "+236236814",
+      "email": "gony@test.com",
+      "id": 6
     },
     {
-      "id": 3,
-      "name": "Mia Doll",
-      "email": "miadoll@test.com"
+      "name": "Mena",
+      "phone": "+34623786234",
+      "email": "mena@test.com",
+      "id": 8
     },
     {
-      "name": "sdcdsv",
-      "phone": "vadfv",
-      "email": "sdvasdvs",
-      "id": 4
+      "name": "Hina",
+      "phone": "+32784632",
+      "email": "hina@email.com",
+      "id": 9
     }
   ]
 }
