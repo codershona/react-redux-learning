@@ -1,7 +1,6 @@
 import axios from 'axios';
 import '../scripts/index.scss';
 
-
 const BASE_URL = 'http://localhost:3000/contacts'
 
 window.onload = function() {
@@ -78,7 +77,42 @@ function createTDElement(contact, parentElement) {
     tdEditBtn.className = 'btn btn-secondary mx-1'
     tdEditBtn.innerHTML = 'Edit'
     tdEditBtn.addEventListener('click', function() {
-        console.log('Please Edit the Button')
+        // console.log('Please Edit the Button')
+
+        // let mainModal = $('#contactEditModal')
+        var mainModal = document.getElementById('#contactEditModal')
+        // mainModal.modal('toggle')
+
+        mainModal.toggle()
+        // window.$("#contactEditModal").modal("toggle");
+
+        let editName = document.querySelector('#edit-name')
+        let editPhone = document.querySelector('#edit-phone')
+        let editEmail = document.querySelector('#edit-email')
+
+        editName.value = contact.name
+        editPhone.value = contact.phone ? contact.phone : 'N/A'
+        editEmail.value = contact.email ? contact.email : ''
+
+        let updateBtn = document.querySelector('#updateContact')
+        updateBtn.addEventListener('click', function() {
+            axios.put(`${BASE_URL}/${contact.id}`, {
+                name: editName.value,
+                phone: editPhone.value,
+                email: editEmail.value
+            })
+            .then(res => {
+                tdName.innerHTML = res.data.name
+                tdPhone.innerHTML = res.data.phone
+
+                tdEmail.innerHTML = res.data.email
+
+                // mainModal.modal('hide')
+                mainModal.hide()
+            })
+            .catch(err => console.log(err))
+        })
+
     })
     tdActions.appendChild(tdEditBtn)
 
@@ -87,7 +121,13 @@ function createTDElement(contact, parentElement) {
     tdDeleteBtn.innerHTML = 'Delete'
     tdDeleteBtn.addEventListener('click', function() {
         // console.log('Please Delete the Button')
-        console.log(contact)
+        // console.log(contact)
+        axios.delete(`${BASE_URL}/${contact.id}`)
+          .then(res => {
+              parentElement.removeChild(TR)
+          })
+          .catch(err => console.log(err))
+
     })
     tdActions.appendChild(tdDeleteBtn)
 
