@@ -7,18 +7,18 @@ function saysName(name) {
 
 }
 var helloOne = saysName;
-// var funny = saysName();
-// var funny = saysName('Barbie Doll');
+var funny = saysName();
+var funny = saysName('Barbie Doll');
 
-// console.log(helloOne);
-// console.log(funny);
+console.log(helloOne);
+console.log(funny);
 
-// helloOne('Barbie Doll');
-// var result = helloOne('Barbie Doll');
+helloOne('Barbie Doll');
+var result = helloOne('Barbie Doll');
 
-// result;
+result;
 
-// console.log(helloOne('Barbie Doll'));
+console.log(helloOne('Barbie Doll'));
 
 
 var twoHello = helloOne;
