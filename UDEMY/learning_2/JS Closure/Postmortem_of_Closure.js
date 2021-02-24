@@ -2,15 +2,15 @@
 
 // method 1
 
-// var names = 'Barbie Doll';
+var names = 'Barbie Doll';
 
-// function hooksName() {
-//    console.log('This is important ' + names);
-// }
+function hooksName() {
+   console.log('This is important ' + names);
+}
 
-// // console.dir(hooksName);
+// console.dir(hooksName);
 
-// hooksName();
+hooksName();
 
 // method 2
 
