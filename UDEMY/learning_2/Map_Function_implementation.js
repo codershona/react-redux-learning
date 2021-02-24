@@ -36,6 +36,7 @@ function latestMap(arr, callback) {
 
 var mapArr = latestMap(arr, function(value) {
    return value + 5 - 2 * 3;
+   // return value * (5 - 2 * 3);
 });
 
 
