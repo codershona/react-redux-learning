@@ -122,9 +122,9 @@
 // let typesName : string = "TI"
 // let typesAge : number = 34
 // let isInterface : boolean = true
-let typesName = "TI"
-let typesAge = 34
-let isInterface = true
+// let typesName = "TI"
+// let typesAge = 34
+// let isInterface = true
 
 // function typeInference (message : string) : any {
 //     // return message
@@ -135,7 +135,7 @@ let isInterface = true
 // }
 
 // let outcome : string = typeInference("I am learning typescript")
-let outcome : {extra: string} = typeInference("I am learning typescript")
+// let outcome : {extra: string} = typeInference("I am learning typescript")
 // outcome = {} // we can assign object {} or, array [] also
 // outcome = ""  // if we use "" string or, 1 as a value it would show us error
 
@@ -154,7 +154,114 @@ let outcome : {extra: string} = typeInference("I am learning typescript")
 // typesAge = 2
 // isInterface = false
 
+// METHOD : TYPE CONVERSION :
 
 
+// console.clear()
+
+// Example 1:
+
+// interface Lessons {
+//     name: string, // there is name and age property
+//     age: number
+// }
+
+// interface Chapters {
+//     name: string,
+//     age: number,
+//     strikeRate: number,
+//     average: number,
+// }
+
+// const chapter : Chapters = {
+//     name: 'Conversions',
+//     age: 67,
+//     strikeRate: 99,
+//     average: 55
+
+// }
+
+// function shows(typeConversions: Lessons): void {
+//     console.log(`name : ${typeConversions.name}\nage : ${typeConversions.age}`)
+
+// }
+// // shows({name: "Learning Typescript", age: 77})
+// shows(chapter)
+
+// let numberOne = '2'
+// let numberTwo: boolean
+// let numberTwo = '8'
+// let outcomes = Number(numberOne) + Number(numberTwo)
+// console.log(outcomes)
+// RUN npm run dev in the console and check the result
+
+
+// numberOne = 400
+// numberTwo = "Type uses of Conversions"
+
+// Example 2:
+
+// let x : unknown = "Chapter Typescript"
+// let task = (x as string).length
+// let task = (<string>x).length
+// console.log(task)
+
+
+
+// METHODs : Understand Type Interface :
+
+console.clear()
+
+interface Method {
+    readonly chapterName: string;
+    chapterId: number;
+    chapterQuiz: string;
+    show(): void;
+    display: () => void;
+}
+
+const tasks: Method = {
+   chapterName: 'Uses of Interfaces',
+   chapterId: 3344,
+   chapterQuiz: "10",
+   show(): void {
+       console.log(`chapterName: ${this.chapterName}\n chapterId: ${this.chapterId}\n chapterQuiz: ${this.chapterQuiz}`);
+   },
+
+   display: () : void => {
+       console.log('This is interfaced')
+   }
+}
+
+// tasks.show();
+tasks.display();
+
+// tasks.chapterName = "Types 3"
+
+// console.log(tasks.show())
+
+// const labTasks = {
+//     chapterName: 'UNIT NINE',
+//     chapterId: 9977,
+//     chapterReview: 20,
+//     averageMarks: 64
+// }
+
+
+
+
+
+// function displayType(method: Method): void {
+//    console.log(method.chapterName)
+//    if(method.chapterId) {
+//     console.log(`chapterName: ${method.chapterName} chapterId: ${method.chapterId} chapterQuiz: ${method.chapterId}`)
+//    }
+// //    console.log(method.chapterId)
+
+
+// }
+
+// displayType(tasks)
+// displayType(labTasks)
 
 
