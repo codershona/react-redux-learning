@@ -210,31 +210,31 @@
 
 // METHODs : Understand Type Interface :
 
-console.clear()
+// console.clear()
 
-interface Method {
-    readonly chapterName: string;
-    chapterId: number;
-    chapterQuiz: string;
-    show(): void;
-    display: () => void;
-}
+// interface Method {
+//     readonly chapterName: string;
+//     chapterId: number;
+//     chapterQuiz: string;
+//     show(): void;
+//     display: () => void;
+// }
 
-const tasks: Method = {
-   chapterName: 'Uses of Interfaces',
-   chapterId: 3344,
-   chapterQuiz: "10",
-   show(): void {
-       console.log(`chapterName: ${this.chapterName}\n chapterId: ${this.chapterId}\n chapterQuiz: ${this.chapterQuiz}`);
-   },
+// const tasks: Method = {
+//    chapterName: 'Uses of Interfaces',
+//    chapterId: 3344,
+//    chapterQuiz: "10",
+//    show(): void {
+//        console.log(`chapterName: ${this.chapterName}\n chapterId: ${this.chapterId}\n chapterQuiz: ${this.chapterQuiz}`);
+//    },
 
-   display: () : void => {
-       console.log('This is interfaced')
-   }
-}
+//    display: () : void => {
+//        console.log('This is interfaced')
+//    }
+// }
 
 // tasks.show();
-tasks.display();
+// tasks.display();
 
 // tasks.chapterName = "Types 3"
 
@@ -264,4 +264,43 @@ tasks.display();
 // displayType(tasks)
 // displayType(labTasks)
 
+
+// METHODs : Typescript Functions  :
+
+console.clear()
+
+// this is optional parameter
+
+// type logicType = (first: string, second: string, third?: number) => string
+interface doAssignment {
+    name: string,
+    age?: number,
+    member: string[],
+
+}
+
+
+// type logicType = (first: string, second: string, third?: number, ...extraInformation: string []) => string
+type logicType = (first: string, second: string, third?: number, ...extraInformation: string []) => doAssignment
+
+// let logic = function(intro: string, title: string, age?: number): string {
+// let logic:(first: string, second: string, third: number) => string = function(intro, title, age)
+// let logic: logicType = function(intro, title, age = 0)
+let logic: logicType = function(intro: string, title: string, age = 0, ...member)
+    {
+    // return intro + title + (age? age: " ")
+    // let concat = extraInformation.join(' ');
+    // return intro + title + age + concat
+    return {
+        name: intro + ' ' + title,
+        age: age,
+        member: member
+    }
+
+}
+// let results = logic("This is ", 89, "Tile Tags ")
+// let results = logic("This is ", undefined, "Title Tags ", "PLATFORM")
+let results = logic("This is ", "Title Tags ", 77, " PLATFORM", "Three four", "Hello!!")
+
+console.log(results)
 
