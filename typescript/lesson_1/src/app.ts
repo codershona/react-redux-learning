@@ -33,19 +33,19 @@
 
 // uses of array
 
-console.clear();
+// console.clear();
 
-interface Person {
-    fullName: string;
-    ages: number;
-    emailaddress: string[];// uses of string
-    isDemo: boolean; // uses of boolean
-    // personNotes: any; // uses of any
-    personNotes: unknown; // uses of unknown data type
-    // error: () => void; // uses of void
-    // error: () => never; // uses of never
+// interface Person {
+//     fullName: string;
+//     ages: number;
+//     emailaddress: string[];// uses of string
+//     isDemo: boolean; // uses of boolean
+//     // personNotes: any; // uses of any
+//     personNotes: unknown; // uses of unknown data type
+//     // error: () => void; // uses of void
+//     // error: () => never; // uses of never
 
-}
+// }
 
 // function err() : never {
 //    while(true) {
@@ -53,12 +53,12 @@ interface Person {
 //    }
 // }
 
-function addSomething(data: Person) : Person | undefined | null {
+// function addSomething(data: Person) : Person | undefined | null {
 
-    data.fullName = "Gony Cha"
- return data
+//     data.fullName = "Gony Cha"
+//  return data
 
-}
+// }
 
 // function addEmails(data: Person, emailad: string) : void {
 //   data.emailaddress.push(emailad);
@@ -80,24 +80,24 @@ function addSomething(data: Person) : Person | undefined | null {
 //    console.log(status);
 // }
 
-const person : Person = {
+// const person : Person = {
 
-    fullName: 'JENNY PENNY',
-    ages: 34,  // uses of number
-    emailaddress: ["coding", "working"], // uses of string
-    isDemo: true ,  // uses of boolean
-    // personNotes: undefined // uses of any(undefined/ null/ string)--> we can keep any type of data
-    personNotes: "" // uses of unknown data type (we can provide ---> {} / []/ 2/ "")
-    // error: err // uses fo never
+//     fullName: 'JENNY PENNY',
+//     ages: 34,  // uses of number
+//     emailaddress: ["coding", "working"], // uses of string
+//     isDemo: true ,  // uses of boolean
+//     // personNotes: undefined // uses of any(undefined/ null/ string)--> we can keep any type of data
+//     personNotes: "" // uses of unknown data type (we can provide ---> {} / []/ 2/ "")
+//     // error: err // uses fo never
 
-}
+// }
 
 // console.log(addSomething(person));
-let res = addSomething(person)
+// let res = addSomething(person)
 // res.ages = 89
-if(typeof res !== 'undefined' && res !== null) {
-    res.ages = 89
-}
+// if(typeof res !== 'undefined' && res !== null) {
+//     res.ages = 89
+// }
 
 // addEmails(person, "dancing");
 // changeDemoStatus(person.isDemo);
@@ -115,5 +115,46 @@ if(typeof res !== 'undefined' && res !== null) {
 // person.ages = anything
 // person.personNotes = unknownTip
 // console.log(person);
+
+
+// Method : Type Interface
+
+// let typesName : string = "TI"
+// let typesAge : number = 34
+// let isInterface : boolean = true
+let typesName = "TI"
+let typesAge = 34
+let isInterface = true
+
+// function typeInference (message : string) : any {
+//     // return message
+//     return {
+//         extra : message
+//     }
+
+// }
+
+// let outcome : string = typeInference("I am learning typescript")
+let outcome : {extra: string} = typeInference("I am learning typescript")
+// outcome = {} // we can assign object {} or, array [] also
+// outcome = ""  // if we use "" string or, 1 as a value it would show us error
+
+
+
+// let learningInterface : unknown = JSON.parse('"name" : "TI", "age" : 34')
+// let learningInterface : {names : string, age : number} = JSON.parse('"name" : "TI", "age" : 34')
+// learningInterface = {} // we can assign string also "".
+// learningInterface = []
+// let achievements : (string | number | boolean)[] = [2, "coding", 6]
+// achievements.push(true)
+// achievements.push()
+// achievements.push({}) // will show the error
+
+// typesName = "1"
+// typesAge = 2
+// isInterface = false
+
+
+
 
 

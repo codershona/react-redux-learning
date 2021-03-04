@@ -1,6 +1,6 @@
 ## Basic Topics:
 
-Basic types;
+Basic types(string/ number/ array/ boolean/ any/ unknown/ void/ null/ undefined/ never/ object/ tuple/ enum/ symbol);
 Type Inference;
 Type Conversion;
 Type Assertion;
