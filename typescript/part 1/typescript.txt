@@ -37,3 +37,16 @@ Type compatibility;
 * Install this : npm i -D typescript nodemon ts-node
 * Run this into the terminal : tsc app.ts
 * npx tsc --init
+
+
+# Typescript Common Example
+
+```
+   function addition(x: number, y: number) {
+       return x + y;
+   }
+   const results = addition('6', '7');
+   console.log(results);
+```
+*
+
