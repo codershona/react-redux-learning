@@ -267,40 +267,169 @@
 
 // METHODs : Typescript Functions  :
 
-console.clear()
+// console.clear()
 
 // this is optional parameter
 
 // type logicType = (first: string, second: string, third?: number) => string
-interface doAssignment {
-    name: string,
-    age?: number,
-    member: string[],
+// interface doAssignment {
+//     name: string,
+//     age?: number,
+//     member: string[],
 
-}
+// }
 
 
 // type logicType = (first: string, second: string, third?: number, ...extraInformation: string []) => string
-type logicType = (first: string, second: string, third?: number, ...extraInformation: string []) => doAssignment
+// type logicType = (first: string, second: string, third?: number, ...extraInformation: string []) => doAssignment
 
 // let logic = function(intro: string, title: string, age?: number): string {
 // let logic:(first: string, second: string, third: number) => string = function(intro, title, age)
 // let logic: logicType = function(intro, title, age = 0)
-let logic: logicType = function(intro: string, title: string, age = 0, ...member)
-    {
-    // return intro + title + (age? age: " ")
-    // let concat = extraInformation.join(' ');
-    // return intro + title + age + concat
-    return {
-        name: intro + ' ' + title,
-        age: age,
-        member: member
+// let logic: logicType = function(intro: string, title: string, age = 0, ...member)
+//     {
+//     // return intro + title + (age? age: " ")
+//     // let concat = extraInformation.join(' ');
+//     // return intro + title + age + concat
+//     return {
+//         name: intro + ' ' + title,
+//         age: age,
+//         member: member
+//     }
+
+// }
+// let results = logic("This is ", 89, "Tile Tags ")
+// let results = logic("This is ", undefined, "Title Tags ", "PLATFORM")
+// let results = logic("This is ", "Title Tags ", 77, " PLATFORM", "Three four", "Hello!!")
+
+// console.log(results)
+
+
+
+// Method : Typescript Type aliases
+
+// console.clear()
+
+// type objectOne = {
+//     objectname: string;
+//     objectid: number;
+// }
+
+// type objectTwo = {
+//     objectname: string;
+//     objectid: number;
+// }
+
+// type myType = string | boolean | objectOne | objectTwo
+// type MyFunType = (value: myType) => myType[]
+
+
+// let aliasesType: MyFunType = (value) => {
+//  arrayOne.push(value)
+//  return arrayOne
+
+// }
+// let arrayOne: myType[] = []
+
+// type Marks = "Fail" | "Pass" | "Retake"
+
+// function allResults(num: number): Marks {
+//     return "Retake"
+// }
+
+
+
+// Typescript Class & Inheritance
+
+
+// method 1
+
+console.clear()
+
+class Human {
+//    public humanName: string;
+//     public humanAge: number;
+    private static count = 0;
+
+    constructor(public humanName: string, public humanAge: number) {
+    //  this.humanName = humanName
+    //  this.humanAge = humanAge
+     Human.count++
+    }
+
+    // public sleep = (): void => {
+    //     this.talk();
+    // }
+
+    public getCount(): number {
+        return Human.count
+    }
+    // public getCount()
+    // static getCount()
+
+    protected sleep = (): void => {
+        this.talk();
+    }
+
+    private talk = (): void => {
+        console.log(`${this.humanName} is Talking`)
     }
 
 }
-// let results = logic("This is ", 89, "Tile Tags ")
-// let results = logic("This is ", undefined, "Title Tags ", "PLATFORM")
-let results = logic("This is ", "Title Tags ", 77, " PLATFORM", "Three four", "Hello!!")
 
-console.log(results)
+class Person extends Human implements PersonInterface{
+    // humanGender: string
+
+    constructor(public humanGender: string, humanName: string, humanAge: number) {
+      super(humanName, humanAge)
+        // this.humanGender = humanGender
+
+    }
+
+    walk = (): void => {
+        this.sleep();
+        console.log(`${this.humanName} is Walking`)
+    }
+}
+
+let personOne = new Person("Female", "Jenny Penny",77);
+let personTwo = new Person("Male", "Gony Chaca",45);
+
+// interface PersonInterface extends Person {
+//     extra: string;
+
+// }
+
+interface PersonInterface {
+   walk: () => void;
+
+}
+
+// function chapter(x: Person): Person {
+//     x.humanName = 'Anonymous'
+//     return x
+// }
+
+// function chapter(y: Person): Human {
+    function chapter(y: Human): Human {
+    // x.humanName = 'Anonymous'
+    // y.getCount()
+    return y
+}
+
+let personThree = chapter(personOne)
+console.log(personThree.humanName)
+
+
+// personOne.sleep()
+// personOne.walk()
+// personOne.talk()
+
+// console.log(personOne.getCount())
+// console.log(Human.count)
+// console.log(personOne.humanName);
+
+// let humanOne = new Human('Turkish Boy', 34);
+// humanOne.talk()
+
 
