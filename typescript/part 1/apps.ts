@@ -3,12 +3,12 @@
 // Run this into the terminal : tsc app.ts
 
 // Udemy Practices
-
+// compile the code using : tsc apps.ts in the console
 
 // Working with types & Core types or diving deeper
 // Method 1
 
-console.clear();
+// console.clear();
 
 
 const numbers1Input = document.getElementById('numbers1') as HTMLInputElement;
@@ -21,15 +21,29 @@ function addition(x : number, y : number) {
     return x + y;
 }
 
+type PrintModes = 'console' | 'alert';
 
+enum OutputModes { CONSOLE, ALERT }; // uses of enum
 
 // function printingMyResult(outcome: any) {
-    function printingMyResult(outcome) {
-    console.log(outcome);
+    // function printingMyResult(outcome, printModes: string) {
+        // function printingMyResult(outcome: string | number, printModes: PrintModes) {
+     function printingMyResult(outcome: string | number, printModes: OutputModes) {
+    // if(printModes === 'console') {
+        if(printModes === OutputModes.CONSOLE) {
+        console.log(outcome);
+    // } else if (printModes === 'alert') {
+    } else if (printModes === OutputModes.ALERT) {
+    alert(outcome);
+    }
+
+        // console.log(outcome);
     //return undefined;
 }
 
-let outcomes: { res: number, print: () => void }[] = [];
+type CalculationResult = { res: number, print: () => void }[];
+
+const outcomes: CalculationResult = [];
 const names = ['Jenny'];
 
 buttonElement.addEventListener('click', () => {
@@ -47,7 +61,12 @@ buttonElement.addEventListener('click', () => {
     // outcomes.push(6);
     // printingMyResult(outcomeContainer.res);
     // printingMyResult(outcomes);
-    outcomes[0].print();
+    // outcomes[0].print();
+    // printingMyResult(outcome, 'console');
+    // printingMyResult(outcome, 'alert');
+    printingMyResult(outcome, OutputModes.CONSOLE);
+    printingMyResult(outcome, OutputModes.ALERT);
+    // printingMyResult(outcome, 'window');
 });
 
 // const outcome = addition(6, 7);
