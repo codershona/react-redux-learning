@@ -10,6 +10,52 @@
 
 // console.clear();
 
+// class Users {
+//   name: string;
+//   private age: number;
+
+//     constructor(name: string, age: number) {
+//         this.name = name;
+//         this.age = age;
+//     }
+
+// }  // uses of class & inheritance
+
+
+interface Greeting {
+    name: string;
+}
+
+interface PrintMethod {
+    print(): void;
+}
+
+// class Users {
+    class Users implements Greeting, PrintMethod {
+
+
+    //   constructor(public name: string, private age: number) {
+        constructor(public name: string, private age: number) {}
+        /*   this.name = name;
+         this.age = age; */
+      print() {
+          console.log(this.name);
+      }
+
+}
+
+
+
+class AdminDashBoard extends Users {
+    constructor(name: string, age: number, private permissions: string[]) {
+        super(name, age);
+    }
+}
+
+const users = new Users('Penny', 33);
+console.log(users.name);
+
+
 
 const numbers1Input = document.getElementById('numbers1') as HTMLInputElement;
 // const numbers1Input = <HTMLInputElement>document.getElementById('numbers1');
@@ -41,7 +87,24 @@ enum OutputModes { CONSOLE, ALERT }; // uses of enum
     //return undefined;
 }
 
-type CalculationResult = { res: number, print: () => void }[];
+interface CalculationContainers {
+    res: number;
+    // print(): void;
+    print: () => void;
+}
+
+
+// type CalculationContainers = {
+//     res: number;
+//     // print(): void;
+//     print: () => void;
+// }
+
+
+
+// type CalculationResult = { res: number, print: () => void }[];
+type CalculationResult = CalculationContainers[];
+
 
 const outcomes: CalculationResult = [];
 const names = ['Jenny'];
