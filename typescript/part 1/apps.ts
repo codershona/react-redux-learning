@@ -105,8 +105,10 @@ interface CalculationContainers {
 // type CalculationResult = { res: number, print: () => void }[];
 type CalculationResult = CalculationContainers[];
 
+// fetch('')
 
-const outcomes: CalculationResult = [];
+// const outcomes: CalculationResult = [];
+const outcomes: Array<CalculationContainers> = [];
 const names = ['Jenny'];
 
 buttonElement.addEventListener('click', () => {
@@ -139,7 +141,13 @@ buttonElement.addEventListener('click', () => {
 
 // console.log(outcome);
 
+// function logAndecho(value: any) {
+    function logAndecho<T>(value: T) {
+    console.log(value);
+    return value;
+}
 
+logAndecho<string>('Hey Typescript').split(' ');
 
 
 

@@ -1,11 +1,44 @@
 // let message = "This is Typescript"
 // console.log(message);
 // Run this into the terminal : tsc app.ts
-// Udemy Practices
-// compile the code using : tsc apps.ts in the console
-// Working with types & Core types or diving deeper
-// Method 1
-// console.clear();
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+// class Users {
+var Users = /** @class */ (function () {
+    //   constructor(public name: string, private age: number) {
+    function Users(name, age) {
+        this.name = name;
+        this.age = age;
+    }
+    /*   this.name = name;
+     this.age = age; */
+    Users.prototype.print = function () {
+        console.log(this.name);
+    };
+    return Users;
+}());
+var AdminDashBoard = /** @class */ (function (_super) {
+    __extends(AdminDashBoard, _super);
+    function AdminDashBoard(name, age, permissions) {
+        var _this = _super.call(this, name, age) || this;
+        _this.permissions = permissions;
+        return _this;
+    }
+    return AdminDashBoard;
+}(Users));
+var users = new Users('Penny', 33);
+console.log(users.name);
 var numbers1Input = document.getElementById('numbers1');
 // const numbers1Input = <HTMLInputElement>document.getElementById('numbers1');
 var numbers2Input = document.getElementById('numbers2');
@@ -34,6 +67,8 @@ function printingMyResult(outcome, printModes) {
     // console.log(outcome);
     //return undefined;
 }
+// fetch('')
+// const outcomes: CalculationResult = [];
 var outcomes = [];
 var names = ['Jenny'];
 buttonElement.addEventListener('click', function () {
@@ -62,3 +97,9 @@ buttonElement.addEventListener('click', function () {
 // let isDoing = false;
 // printingMyResult(outcome);
 // console.log(outcome);
+// function logAndecho(value: any) {
+function logAndecho(value) {
+    console.log(value);
+    return value;
+}
+logAndecho('Hey Typescript').split(' ');
