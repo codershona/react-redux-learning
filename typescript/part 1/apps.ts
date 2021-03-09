@@ -12,6 +12,7 @@ console.clear();
 
 
 const numbers1Input = document.getElementById('numbers1') as HTMLInputElement;
+// const numbers1Input = <HTMLInputElement>document.getElementById('numbers1');
 const numbers2Input = <HTMLInputElement>document.getElementById('numbers2');
 
 const buttonElement = document.querySelector('button');
@@ -28,14 +29,25 @@ function addition(x : number, y : number) {
     //return undefined;
 }
 
+let outcomes: { res: number, print: () => void }[] = [];
+const names = ['Jenny'];
+
 buttonElement.addEventListener('click', () => {
     const numbers1 = +numbers1Input.value;
     const numbers2 = +numbers2Input.value;
     const outcome = addition(numbers1, numbers2);
-    const outcomeContainer: object = {
-        res: outcome
+    // const outcomeContainer: { res: number } = {
+        const outcomeContainer = {
+        res: outcome,
+        print() {
+            console.log(this.res);
+        }
     };
-    printingMyResult(outcomeContainer);
+    outcomes.push(outcomeContainer);
+    // outcomes.push(6);
+    // printingMyResult(outcomeContainer.res);
+    // printingMyResult(outcomes);
+    outcomes[0].print();
 });
 
 // const outcome = addition(6, 7);
