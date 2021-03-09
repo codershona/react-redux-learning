@@ -37,6 +37,10 @@ Type compatibility;
 * Install this : npm i -D typescript nodemon ts-node
 * Run this into the terminal : tsc app.ts
 * npx tsc --init
+* tsc apps.ts -w
+* tsc --init
+* RUN tsc -w/ tsc to compile all the files
+******
 
 
 # Typescript Common Example

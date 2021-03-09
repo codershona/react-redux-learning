@@ -1,3 +1,4 @@
+"use strict";
 // let message = "This is Typescript"
 // console.log(message);
 // Run this into the terminal : tsc app.ts
@@ -39,10 +40,14 @@ var AdminDashBoard = /** @class */ (function (_super) {
 }(Users));
 var users = new Users('Penny', 33);
 console.log(users.name);
+// const numbers1Input = document.getElementById('numbers1') as HTMLInputElement;
 var numbers1Input = document.getElementById('numbers1');
 // const numbers1Input = <HTMLInputElement>document.getElementById('numbers1');
 var numbers2Input = document.getElementById('numbers2');
 var buttonElement = document.querySelector('button');
+// if (buttonElement) {
+//     buttonElement
+// }
 function addition(x, y) {
     return x + y;
 }

@@ -57,11 +57,17 @@ console.log(users.name);
 
 
 
+// const numbers1Input = document.getElementById('numbers1') as HTMLInputElement;
+
 const numbers1Input = document.getElementById('numbers1') as HTMLInputElement;
 // const numbers1Input = <HTMLInputElement>document.getElementById('numbers1');
 const numbers2Input = <HTMLInputElement>document.getElementById('numbers2');
 
-const buttonElement = document.querySelector('button');
+const buttonElement = document.querySelector('button')!;
+
+// if (buttonElement) {
+//     buttonElement
+// }
 
 function addition(x : number, y : number) {
     return x + y;
