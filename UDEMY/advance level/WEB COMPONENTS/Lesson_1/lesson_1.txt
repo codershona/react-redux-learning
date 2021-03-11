@@ -4,4 +4,14 @@ What are web components?
 
 "CUSTOM HTML ELEMENT"
 
+### Web Component LifeCycles
+
+```
+  * Element created + Basic Initializations ----> constructor()
+  * Element attached to DOM + DOM Initializations ---> connectedCallback()
+  * Element detached from DOM + Cleanup work =====> disconnectedCallback()
+  * Observed Attribute Updated + Update Data & DOM =====> attributeChangedCallback()
+  
+
+```
 
