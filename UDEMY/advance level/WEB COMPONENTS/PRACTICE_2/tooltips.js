@@ -30,7 +30,12 @@ class Tooltips extends HTMLElement {
      this._toolTipContainers = document.createElement('div');
     //  this._toolTipContainers.textContent = 'I am writing ToolTip Texts';
     this._toolTipContainers.textContent = this._toolTipText;
-     this.appendChild(this._toolTipContainers);
+    this._toolTipContainers.style.backgroundColor = 'lightblue';
+    this._toolTipContainers.style.color = 'black';
+    this._toolTipContainers.style.position = 'absolute';
+    this._toolTipContainers.style.zIndex = '10';
+    this.appendChild(this._toolTipContainers);
+    this.style.position = "relative";
 
     }
 
