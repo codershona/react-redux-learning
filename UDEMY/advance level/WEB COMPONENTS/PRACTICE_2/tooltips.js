@@ -20,6 +20,15 @@ class Tooltips extends HTMLElement {
        // this.shadowRoot.appendChild(template.content.cloneNode(true));
 
        this.shadowRoot.innerHTML = `
+       <style>
+        div {
+            background-color: lightblue;
+            color: black;
+            position: absolute;
+            z-index: 10;
+
+        }
+       </style>
        <slot>SOME DEFAULT</slot>
        <span> (?) </span>
 
@@ -47,10 +56,10 @@ class Tooltips extends HTMLElement {
      this._toolTipContainers = document.createElement('div');
     //  this._toolTipContainers.textContent = 'I am writing ToolTip Texts';
     this._toolTipContainers.textContent = this._toolTipText;
-    this._toolTipContainers.style.backgroundColor = 'lightblue';
-    this._toolTipContainers.style.color = 'black';
-    this._toolTipContainers.style.position = 'absolute';
-    this._toolTipContainers.style.zIndex = '10';
+    // this._toolTipContainers.style.backgroundColor = 'lightblue';
+    // this._toolTipContainers.style.color = 'black';
+    // this._toolTipContainers.style.position = 'absolute';
+    // this._toolTipContainers.style.zIndex = '10';
     this.shadowRoot.appendChild(this._toolTipContainers);
     this.style.position = "relative";
 
