@@ -15,7 +15,7 @@
 </head>
 <body>
  <template id="tooltips-template">
-  <span> (?) </span>
+  <slot>SOME DEFAULT</slot><span> (?) </span>
  </template>
 
   <p>
@@ -25,8 +25,10 @@
   </wc-tooltips>
     Awesome!
 </p>
-  <wc-tooltips>
+  <!-- <wc-tooltips>
     Events Listener for Components
+  </wc-tooltips> -->
+  <wc-tooltips>
   </wc-tooltips>
 </body>
 </html>
