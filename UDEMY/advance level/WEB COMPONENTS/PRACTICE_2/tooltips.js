@@ -14,6 +14,11 @@ class Tooltips extends HTMLElement {
        this.attachShadow({
            mode: 'open'
        });
+
+       const template = document.querySelector('#tooltips-template');
+
+       this.shadowRoot.appendChild(template.content.cloneNode(true));
+
 }
 
   // using connected Call back () method so that we could access in the DOM
@@ -21,8 +26,10 @@ class Tooltips extends HTMLElement {
         if (this.hasAttribute('text')) {
             this._toolTipText = this.getAttribute('text');
         }
-        const toolTipIcons = document.createElement('span');
-        toolTipIcons.textContent = ' (?)';
+        // const toolTipIcons = document.createElement('span');
+        // toolTipIcons.textContent = ' (?)';
+        const toolTipIcons = this.shadowRoot.querySelector('span');
+
         toolTipIcons.addEventListener('mouseenter', this._showTooltips.bind(this));
         toolTipIcons.addEventListener('mouseleave', this._hideTooltips.bind(this));
         this.shadowRoot.appendChild(toolTipIcons);
@@ -45,7 +52,7 @@ class Tooltips extends HTMLElement {
     // hiding tooltips and it will hide the data
      _hideTooltips() {
         this.shadowRoot.removeChild(this._toolTipContainers);
-        
+
      }
 
 }

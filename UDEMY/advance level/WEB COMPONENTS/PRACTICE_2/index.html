@@ -14,10 +14,17 @@
   <script src="tooltips.js"></script>
 </head>
 <body>
-  <p><wc-tooltips text="This is Set for the Standards">
+ <template id="tooltips-template">
+  <span> (?) </span>
+ </template>
+
+  <p>
+    <wc-tooltips text="This is Set for the Standards">
     <!-- <h1 slot="title">The ToolTIPS Title</h1> -->
     Web Components App
-  </wc-tooltips> Awesome! </p>
+  </wc-tooltips>
+    Awesome!
+</p>
   <wc-tooltips>
     Events Listener for Components
   </wc-tooltips>
