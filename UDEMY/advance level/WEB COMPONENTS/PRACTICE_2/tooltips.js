@@ -15,9 +15,16 @@ class Tooltips extends HTMLElement {
            mode: 'open'
        });
 
-       const template = document.querySelector('#tooltips-template');
+       // const template = document.querySelector('#tooltips-template');
 
-       this.shadowRoot.appendChild(template.content.cloneNode(true));
+       // this.shadowRoot.appendChild(template.content.cloneNode(true));
+
+       this.shadowRoot.innerHTML = `
+       <slot>SOME DEFAULT</slot>
+       <span> (?) </span>
+
+       `;
+
 
 }
 
