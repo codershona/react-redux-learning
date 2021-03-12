@@ -11,7 +11,10 @@ class Tooltips extends HTMLElement {
         this._toolTipText = 'This was a dummy TEXTS';
 
         // this._toolTipText = this.getAttribute('text');
-    }
+       this.attachShadow({
+           mode: 'open'
+       });
+}
 
   // using connected Call back () method so that we could access in the DOM
     connectedCallback() {
@@ -22,7 +25,7 @@ class Tooltips extends HTMLElement {
         toolTipIcons.textContent = ' (?)';
         toolTipIcons.addEventListener('mouseenter', this._showTooltips.bind(this));
         toolTipIcons.addEventListener('mouseleave', this._hideTooltips.bind(this));
-        this.appendChild(toolTipIcons);
+        this.shadowRoot.appendChild(toolTipIcons);
 
     }
 
@@ -34,16 +37,15 @@ class Tooltips extends HTMLElement {
     this._toolTipContainers.style.color = 'black';
     this._toolTipContainers.style.position = 'absolute';
     this._toolTipContainers.style.zIndex = '10';
-    this.appendChild(this._toolTipContainers);
+    this.shadowRoot.appendChild(this._toolTipContainers);
     this.style.position = "relative";
 
     }
 
     // hiding tooltips and it will hide the data
      _hideTooltips() {
-        this.removeChild(this._toolTipContainers);
-
-
+        this.shadowRoot.removeChild(this._toolTipContainers);
+        
      }
 
 }
