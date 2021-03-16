@@ -1,12 +1,8 @@
 class Tooltips extends HTMLElement {
     constructor() {
         super();
-        // const toolTipIcons =  document.createElement('span');
-        // toolTipIcons.textContent = ' (?)';
-        // this.appendChild(toolTipIcons);
-        // console.log("Learning web components");
-
         this._toolTipContainers;
+        this._toolTipIcon;
 
         this._toolTipText = 'This was a dummy TEXTS';
 
@@ -61,6 +57,7 @@ class Tooltips extends HTMLElement {
         }
 
        </style>
+
        <slot> SOME DEFAULT </slot>
        <span class="icon"> ? </span>
 
@@ -72,11 +69,11 @@ class Tooltips extends HTMLElement {
         if (this.hasAttribute('text')) {
             this._toolTipText = this.getAttribute('text');
         }
-        const toolTipIcons = this.shadowRoot.querySelector('span');
+        this._toolTipIcon = this.shadowRoot.querySelector('span');
 
-        toolTipIcons.addEventListener('mouseenter', this._showTooltips.bind(this));
-        toolTipIcons.addEventListener('mouseleave', this._hideTooltips.bind(this));
-        this.shadowRoot.appendChild(toolTipIcons);
+        this._toolTipIcon.addEventListener('mouseenter', this._showTooltips.bind(this));
+        this._toolTipIcon.addEventListener('mouseleave', this._hideTooltips.bind(this));
+        // this.shadowRoot.appendChild(toolTipIcons);
         this.style.position = "relative";
     }
 
@@ -94,6 +91,13 @@ class Tooltips extends HTMLElement {
 
     static get observedAttributes() {
         return ['text'];
+    }
+
+    disconnectedCallback() {
+       // console.log('Disconnected!!!');
+       this._toolTipIcon.removeEventListener('mouseenter', this._showTooltips);
+       this._toolTipIcon.removeEventListener('mouseleave', this._hideTooltips);
+
     }
 
     _showTooltips() {
