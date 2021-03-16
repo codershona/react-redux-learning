@@ -28,6 +28,11 @@ class Tooltips extends HTMLElement {
 
         }
 
+        :host {
+            background: #ccc;
+
+        }
+
         .highlight {
             background-color: red;
 
@@ -38,9 +43,18 @@ class Tooltips extends HTMLElement {
         border-bottom: 1px dotted blue;
         }
 
+        .icon {
+            background: black;
+            color: white;
+            padding: 0.14rem 0.4rem;
+            text-align: center;
+            border-radius: 50%;
+
+        }
+
        </style>
        <slot>SOME DEFAULT</slot>
-       <span> (?) </span>
+       <span class="icon"> ? </span>
 
        `;
 
