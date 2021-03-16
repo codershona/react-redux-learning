@@ -29,7 +29,7 @@ class Tooltips extends HTMLElement {
         }
 
         :host(.important) {
-            background: #ccc;
+            background: var(--color-primary, #ccc);
 
         }
 
