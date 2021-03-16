@@ -30,10 +30,13 @@ class Tooltips extends HTMLElement {
 
         .highlight {
             background-color: red;
-            
+
 
         }
 
+        ::slotted(.highlight) {
+        border-bottom: 1px dotted blue;
+        }
 
        </style>
        <slot>SOME DEFAULT</slot>
