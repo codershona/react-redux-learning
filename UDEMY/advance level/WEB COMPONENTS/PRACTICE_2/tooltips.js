@@ -30,6 +30,10 @@ class Tooltips extends HTMLElement {
 
         }
 
+        :host {
+            position: relative;
+        }
+
         :host(.important) {
             background: var(--color-primary, #ccc);
             padding: 0.16rem;
@@ -74,7 +78,7 @@ class Tooltips extends HTMLElement {
         this._toolTipIcon.addEventListener('mouseenter', this._showTooltips.bind(this));
         this._toolTipIcon.addEventListener('mouseleave', this._hideTooltips.bind(this));
         // this.shadowRoot.appendChild(toolTipIcons);
-        this.style.position = "relative";
+        // this.style.position = "relative";
         this._render();
     }
 
