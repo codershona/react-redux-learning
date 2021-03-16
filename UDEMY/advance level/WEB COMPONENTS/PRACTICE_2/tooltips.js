@@ -21,16 +21,22 @@ class Tooltips extends HTMLElement {
        this.shadowRoot.innerHTML = `
        <style>
         div {
+            font-weight: normal;
             background-color: lightblue;
             color: black;
             position: absolute;
+            top: 1.7rem;
+            left: 0.76rem;
             z-index: 10;
+            padding: 0.14rem;
+            border-radius: 2.8px;
+            box-shadow: 1px 1px 6px rgba(0,0,0,0.26);
 
         }
 
         :host(.important) {
             background: var(--color-primary, #ccc);
-
+            padding: 0.16rem;
         }
 
         :host-context(p) {
@@ -68,8 +74,6 @@ class Tooltips extends HTMLElement {
         if (this.hasAttribute('text')) {
             this._toolTipText = this.getAttribute('text');
         }
-        // const toolTipIcons = document.createElement('span');
-        // toolTipIcons.textContent = ' (?)';
         const toolTipIcons = this.shadowRoot.querySelector('span');
 
         toolTipIcons.addEventListener('mouseenter', this._showTooltips.bind(this));
@@ -79,13 +83,8 @@ class Tooltips extends HTMLElement {
     }
 
     _showTooltips() {
-     this._toolTipContainers = document.createElement('div');
-    //  this._toolTipContainers.textContent = 'I am writing ToolTip Texts';
+    this._toolTipContainers = document.createElement('div');
     this._toolTipContainers.textContent = this._toolTipText;
-    // this._toolTipContainers.style.backgroundColor = 'lightblue';
-    // this._toolTipContainers.style.color = 'black';
-    // this._toolTipContainers.style.position = 'absolute';
-    // this._toolTipContainers.style.zIndex = '10';
     this.shadowRoot.appendChild(this._toolTipContainers);
     this.style.position = "relative";
 
