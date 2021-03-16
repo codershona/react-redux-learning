@@ -16,7 +16,6 @@ class Tooltips extends HTMLElement {
        });
 
        // const template = document.querySelector('#tooltips-template');
-
        // this.shadowRoot.appendChild(template.content.cloneNode(true));
 
        this.shadowRoot.innerHTML = `
@@ -28,6 +27,14 @@ class Tooltips extends HTMLElement {
             z-index: 10;
 
         }
+
+        .highlight {
+            background-color: red;
+            
+
+        }
+
+
        </style>
        <slot>SOME DEFAULT</slot>
        <span> (?) </span>
