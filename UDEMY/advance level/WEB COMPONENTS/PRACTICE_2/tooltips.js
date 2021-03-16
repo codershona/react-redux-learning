@@ -1,9 +1,9 @@
 class Tooltips extends HTMLElement {
     constructor() {
         super();
-        this._toolTipContainers;
+        // this._toolTipContainers;
         this._toolTipIcon;
-
+        this._toolTipVisible = false;
         this._toolTipText = 'This was a dummy TEXTS';
 
         // this._toolTipText = this.getAttribute('text');
@@ -75,11 +75,11 @@ class Tooltips extends HTMLElement {
         this._toolTipIcon.addEventListener('mouseleave', this._hideTooltips.bind(this));
         // this.shadowRoot.appendChild(toolTipIcons);
         this.style.position = "relative";
+        this._render();
     }
 
     attributeChangedCallback(name, oldValue, newValue) {
        // console.log(name, oldValue, newValue);
-
        if (oldValue === newValue) {
            return;
        }
@@ -93,6 +93,19 @@ class Tooltips extends HTMLElement {
         return ['text'];
     }
 
+    _render() {
+        let toolTipContainers = this.shadowRoot.querySelector('div');
+       if (this._toolTipVisible) {
+        toolTipContainers = document.createElement('div');
+        toolTipContainers.textContent = this._toolTipText;
+        this.shadowRoot.appendChild(toolTipContainers);
+       } else {
+           if (toolTipContainers) {
+        this.shadowRoot.removeChild(toolTipContainers);
+           }
+       }
+    }
+
     disconnectedCallback() {
        // console.log('Disconnected!!!');
        this._toolTipIcon.removeEventListener('mouseenter', this._showTooltips);
@@ -101,17 +114,23 @@ class Tooltips extends HTMLElement {
     }
 
     _showTooltips() {
-    this._toolTipContainers = document.createElement('div');
-    this._toolTipContainers.textContent = this._toolTipText;
-    this.shadowRoot.appendChild(this._toolTipContainers);
+    // this._toolTipContainers = document.createElement('div');
+    // this._toolTipContainers.textContent = this._toolTipText;
+    // this.shadowRoot.appendChild(this._toolTipContainers);
     // this.style.position = "relative";
+
+    this._toolTipVisible = true;
+    this._render();
 
     }
 
     // hiding tooltips and it will hide the data
      _hideTooltips() {
-        this.shadowRoot.removeChild(this._toolTipContainers);
-     }
+        // this.shadowRoot.removeChild(this._toolTipContainers);
+
+         this._toolTipVisible = false;
+         this._render();
+    }
 
 }
 
