@@ -28,15 +28,13 @@ class Tooltips extends HTMLElement {
 
         }
 
-        :host {
+        :host(.important) {
             background: #ccc;
 
         }
 
         .highlight {
             background-color: red;
-
-
         }
 
         ::slotted(.highlight) {
