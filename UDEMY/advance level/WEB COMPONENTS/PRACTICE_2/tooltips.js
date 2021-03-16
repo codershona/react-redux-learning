@@ -61,12 +61,10 @@ class Tooltips extends HTMLElement {
         }
 
        </style>
-       <slot>SOME DEFAULT</slot>
+       <slot> SOME DEFAULT </slot>
        <span class="icon"> ? </span>
 
        `;
-
-
 }
 
   // using connected Call back () method so that we could access in the DOM
@@ -79,21 +77,28 @@ class Tooltips extends HTMLElement {
         toolTipIcons.addEventListener('mouseenter', this._showTooltips.bind(this));
         toolTipIcons.addEventListener('mouseleave', this._hideTooltips.bind(this));
         this.shadowRoot.appendChild(toolTipIcons);
+        this.style.position = "relative";
+    }
 
+    attributeChangedCallback(name, oldValue, newValue) {
+       console.log(name, oldValue, newValue);
+    }
+
+    static get observedAttributes() {
+        return ['text'];
     }
 
     _showTooltips() {
     this._toolTipContainers = document.createElement('div');
     this._toolTipContainers.textContent = this._toolTipText;
     this.shadowRoot.appendChild(this._toolTipContainers);
-    this.style.position = "relative";
+    // this.style.position = "relative";
 
     }
 
     // hiding tooltips and it will hide the data
      _hideTooltips() {
         this.shadowRoot.removeChild(this._toolTipContainers);
-
      }
 
 }
