@@ -12,6 +12,8 @@ class Modals extends HTMLElement {
              height: 100vh;
              background: rgba(0,0,0,0.75);
              z-index: 10;
+             opacity: 0;
+             pointer-events: none;
          }
 
          #modal {
@@ -20,14 +22,16 @@ class Modals extends HTMLElement {
             top: 15vh;
             left: 25%;
             width: 50%;
-           // height: 20rem; 
+           // height: 20rem;
             box-shadow: 0 2px 8px rgba(0,0,0,0.26);
             background: white;
             border-radius: 3px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-
+            opacity: 0;
+            pointer-events: none;
+            
         }
 
         #main {
@@ -52,10 +56,7 @@ class Modals extends HTMLElement {
 
         #actions button {
             margin: 0 0.25rem;
-
-
         }
-
 
          </style>
 

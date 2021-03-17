@@ -30,5 +30,16 @@
 
     <p>I am creating a basic Modal</p>
     <button>SHOWS DETAILS</button>
+    <script>
+        const confirmButton = document.querySelector('button');
+        const modal = document.querySelector('wc-modal');
+
+
+        confirmButton.addEventListener('click', () => {
+         modal.setAttribute('opened', '');
+
+        });
+
+    </script>
 </body>
 </html>
