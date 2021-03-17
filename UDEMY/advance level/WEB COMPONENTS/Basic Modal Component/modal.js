@@ -16,6 +16,13 @@ class Modals extends HTMLElement {
              pointer-events: none;
          }
 
+         :host([opacity]) #backdrop,
+         :host([opened]) #modal {
+             opacity: 1;
+             pointer-events: all;
+
+         }
+
          #modal {
             position: fixed;
             z-index: 100;
@@ -31,7 +38,7 @@ class Modals extends HTMLElement {
             justify-content: space-between;
             opacity: 0;
             pointer-events: none;
-            
+
         }
 
         #main {
@@ -82,6 +89,26 @@ class Modals extends HTMLElement {
          `;
 
     }
+
+ //   attributeChangedCallback(name, oldValue, newValue) {
+
+
+        // opening the modal via css:
+        // if (name === 'opened') {
+        //     if (this.hasAttribute('opened')) {
+        //         this.shadowRoot.querySelector('#backdrop').style.opacity = 1;
+        //         this.shadowRoot.querySelector('#backdrop').style.pointerEvents = 'all';
+        //         this.shadowRoot.querySelector('#modal').style.opacity = 1;
+        //         this.shadowRoot.querySelector('#modal').style.pointerEvents = 'all';
+        //     }
+
+        // }
+    // }
+
+
+    // static get observedAttributes() {
+    //     return ['opened'];
+    // }
 
 }
 
