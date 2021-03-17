@@ -20,10 +20,40 @@ class Modals extends HTMLElement {
             top: 15vh;
             left: 25%;
             width: 50%;
-            height: 30rem;
+           // height: 20rem; 
             box-shadow: 0 2px 8px rgba(0,0,0,0.26);
             background: white;
             border-radius: 3px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+        }
+
+        #main {
+          padding: 1rem;
+        }
+
+        header {
+            font-size: 1.25rem;
+        }
+
+        header h1 {
+            padding: 1rem;
+        }
+
+        #actions {
+            border-top: 1px solid #ccc;
+            padding: 1rem;
+            display: flex;
+            justify-content: flex-end;
+
+        }
+
+        #actions button {
+            margin: 0 0.25rem;
+
+
         }
 
 
@@ -31,7 +61,21 @@ class Modals extends HTMLElement {
 
 
          <div id="backdrop"></div>
-         <div id="modal"></div>
+         <div id="modal">
+           <header>
+           <h1>Request Confirm</h1>
+           </header>
+
+           <section id="main">
+               <slot></slot>
+           </section>
+
+           <section id="actions">
+           <button>Delete</button>
+           <button>YES</button>
+       </section>
+
+         </div>
 
 
          `;
