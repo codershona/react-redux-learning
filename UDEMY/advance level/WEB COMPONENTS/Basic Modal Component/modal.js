@@ -48,11 +48,12 @@ class Modals extends HTMLElement {
         }
 
         header {
-            font-size: 1.25rem;
+            // font-size: 1.25rem;
+            padding: 1rem;
         }
 
-        header h1 {
-            padding: 1rem;
+        ::slotted(h1) {
+            font-size: 1.25rem;
         }
 
         #actions {
@@ -73,7 +74,9 @@ class Modals extends HTMLElement {
          <div id="backdrop"></div>
          <div id="modal">
            <header>
-           <h1>Request Confirm</h1>
+           <slot name="title">
+           Can You Confirm the project!!!
+           </slot>
            </header>
 
            <section id="main">
