@@ -84,8 +84,8 @@ class Modals extends HTMLElement {
            </section>
 
            <section id="actions">
-           <button>Delete</button>
-           <button>YES</button>
+           <button id="cancel-btn">DELETE</button>
+           <button id="confirm-btn">YES</button>
        </section>
 
          </div>
@@ -96,7 +96,14 @@ class Modals extends HTMLElement {
          const slots = this.shadowRoot.querySelectorAll('slot');
          slots[1].addEventListener('slotchange', event => {
              console.dir(slots[1].assignedNodes());
-         })
+         });
+
+         const cancelButton = this.shadowRoot.querySelector('#cancel-btn');
+         const confirmButton = this.shadowRoot.querySelector('#confirm-btn');
+
+         cancelButton.addEventListener('click', this._cancel.bind(this));
+         confirmButton.addEventListener('click', this._confirm.bind(this));
+
 
     }
 
@@ -130,6 +137,25 @@ class Modals extends HTMLElement {
         // this.isOpen; // this will define as false
         this.isOpen = true;
 
+    }
+
+    // _hide() will represent private method & hide() will represent public method
+
+    hide() {
+
+        if (this.hasAttribute('opened')) {
+            this.removeAttribute('opened');
+
+        }
+       this.isOpen = false;
+    }
+
+    _cancel() {
+        this.hide();
+    }
+
+    _confirm() {
+        this.hide();
     }
 
 }

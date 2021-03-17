@@ -29,6 +29,14 @@
         const confirmButton = document.querySelector('button');
         const modal = document.querySelector('wc-modal');
 
+        modal.addEventListener('confirm', () => {
+            console.log('CONFIRMED!!!!.......');
+        });
+
+
+        modal.addEventListener('cancel', () => {
+            console.log('CANCELLED!!!!.......');
+        });
 
         confirmButton.addEventListener('click', () => {
          // modal.setAttribute('opened', '');
