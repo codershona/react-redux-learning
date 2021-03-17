@@ -103,7 +103,9 @@ class Modals extends HTMLElement {
 
          cancelButton.addEventListener('click', this._cancel.bind(this));
          confirmButton.addEventListener('click', this._confirm.bind(this));
-
+        // cancelButton.addEventListener('cancel', () => {
+        //  console.log('CANCEL PLEASE!!!!');
+        // });
 
     }
 
@@ -150,8 +152,11 @@ class Modals extends HTMLElement {
        this.isOpen = false;
     }
 
-    _cancel() {
+    _cancel(event) {
         this.hide();
+        const cancelEvent = new Event('cancel');
+        event.target.dispatchEvent(cancelEvent);
+
     }
 
     _confirm() {
