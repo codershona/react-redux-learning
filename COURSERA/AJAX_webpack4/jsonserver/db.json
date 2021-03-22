@@ -1,0 +1,27 @@
+{
+  "contacts": [
+    {
+      "id": 1,
+      "name": "Barbie Doll",
+      "email": "barbiedoll@test.com"
+    },
+    {
+      "name": "Gony Mia",
+      "phone": "+236236814",
+      "email": "gony@test.com",
+      "id": 6
+    },
+    {
+      "name": "Mena",
+      "phone": "+34623786234",
+      "email": "mena@test.com",
+      "id": 8
+    },
+    {
+      "name": "Hina",
+      "phone": "+32784632",
+      "email": "hina@email.com",
+      "id": 9
+    }
+  ]
+}

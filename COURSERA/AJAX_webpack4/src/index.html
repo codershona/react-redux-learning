@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="scripts/index.css"> -->
+    <title>Contact Phonebook</title>
+</head>
+<body>
+    <div class="container">
+    <!-- <h1>Using Ajax PhoneBook</h1>
+    <button class="btn btn-danger" id="loadingData">Loading Data</button>
+    <p id="output"></p> -->
+
+    <h1 class="display-4 text-center">Ajax PhoneBook</h1>
+    <div class="row my-4">
+        <div class="col">
+            <input type="text" placeholder="Please type your Full Name" id="nameFields" class="form-control">
+        </div>
+        <div class="col">
+            <input type="text" placeholder="Please type your Correct Phone Number" id="phoneFields" class="form-control">
+        </div>
+        <div class="col">
+            <input type="email" placeholder="Please type your Email Address" id="emailFields" class="form-control">
+        </div>
+        <div class="col">
+            <button id="saveContact" class="btn btn-danger">SAVED!</button>
+        </div>
+    </div>
+
+    <!-- table created -->
+
+        <table class="table table-dark table-striped">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Phone</th>
+                <th>Email</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="tbody">
+            <tr>
+                <!-- <td>Julie</td>
+                <td>Julie</td>
+                <td>Julie</td> -->
+            <!-- <td>
+                <button class="btn btn-secondary">EDIT</button>
+                <!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#mainModal" data-bs-whatever="@mdo">EDIT</button> -->
+                <!-- <button class="btn btn-warning">DELETE</button>
+            </td> --> -->
+
+            </tr>
+            </tbody>
+          </table>
+
+</div>
+
+<!-- Editing the button modal bootstrap -->
+<div class="modal fade" id="contactEditModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Edit Contact</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="mb-3">
+              <label for="edit-name" class="col-form-label">Edit Name</label>
+              <input type="text" class="form-control" id="edit-name">
+            </div>
+            <div class="mb-3">
+                <label for="edit-phone" class="col-form-label">Edit Phone</label>
+                <input type="text" class="form-control" id="edit-phone">
+              </div>
+              <div class="mb-3">
+                <label for="edit-email" class="col-form-label">Edit Email</label>
+                <input type="email" class="form-control" id="edit-email">
+              </div>
+            <!-- <div class="mb-3">
+              <label for="message-text" class="col-form-label">Message:</label>
+              <textarea class="form-control" id="message-text"></textarea>
+            </div> -->
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" id="updateContact" class="btn btn-primary">Save Contact</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+
+</body>
+</html>

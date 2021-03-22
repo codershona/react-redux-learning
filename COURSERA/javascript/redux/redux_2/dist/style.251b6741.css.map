@@ -1,0 +1,1 @@
+{"version":3,"sources":["styles/style.css"],"names":[],"mappings":"AAAA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA","file":"style.251b6741.css","sourceRoot":"../src","sourcesContent":[".avatar {\n    width: 30px;\n    height: 30px;\n    border-radius: 5px;\n    border: 1px solid grey;\n    margin: 0 5px;\n}\n\nspan {\n    cursor: pointer;\n}\n\n"]}

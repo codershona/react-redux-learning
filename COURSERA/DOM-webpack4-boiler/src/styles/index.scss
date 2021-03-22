@@ -1,0 +1,58 @@
+html, body {
+    background: #141E30;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #243B55, #141E30);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #243B55, #141E30); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+    font-size: 50px;
+    text-align: center;
+    color: lightsalmon;
+    font-family: 'Yusei Magic', sans-serif;
+}
+
+#addTasksButton {
+    color: #000;
+    background: lightsalmon;
+}
+
+.single_tasks {
+    min-height: 76px;
+    padding: 6px;
+    background: rgb(209, 66, 10);
+    position: relative;
+    margin-bottom: 11px;
+    color: rgb(235, 223, 223);
+    font-family: 'Yusei Magic', sans-serif;
+}
+
+.tasks_controller_panel {
+    width: 100%;
+    min-height: 41px;
+    background: rgb(17, 121, 17);
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    color: rgb(235, 223, 223);
+}
+
+.colors_circle {
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+}
+
+.inner-textArea {
+    resize: none;
+    position: absolute;
+    background: #ddd;
+    padding: 5px;
+    font-size: 15px;
+    font-family: 'Yusei Magic', sans-serif;
+    top: 0;
+    left: 0;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.35);
+
+}

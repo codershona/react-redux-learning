@@ -1,0 +1,39 @@
+## Basic Topics:
+
+Basic types;
+Type Inference;
+Type Conversion;
+Type Assertion;
+Type definition;
+Variable Declaration and Scope;
+Interfaces;
+Literal Types;
+Type Definition;
+Unions and Intersection types;
+Class and Inheritance;
+Enums in Typescript;
+Generics in Typescript;
+
+
+## Advance topics:
+
+Typeguards;
+Nullable Type;
+Type Aliases;
+Interface vs Type Aliases;
+Utility Types;
+Decorators;
+Declaration Merging;
+Mixins;
+Modules;
+Module Resolution;
+Namespaces;
+Namespaces and module;
+Symbol;
+Triple-Splash Directives;
+Type compatibility;
+
+
+* Install this : npm i -D typescript nodemon ts-node
+* Run this into the terminal : tsc app.ts
+* npx tsc --init
