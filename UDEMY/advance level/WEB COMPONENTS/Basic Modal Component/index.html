@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Basic Modal Component</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 2rem;
+            font-family: sans-serif;
+
+        }
+
+    </style>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <!-- <link rel='stylesheet' type='text/css' media='screen' href='main.css'> -->
+    <script src='modal.js'></script>
+</head>
+<body>
+    <wc-modal><h1 slot="title">REQUEST CONFIRM</h1><p>I am agree to work on project!!</p></wc-modal>
+
+    <p>I am creating a basic Modal</p>
+    <button>SHOWS DETAILS</button>
+    <script>
+        const confirmButton = document.querySelector('button');
+        const modal = document.querySelector('wc-modal');
+
+        modal.addEventListener('confirm', () => {
+            console.log('CONFIRMED!!!!.......');
+        });
+
+
+        modal.addEventListener('cancel', () => {
+            console.log('CANCELLED!!!!.......');
+        });
+
+        confirmButton.addEventListener('click', () => {
+         // modal.setAttribute('opened', '');
+         if (!modal.isOpen) {
+            modal.open();
+            console.log('Modal Opening,,,!');
+         }
+        //  modal.open();
+         // console.log(modal.isOpen);
+
+        });
+
+    </script>
+</body>
+</html>

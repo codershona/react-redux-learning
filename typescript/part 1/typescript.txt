@@ -1,6 +1,6 @@
 ## Basic Topics:
 
-Basic types;
+Basic types(string/ number/ array/ boolean/ any/ unknown/ void/ null/ undefined/ never/ object/ tuple/ enum/ symbol);
 Type Inference;
 Type Conversion;
 Type Assertion;
@@ -37,3 +37,20 @@ Type compatibility;
 * Install this : npm i -D typescript nodemon ts-node
 * Run this into the terminal : tsc app.ts
 * npx tsc --init
+* tsc apps.ts -w
+* tsc --init
+* RUN tsc -w/ tsc to compile all the files
+******
+
+
+# Typescript Common Example
+
+```
+   function addition(x: number, y: number) {
+       return x + y;
+   }
+   const results = addition('6', '7');
+   console.log(results);
+```
+*
+

@@ -1,4 +1,12 @@
-let messages = "Hello Typescript"
+// Udemy Practices
 
-console.log(messages);
+
+// Working with types & Core types or diving deeper
+// Method 1
+
+console.clear()
+
+
+
+
 
